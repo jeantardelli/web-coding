@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script>
+		function showMouseP(event) {
+			document.getElementsByTagName("p")[0].innerHTML = "mouse at (" + event.clientX + "," + event.clientY + ")+\n";
+		}
+	</script>
+</head>
+<body onscroll="alert(document.body.scrollTop)"
+			onkeydown="alert(event.keyCode)"
+			onmousemove="showMouseP(event)"
+			onbeforeunload="alert('Sad to see you leave!')">
+	<button onclick="scrollBy(0, 300)")>
+		Scroll down
+	</button>
+	<p></p>
+	<pre>
+				asided
+				asd
+				addressad
+				addressadda
+				datada
+				sda
+				sdaasd
+				.....
+	</pre>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--There can only be one checked input for radio controls
+	with the same name. Here, the submission will fail if the
+	'Name' contains invalid characters of if the 'Email' is
+	invalid-->
+<html>
+<head>
+	<title>Generic Input Types</title>
+</head>
+<body><form action="process.asp">	
+		Name:
+		<input type="text" name="name" autofocus placeholder="Enter your name here"
+		 autosave="123" pattern="[A-Za-z]*"/>
+		<br /><br />
+
+		Date:
+		<input type="date" name="dt" value="2014-11-25";/>
+		<br /><br />
+
+		Time:
+		<input type="time" name="tm" value="17:00:00";/>
+		<br /><br />
+
+		Department:
+		<input list="departments" name="department" spellcheck="true"/>
+		<datalist id="departments">
+			<option value="Finance"></option>
+			<option value="Management"></option>
+			<option value="Marketing"></option>
+			<option value="Public Relations"></option>
+			<option value="Research"></option>
+		</datalist>
+		<br /><br />
+
+		Email
+		<input type="email" name="em" maxlength="30"/>
+		<br/><br/>
+
+		Sex:
+		<input type="radio" name="sex" id="f" />
+		<label for="f">female</label>
+		<input type="radio" name="sex" id="m" />
+		<label for="m">male</label>
+		<input type="radio" name="sex" id="nb" />
+		<label for="nb">non-binary</label>
+		<br /><br />
+
+		Rating:
+		<input type="range" min="0" max="100" step="1" value="90"/>
+		<br /><br />
+		<input type="checkbox" id="confirm" name="conditions"/>
+		<label for="confirm">I have read the conditions.</label>
+
+		<input type="submit">
+	</form>
+</body>
+</html>

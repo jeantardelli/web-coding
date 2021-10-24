@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!--Include a '#' when referencing an image map. Here
+ a circular region is carved out of the image, so that
+ only the circle can be clicked to link to google.-->
+<html>
+<head>
+	<title> Image </title>
+</head>
+<body>
+<map name="planet">
+	<area shape="circle" coords="100,100,88" alt="planet" href="https://google.com/search?q=neptune" />
+</map>
+<figure>
+	<figcaption> HTML Image </figcaption> <br />
+	<img src="../src/images/neptune.jpg" alt="neptune" usemap="#planet" height="200" width="200" />
+</figure><br />
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Basics</title>
+</head>
+<body>
+	<form id="frm" method="get" action="action.php" style="width:280px"><fieldset>
+			<legend>Make A Report</legend>
+			<br />Type:<br />
+			<select name="type" size="8">
+				<optgroup label="Normal">
+					<option>Money Received</option>
+					<option>Employee Off</option>
+					<option selected>New Employee</option>
+				</optgroup>
+				<optgroup label="Urgent">
+					<option>Money</option>
+					<option>Server Down</option>
+					<option>Insufficient Stock</option>
+				</optgroup>
+			</select>
+			<br /><br />Message:<br />
+			<textarea name="message" rows="4" cols="30" autofocus wrap="no">Here is the report.</textarea>
+			<button type="submit">SUBMIT</button>
+		</fieldset>
+	</form>
+</body>
+</html>
