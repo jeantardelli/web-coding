@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--Fixing the <body> width prevents the elements from
+ shifting aroung as browser window is resized.
+
+ Setting the 'height' of <body> and <html> to 100% allows
+ a <div> inside to extend 100% vertically over the entire
+ page.
+
+ '!important' prevents a property from being overriden if
+ it is declared again (not much of a use here). -->
+<html>
+<head>
+	<style type="text/css">
+	html, body {height: 100%}
+	p:nth-child(2){text-decoration:underline;}
+	p:nth-of-type(2){font-weight:bold !important;}
+	</style>
+</head>
+<body style="width:1440px; margin:0px;">
+	<div style="background:orange; height:100%;">
+		<div>
+			<p>Hello World!</p>
+			<div>Hello World!</div>
+			<p>Hello World!</p>
+		</div>
+		<div>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+			<p>Hello World!</p>
+		</div>
+</body>
+</html>
