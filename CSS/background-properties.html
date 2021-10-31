@@ -4,13 +4,32 @@
  image to be displayed. Note the use of 'display'. -->
 <html>
 <head>
+	<base href="../src/gif/" />
 	<style>
-	#spritelist {list-style:none;}
-	#spritelist li, #spritelist a{height:60px;display:block!;}
-	#star{left:0px;width:60px;}
-	#star{b
+	#spriteslist {list-style:none;}
+	#spriteslist li, #spriteslist a{height:150px;display:block;}
+	#heart{left:0px;width:150px;}
+	#heart{background:url("sprites.gif") -19px 0px;}
+	#heart a:hover{background:url("sprites.gif") -19px -150px;}
+	#star{left:170px;width:150px;}
+	#star{background:url("sprites.gif") -183px 0px;}
+	#star a:hover{background:url("sprites.gif") -183px -150px;}
+	#hexagon{left:179px;width:150px;}
+	#hexagon{background:url("sprites.gif") -348px 0;}
+	#hexagon a:hover{background:url("sprites.gif") -350px -150px;}
 	</style>
 </head>
 <body>
+	Whole Image: <br /><img src="sprites.gif" />
+	<br /><br /><br />
+	Sprites:
+	<ul id="spriteslist">
+		<li id="heart"><a href="a.html"></a></li>
+		<li id="star"><a href="b.html"></a></li>
+		<li id="hexagon"><a href="c.html"></a></li>
+	</ul>
+	<p style="float:none;">
+		Point the mouse at a shape changes its colour.
+	</p>
 </body>
 </html>
