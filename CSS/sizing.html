@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Setting one of the two dimensions to 'auto' scales
+	an image proportionally. Placing a <div> inside <a>
+	makes it a clickable link. Also note the use of calc() -->
+<html>
+<head>
+	<style type="text/css">
+		img, div, a {display: inline-block;}
+		img {
+			width: calc(20% - 20px);
+			height: auto;}
+		#triangle {
+			width: 0;
+			height: 0;
+			border-left: 50px solid transparent;
+			border-right: 50px solid transparent;
+			border-bottom: 100px solid red;
+		}
+		#circle {
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+			border: 2px solid;
+			background: url("../src/images/curves.png");
+		}
+	</style>
+</head>
+<body>
+	<img src="../src/images/apples.png" />
+	<div id="triangle"></div>
+	<a href="https://google.com"><div id="circle"></div></a>
+</body>
+</html>

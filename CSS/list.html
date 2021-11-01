@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- This changes the colour of the list bullets. -->
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<style type="text/css">
+		ul {list-style: none;
+			padding: 0;
+			margin: 0;}
+		li {padding-left: 1em;
+			text-indent: -.7em;}
+		li:before {
+			content: "• ";
+			color: red;}
+	</style>
+</head>
+<body>
+	<ul><li>Cat</li>
+		<li>Dog</li>
+		<li>Fish</li></ul>
+</body>
+</html>

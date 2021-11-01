@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- This example shows a portion of a html file that defines
+	and uses a font. The font is tried one by one downwards.
+	local() uses a font on the visitor's local computer -->
+<html>
+<head>
+	<style type="text/css">
+	@font-face{
+		font-family: newfont;
+		src: local('Green Web'), url('Gabriotta.ttf'),
+		url('https://wwww.example.com/Gabriola.eot');
+		font-style: italic;
+	}
+	p {font-family: newfont;}
+	</style>
+</head>
+<body>
+</body>
+</html>
