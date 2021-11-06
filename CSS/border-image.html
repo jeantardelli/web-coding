@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	div {border: 20px solid transparent;
+		width:160px;
+		padding: 10px 20px;
+	}
+	#round {border-image: url("../src/gif/image.gif") 30 round;
+	}
+	#stretch {
+		border-image: url("../src/gif/image.gif") 30 stretch;
+	}
+</style>
+</head>
+<body>
+	<p style="padding:0px 70px;">The image used:</p>
+	<img src="../src/gif/image.gif" style="padding:0px 80px;" /><br /><br /><br />
+	<div id="round">repeated border image</div><br />
+	<div id="stretch">stretched border image</div>
+</body>
+</html>
