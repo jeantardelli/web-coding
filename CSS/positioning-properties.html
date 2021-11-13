@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- This example illustrates how to desing document layout
+	in HTML and CSS using <div> and 'float'. Note the use of
+	the length unit 'vw' -->
+<html>
+<body style="margin:0">
+	<div id="container" style="width:100vw">
+		<div id="header" style="background-color: #FFA555;">
+			<span>Header</span>
+		</div>
+		<div id="menu" style="background-color:#22D700;height:250px;width:100px;float:left;">
+			<h3 style="margin:20px; width:45px;border:black dotted 5px;outline: dashed 3px grey">Menu</h3>
+		</div>
+		<div id="content" style="background-color:#EEEEEE;height:250px;width:1190px;float:left;position:relative;">
+			<h3>Content</h3>
+			<h3 style="position:absolute; bottom:5px">The end</h3>
+		</div>
+		<div id="footer" style="background-color:#FFA555;clear:both;">
+			<h3>Footer</h3>
+		</div>
+	</div>
+</body>
+</html>
