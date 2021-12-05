@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Include the vendor-specific prefix if a
+	browser doesn't support this -->
+<html>
+<head>
+	<style>
+	@keyframes kf{
+		from {left:0px; background:yellow;}
+		25% {left:100px; background:green;}
+		50% {left:50px; background:white;}
+		75% {left:200px; background:blue;}
+		to {left:300px; background:yellow;}
+	}
+	div {width:100px;
+		height:100px;
+		position:relative;
+		background:yellow;
+		animation: kf 5s 3s alternate infinite;
+	}
+	</style>
+</head>
+<body>
+	<div>A moving box that changes its colour.</div>
+</body>
+</html>

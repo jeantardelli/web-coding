@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+	body {counter-reset:section;}
+	h1 {counter-reset:subsection;}
+	h1:before {counter-increment:section;
+		content:"Identity " counter(section) ".(" attr(class) ") ";
+	}
+	h2:before {counter-increment:subsection;
+		content:counter(section) "." counter(subsection) " ";
+	}
+	q {quotes: "<" ">" "'" "'";}
+	</style>
+</head>
+<body>
+	<h1 class="R"><q><q>Main</q> Race</q></h1>
+	<h2>Dutch</h2>
+	<h2>American</h2>
+	<h2>Indian</h2>
+	<h1 class="P"><q>Place</q></h1>
+	<h2>London</h2>
+	<h2>Beijing</h2>
+	<h1 class="S"><q>Sex</q></h1>
+	<h2>Male</h2>
+	<h2>Female</h2>
+</body>
+</html>

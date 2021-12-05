@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- This illustrates how to place something right at the
+	center. If you wish to centralize something horizontally
+	only, then you should use: margin: 0, auto;
+
+	As the visitor resizes the window, the dialog box remains at
+	center, shinking or expanding along with the text. The dialog
+	box is closed by clicking at 'X' at the upper right corner. -->
+<html>
+<head>
+	<style type="text/css">
+	.center { margin:auto;
+		position: absolute;
+		top:0; left:0; bottom:0; right:0; }
+	.dialogBox {height:50%;
+		width:50%;
+		outline: 3px dotted;
+		font-size: 5vw;
+		background: rgba(200,200,0,0.8);}
+	#close { position: absolute;
+		left:91%}
+	#close:hover {font-weight: bold;
+		cursor: pointer;}
+	.boxMsg { width: 90%; height: 5vw;}
+	</style>
+</head>
+<body style="background:url('../src/images/curves.png') repeat-x,
+						 url('../src/images/apples.png') repeat;
+						 background-size: 100px 100px,
+						 120px 120px;">
+	<a href="https://google.com" style="cursor:default; pointer-events:none;">Disabled Link</a>
+	<span style="background:black; color:white; cursor:pointer;"
+				onclick="document.getElementsByTagName('div')[0].style.display='block';">Show Dialog Box</span>
+	<div class="center dialogBox">
+		<span id="close"
+					onclick="document.getElementsByTagName('div')[0].style.display='none';">X</span>
+		<p class="center boxMsg">An error has ocurred.</p>
+	</div>
+</body>
+</html>

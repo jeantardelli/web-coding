@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- As the mouse leaces the enlarged box, the box gradually
+	shrinks to its original size and fades-in, after a 2s delay -->
+<html>
+<head>
+	<title>Transition</title>
+	<style>
+	div {width: 150px;
+		height: 150px;
+		position: fixed;
+		background: yellow;
+		opacity: 1.0;
+		transition: width 5s linear,
+		height 5s cubic-bezier(0,0.3,0.5,0.1),
+		opacity 5s;
+	transition-delay:2s;}
+	div:hover {
+		width: 300px;
+		height: 300px;
+		opacity:0.0; }
+	</style>
+</head>
+<body>
+	<div>Pointing at this box with the mouse gradually enlarges it and fades it out.</div>
+</body>
+</html>
