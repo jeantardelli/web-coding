@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		function f(num){
+
+			// 1. Function Declaration
+			function a(){num++; return num;}
+
+			// 2. Function Expression / Anonymous Function
+			var b = function (){num++; return num;};
+
+			// 3. Recursive Function Expression
+			var c = function d(n){if (n==1) return 1;
+														else return n+d(n-1);};
+
+			// 4. Function Constructor
+			var e = new Function('a','b','return (a+b);');
+			alert (a());       // 2
+			alert (b());       // 3
+			alert (c(4));      // 10
+			alert (typeof(c)); // function
+			alert (typeof(d)); // undefined
+			alert (e(2,3));    // 5
+			alert ((function (n){return n;})(100)); // 100
+
+			return e;
+		}
+		alert(f(1)(3,4));  // 7
+		var g = f(1);
+		alert(g(5,6));     // 11
+	</script>
+</body>
+</html>

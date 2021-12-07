@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<script>
+		var m;
+		outerloop:
+		for (var i=0; i<10; i++){
+			for (var j=0; j<10; j++){
+				m=i*j;
+				if (j>8) continue;
+				if (m>50) break outerloop;
+			}
+		}
+		document.write(i+"*"+j+"="+m);
+	</script>
+</body>
+</html>

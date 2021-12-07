@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- This illustrates some differences between for...in and
+ for...of. -->
+<html>
+<body>
+	<script>
+		arr = [3, 5, 7];
+		arr.foo = "hello";
+		for (i in arr) {
+			alert(i); // 0, 1, 2, foo
+		}
+		for (i of arr) {
+			alert(i); // 3, 5, 7
+		}
+	</script>
+</body>
+</html>
