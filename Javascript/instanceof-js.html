@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- A function can be used as a constructor for a new user-defined data type. 
+	Methods of the data type can be declared within the function. Use instanceof to
+	test if an object belongs to an object. Use in to test if a property, method or 
+	array index belongs to an object. -->
+<html>
+<head></head>
+<body>
+	<script>
+		function rectangle(a,b) {
+			this.width=a;
+			this.height=b;
+			this.area=function(){
+				return this.width*this.height;
+			}
+		}
+		var r = new rectangle(10,20);
+		r.height=30;
+		document.write(r.area()+"<br />");
+		document.write((r instanceof rectangle)+"<br />");
+		document.write((r instanceof Object)+"<br />");
+		document.write(("width" in r)+"<br />");
+		document.write(("width" in rectangle)+"<br />");
+		document.write(("PI" in Math)+"<br />");
+	</script>
+</body>
+</html>

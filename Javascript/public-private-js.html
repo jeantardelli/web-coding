@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Creating functions within other functions unnecessarily will decrease processing speed and
+	increase memory consumption. However, one may choose to use closures to simulate object-oriented
+	paradigm, in which some members of an object are hidden from the outside(private), while some others
+	are exposed (public). -->
+<html><body><script>
+			var makeCounter = function() {
+				var privateCounter = 0;
+				function changeBy(val) {
+					privateCounter += val;
+				}
+				return {
+					increment: function() {
+						changeBy(1);
+					},
+					decrement: function() {
+						changeBy(-1);
+					},
+					value: function() {
+						return privateCounter;
+					}
+				}
+			};
+			var x = makeCounter();
+			alert(x.value()); // 0
+			x.increment();
+			x.increment();
+			alert(x.value()); // 2
+			x.decrement();
+			alert(x.value()); // 1
+		</script>
+	</body>
+</html>

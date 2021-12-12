@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- Function parameters are passed-by-value or passed-by-reference -->
+<html lang="en">
+<body>
+	<script>
+		function changeStuff(num, obj1, obj2){
+			num = num * 10;
+			obj1.item = "changed";
+			obj2 = {item: "changed"};
+		}
+	var num = 10;
+	var obj1 = {item: "unchanged"};
+	var obj2 = {item: "unchanged"};
+	changeStuff(num, obj1, obj2);
+	alert(num);       // 10
+	alert(obj1.item); // changed
+	alert(obj2.item); // unchanged
+	function myobject() {
+		this.value = 5;
+	}
+	myobject.prototype.add = function() {
+		this.value++;
+	}
+	function objectchanger(fnc){
+		fnc();
+	}
+	var o = new myobject()
+	alert(o.value);     // 5
+	o.add();
+	alert(o.value);			// 6
+	objectchanger(o.add);
+	alert(o.value);     // 6
+
+</script>
+</body>
+</html>

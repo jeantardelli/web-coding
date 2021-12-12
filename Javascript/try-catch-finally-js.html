@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- This example trie to call a function that is not
+	defined. The resulting error is captured by the error
+	object err. -->
+<html>
+<head></head>
+<body>
+	<script>
+		try {
+			asdd(5);
+		} catch (err){
+			document.write(err.message);
+		} finally {
+			document.write("***");
+		}
+	</script>
+</body>
+</html>
