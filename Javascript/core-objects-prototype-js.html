@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- We can define the 'constructor' and 'prototype' properties of the core objects.
+	'constructor' is a special string that contains the type name. 'prototype' can be used
+	to add functions to the data type. 
+
+	Some of these core objects also have the methods 'toString()' , which converts the value
+	to a string automatically, and 'valueOf()', which returns the intrinsic value. -->
+<html>
+<head></head>
+<body>	
+	<script>
+		Number.prototype.square=function(){
+			this.s=this.valueOf()*this.valueOf();
+		}
+		Number.prototype.toString=function(){
+			return 'eleven';
+		}
+		var n = new Number(11);
+		n.square();
+		alert(n.s); // 121
+		alert(n); // eleven
+		alert(n.constructor); // function Number(){[native code]}
+	</script>
+</body>
+</html>

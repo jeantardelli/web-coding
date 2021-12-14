@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- We can throw our own exceptions -->
+<html lang="en">
+<head></head>
+<body>
+	<script>
+		try {
+			var a=0;
+			if (a==0) throw "Division by zero.";
+			document.write(5/a);
+		} catch (err) {
+			document.write(err);
+		}
+	</script>
+</body>
+</html>

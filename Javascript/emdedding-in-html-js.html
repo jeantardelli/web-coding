@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- Where there is supposed to be a URL traditionally, JavaScript code can be run
+	instead by prepending the string ‘javascript:’. ‘void’ prevents a value from
+	being returned. -->
+<html>
+<body>
+	<script>
+		function a(){ alert('Hello'); }
+	</script>
+	<form action="javascript:a()">
+		Form <button>SUBMIT</button>
+	</form>
+	<a href="javascript:void(a())">Link</a>
+</body>
+</html>
