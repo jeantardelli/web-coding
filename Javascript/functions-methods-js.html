@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 'call(o1[,o2……])' calls the function by passing o1 as the ‘this’ value, and
+	subsequent arguments as the parameters. 'apply(o[,arr])' is similar to call() 
+	but passes the arguments as an array instead. -->
+<html>
+<body>
+	<script>
+		// 1. Chaining constructors
+		function Product(name, price){
+			this.name = name;
+			this.price = price;
+			return this;
+		}
+		function Food(name, price){
+			Product.call(this, name, price);
+			this.category = 'food';
+		}
+		Food.prototype = Object.create(Product.prototype);
+		var cheese = new Food('feta', 5);
+
+    // 2. Anonymous function
+		var animals = [{ species: 'Lion', name: 'King' },
+			{ species: 'Whale', name: 'Willly' }];
+		for (var i=0; i < animals.length; i++) {
+			(function (i) {
+				alert('#' + i + ' ' + this.species + ': ' + this.name);
+			}).call(animals[i], i);
+		}
+	</script>
+</body>
+</html>

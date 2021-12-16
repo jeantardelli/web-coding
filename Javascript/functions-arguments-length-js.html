@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- Length returns the number of parameters expected by a function. Within the function
+	body, you can use the arguments array to access a variable number of parameters. -->
+<html>
+<body>
+	<script>
+		function S(){
+			var sum=0;
+			for (i=0; i<arguments.length; i++){
+				sum += arguments[i];
+			}
+			alert(arguments.callee); // shows the function definition
+			return sum;
+		}
+		alert(S(10,20,30));               // 60
+		alert((function(a,b,c){}).length); // 3
+	</script>
+</body>
+</html>

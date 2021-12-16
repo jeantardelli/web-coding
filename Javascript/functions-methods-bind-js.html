@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- 'bind(o1[,o2……])' creates a new function by passing 	o1 as 
+	the ‘this’ value, and subsequent arguments as the parameters. -->
+<html>
+<body>
+	<script>
+		function sum(){
+			var sum=0;
+			for (i=0; i<arguments.length; i++){
+				sum += arguments[i];
+			}
+			return sum;
+	}
+	alert(sum(10, 20, 30)); // 60
+	sum1000 = sum.bind(null, 1000, 1)
+	alert(sum1000(10, 20, 30)); // 1061
+	</script>
+</body>
+</html>

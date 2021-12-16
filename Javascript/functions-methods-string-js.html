@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<script>
+		var s="abcdabcd";
+		alert(s.charAt(2));                     // c
+		alert(s.indexOf("ab", 3));              // 4
+		alert(s.indexOf("AB"));                 // -1
+		alert(s.lastIndexOf("abc", 2))          // 0
+		alert(s.charCodeAt(0));                 // 97
+    alert(String.fromCharCode(97, 98, 99)); // abc
+		alert(s.concat("XXX", "YYY"));          // abcdabcdXXXYYY
+		alert(s.split("b", 3));                 // a,cda,cd
+		alert(s.substr(3));                     // dabcd
+		alert(s.substr(3, 4));                  // dabc
+		alert(s.substr(-3, 2));                 // bc
+		alert(s.substring(3, 4));               // d
+		alert(s.slice(3, 4));                   // d
+		alert(s.slice(-3, 8));                  // bcd
+		alert('('+' abc  '.trim()+')');         // (abc)
+		alert(s.toUpperCase().toLowerCase());   // abcdabcd
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- MAX_VALUE and MIN_VALUE store the largest and smallest possible values in Javascript respectively. 
+	NEGATIVE_INFINITY and POSITIVE_INFINITY store negative infinity and positive infinity respectively, 
+	and are resulted by overflowed operations. NaN represents an undefined number(not a number).
+	toExponential([i]) switches a number to exponential form. toFixed(i) rounds off a number to one with i
+	digits after the decimal point. toPrecision(i) rounds off a number to one with i digits altogether. -->
+<html>
+<head></head>
+<body>
+	<script>
+		var pi=3.14159;
+		document.write(
+			Number.MAX_VALUE + "</br>" +
+			Number.MIN_VALUE + "</br>" +
+			Number.NEGATIVE_INFINITY + "</br>" +
+			Number.POSITIVE_INFINITY + "</br>" +
+			Number.NaN + "</br>" +
+			pi + "</br>" +
+			pi.toExponential() + "</br>" +
+			pi.toExponential(3) + "</br>" +
+			pi.toFixed(3) + "</br>" +
+			pi.toPrecision(3)
+		);
+	</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<script>
+		var s='abcdabcd';
+		alert(s.match(/abcd/));         // abcd
+		alert(s.match(/ABcd/gi))        // abcd,abcd
+		alert(s.search(/b.d/gi));       // 1
+		alert(s.replace(/ABc/gi, 'X')); //XdXd
+	</script>
+</body>
+</html>
