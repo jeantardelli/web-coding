@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- Some browsers support the experimental startsWith()
+	function, which returns a Boolean value. -->
+<html>
+<head></head>
+<body>
+	<script>
+		var str = "To be, or not to be, that is the question.;";
+		alert(str.startsWith("To be"));         // true
+		alert(str.startsWith("not to be"));     // false
+		alert(str.startsWith("not to be", 10)); // true
+
+    /* Some browsers support string generics, which means
+		that String methods can be applied to other objects. */
+		alert(String.replace(15, /5/, '2'));
+	</script>
+</body>
+</html>

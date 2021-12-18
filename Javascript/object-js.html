@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--  An object literal can be initialized by passing a value to each
+	property name inside {…}:
+
+	var o = {p1:5, "p2": "Ali"}; // optional "" for p2. This line is the same as
+	var o = new Object();
+	o.p1 = 5; o.p2="Ali";
+
+	A property of an object can be accessed in two ways: o.p1 or o["p1"]. Using
+	with, the object name can be omitted. -->
+<html lang="en">
+<head></head>
+<body>
+	<script>
+		var o = {p1: 5, "p2": "Ali"};
+		alert(o.p2);                    // Ali
+		alert(o instanceof Object);     // true
+		alert('p1' in o);               // true
+		alert('PI' in Math);            // true
+		with (o){alert(p1);}            // 5
+		with (Math){alert(cos(PI));}    // -1
+		delete o.p1;
+		alert('p1' in o);               // false
+
+		/* Non-string property names can be used. */
+		var obj = {1.5: "a", "": "b", "!": "c", "q q": "d"};
+
+		/* Some browsers may support object destructuring, which is an
+		experimental syntax at the time of writing. */
+		var o = {p: 42, q: true};
+		var {p, q} = o;
+		alert(p); // 42
+		alert(q); // true
+
+		var {p: foo, q: bar} = o;
+		alert(foo);  // 42
+		alert(bar);  // true
+
+		/* is(o1, o2) checks if o1 and o2 are the same. */
+		alert(Object.is(NaN, NaN));    // true
+	</script>
+</body>
+</html>

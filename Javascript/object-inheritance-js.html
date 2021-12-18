@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- create(o1[,o2]) creates a new object, with o1 as the prototype object, and
+	o2 as the properties object.o2 corresponds to the second argument of defineProperties(). -->
+<html>
+<body>
+	<script>
+		/* This illustrates classicla inheritance in JavaScript. */
+		function Shape() {
+			this.x = 0;
+			this.y = 0;
+		}
+		Shape.prototype.move = function(x, y) {
+			this.x += x;
+			this.y += y;
+			alert('Shape moved.');
+		}
+		function Rectangle() {
+			Shape.call(this);
+		}
+		Rectangle.prototype = Object.create(Shape.prototype);
+		Rectangle.prototype.contructor = Rectangle;
+		var rect = new Rectangle();
+		rect instanceof Rectangle;  // true
+		rect instanceof Shape;      //true
+		rect.move(1, 1);
+	</script>
+</body>
+</html>

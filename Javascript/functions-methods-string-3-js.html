@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- big(), blink(), bold(), fixed(), italics(), small(), strike(),
+	sub(), sup(), anchor(s) and link(s) create HTML-formatted string -->
+<html>
+<head></head>
+<body>
+	<script>
+		var s='abc';
+
+		// <big>abc</big>
+		alert(s.big());
+
+		// <a name="myLink">abc></a>
+		alert(s.anchor('myLink'));
+
+		// <a href="https://google.com"><abc></a>
+		alert(s.link('https://google.com'))
+	</script>
+</body>
+</html>
