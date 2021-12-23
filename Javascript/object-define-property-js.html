@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- defineProperty(o1,s,o2) defines a property s for object o1 with the descriptor o2.
+	defineProperties(o1, o2) defines multiple properties for the object o1 using the property-descriptor object o2.
+	getOwnPropertyDescriptor(o1,s) returns the descriptor for the property s on object o1
+
+	Property Descriptor
+	configurable: true if the property may be deleted and the type of this property descriptor may be changed. Defaults to false.
+	enumerable: true if this property shows up during enumeration. Defaults to false.
+	writable: true if the value may be changed. Defaults to false.
+	value: the value associated with the property.
+	get: the getter function.
+	set: the setter function. -->
+<html>
+<body>
+	<script>
+		var o1 = {};
+		var o1v = 100;
+		Object.defineProperty(o1, 'a',
+													{configurable:true,
+													 enumerable:true,
+													 get: function(){return o1v;},
+													 set: function(v){o1v=v;}});
+		alert(o1.a); // 100
+		o1.a = 200;
+		alert(o1.a); // 200
+		alert(o1v);  // 200
+
+		var o2 = {};
+		Object.defineProperties(o2, {
+			b: {value: 'hello', enumerable: true},
+			c: {value: 1000, writable: true}});
+		alert(o2.propertyIsEnumerable('b')); // true
+		alert(o2.propertyIsEnumerable('c')); // false
+		for (var p in o2) {alert(p);}  // b
+		o2.b = 'world'; alert(o2.b);   // hello
+		o2.c = 10     ; alert(o2.c);   // 10
+		document.write(Object.getOwnPropertyDescriptor(o2,'b'));
+	</script>
+</body>
+</html>

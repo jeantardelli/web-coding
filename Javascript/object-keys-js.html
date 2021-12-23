@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- keys() returns an array of enumerable properties.
+	getOwnPropertyNames() returns an array of all properties. -->
+<html>
+</head>
+	<script>
+		var obj={'a':10,'b':20};
+		alert(Object.keys(obj)); // a,b
+		alert(Object.getOwnPropertyNames(obj)); // a,b
+
+		var arr=['a','b','c'];
+		alert(Object.keys(arr)); // 0,1,2
+		alert(Object.getOwnPropertyNames(arr)); // 0,1,2,length
+	</script>
+<body>
+</body>
+</html>

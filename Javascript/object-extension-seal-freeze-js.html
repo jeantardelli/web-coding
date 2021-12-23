@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- preventExtensions(o) prevents new properties from being added to the object o. isExtensible(o) returns
+	true if new objects can be added to the object o. seal(o) prevents new properties from being added to the
+	object o, and marks all properties as non-configurable. isSealed(o) returns true if the object o is sealed.
+	freeze(o) prevents new properties from being added to the object o, and prevents existing properties from
+	being removed or changed. isFrozen(o) returns true if the object o is frozen. -->
+<html>
+<body>
+	<script>
+		var o={'a':10,'b':20};
+		Object.preventExtensions(o);
+		alert(Object.isExtensible(o)); // false
+		o.c=30; alert(o.c); // undefined
+		o.b=200; alert(o.b); // 200
+		Object.freeze(o);
+		o.b=2000; alert(o.b); // 200
+	</script>
+</body>
+</html>

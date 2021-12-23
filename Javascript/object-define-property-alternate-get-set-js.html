@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<!-- There is an alternative syntax for getters and setters. -->
+<html><body><script>
+			var obj = {get foo(){
+				return this.___foo___
+			},
+			set foo(value){
+				this.___foo___ = value*value;
+			}}
+			obj.foo = 10;
+			alert(obj.foo); // 100
+		</script></body></html>

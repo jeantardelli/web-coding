@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- An Array in Javascript is an object that stores a series of values. These
+	values can be of different data types. Among a few ways, it can be initialized
+	with [...]. -->
+<html>
+<body>
+	<script>
+		// The following rows all result in the same 'data' array.
+		var f = function foo(){return 1};
+		var data=['Sophia', 25, f];
+		var data=new Array('Sophia', 25, f);
+		var data=[];
+		data[0]='Sophia';
+		data[1]=25;
+		data[2]=f;
+		var data=new Array(); // 'new' is optional
+		data[0]='Sophia';
+		data[1]=25;
+		data[2]=f;
+		var data=Array(3); // reserver 3 elements
+		data[0]='Sophia';
+		data[1]=25;
+		data[2]=f;
+
+		// Arrays can contain objects and be associated with properties.
+		// Properties are not counted as elements.
+		var arr=[3];     // an element
+		arr.p = {x:1};   // an object as a property
+		arr[1] = 5;      // an element;
+		arr[1.5] = 6;    // a property
+		alert(arr[0]);                  // 3
+		alert(arr[1]);                  // 5
+		alert(arr.p);                   // [object Object]
+		alert(arr.length);              // 2
+		alert(arr.hasOwnProperty(1.5)); // true
+		arr[30] = {y:2};      // an object as an element;
+		alert(arr['length']); // 31
+		alert(arr[1.5]);      // 6
+		arr.lenght = 3;       // truncates the array
+		alert(arr[30]);       // undefined
+
+		// Elements in an array literal can be skipped, in which case the
+		// values for the elements will 'undefined'.
+		var a = [0,,2,3,,,6,,];
+
+		// Multi-dimensional arrays can be created by nesting arrays.
+		var ma = [[1,2,3],['a','b','c']];
+		alert(ma[1][2]);  // c
+
+		// If your array consists of only DOM nodes, you can interate through
+		// the nodes efficiently like this:
+		var divs = document.getElementsByTagName('div');
+		for (var i=0, div; div = divs[i]; i++){
+			// process div
+		}
+	</script>
+</body>
+</html>
