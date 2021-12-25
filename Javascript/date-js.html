@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- A Date() can be initialized in several ways:
+
+			var d = new Date();
+			var d = new Date(milliseconds);
+			var d = new Date(dateString);
+			var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+	Some parameters in the last form of initialization are optional. For example:
+
+			var today = new Date();
+			var d1 = new Date("July 14, 1997 10:30:00");
+			var d2 = new Date(97,7,14);
+			var d3 = new Date(97,7,14,10,30,0);
+
+	Calling Date without the new keyword simply converts the provided date to a string.
+
+			// Tue Oct 21 2014 16:53:17 GTM+0800
+			// (Malay Peninsula Standard Time)
+			alert(Date());
+
+	Date and time parameters can be accessed and modified with the ‘get-‘ and ‘set-‘ functions. If present,
+	UTC represents Universal Time:
+		{get|set} [UTC]FullYear(<i>)... a number
+		{get|set} [UTC]Month(<i>)... 0 to 11
+		{get|set}[UTC]Date(<i>)... 1 to 31
+		get[UTC]Day()... 0 to 6
+		{get|set} [UTC]Hours(<i>)... 0 to 23
+		{get|set} [UTC]Minutes(<i>)... 0 to 59
+		{get|set} [UTC]Seconds(<i>)... 0 to 59
+		{get|set} [UTC]Milliseconds(<i>)... 0 to 999
+		{get|set}Time(<i>) gets or sets the number of milliseconds elapsed since midnight 1 Jan, 1970.
+		parse(ds) takes in a date string and returns the number of milliseconds elapsed since midnight 1 Jan 1970.
+		getTimezoneOffset() returns the difference between UTC time and localtime in minute.
+
+A Date() can be converted to different formats: toDateString(), toTimeString(), toISOString(), toJSON(),
+toLocaleDateString(), toLocaleTimeString(), toLocaleString(), toUTCString(). -->
+<html>
+<head></head>
+<body>
+	<script>
+		var d=new Date(); // current datetime
+		document.write(d+"<br />"); // calls .toString()
+		d.setMonth(0);
+		d.setFullYear(2010);
+		document.write(d.toDateString()+""+d.getDay()+"<br />");
+		document.write(d.getHours()+"<br />");
+		document.write(d.getUTCHours()+"<br />");
+		document.write(d.getTimezoneOffset()+"<br />");
+
+		var d2=Date.parse("January 05,2012");
+		document.write(d2+"<br />");
+
+		var d3=Date.UTC(2011,10,25,12);
+		document.write(d3+"<br />");
+		d.setTime(490594540395);
+		document.write(d+"<br /><br />");
+		document.write(d.toDateString()+"<br />");
+		document.write(d.toTimeString()+"<br />");
+		document.write(d.toISOString()+"<br />");
+		document.write(d.toJSON()+"<br />");
+		document.write(d.toLocaleDateString()+"<br />");
+		document.write(d.toLocaleTimeString()+"<br />");
+		document.write(d.toLocaleString()+"<br />");
+		document.write(d.toUTCString()+"<br />");
+	</script>
+</body>
+</html>

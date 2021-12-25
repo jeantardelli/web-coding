@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- sort([f(o1,o2)]) sorts the element with function f. f is a function that takes in two items.
+	It returns a negative number if the first argument precedes the second argument, and zero if the
+	two items have the same precedence. reduce(f(o1,o2)[,o3]) applies f to reduce the list of items
+	down to a single value using the initial value o3. reduceRight(f(o1,o2)[,o3]) works like reduce()
+	but starts with the last element.-->
+<html>
+<body>
+	<script>
+		function sortByLength(a,b){
+			return a.length > b.length;
+		}
+		var reduceByJoining = function (a,b){
+			return a.concat(b);
+		}
+		arr = ['fish', 'cat',,,'dolphin'];
+		alert(arr.sort());                              // cat,dolphin,fish,,
+		alert(arr.sort(sortByLength));                  // cat,fish,dolphin,,
+		alert(arr.reduce(reduceByJoining));             // catfishdolphin
+		alert(arr.reduceRight(reduceByJoining, 'ant')); // antdolphinfishcat
+
+		// If your browser supports JavaScript 1.7, array comprehensions may
+		// be used in place of map() and filter()
+		//arr = [1,2,3,4,5];
+		//alert([i*i for (i of arr)]);             // 1,4,9,16,25
+		//alert([i*i for (i of arr) if (i%2==0)]); // 4,16
+
+		// Some objects, such as:
+		// - HTMLCollection returned by document.getElementsByTagName()
+		// - the 'arguments' object made available within the body of a function
+		// - strings
+		// look and behave like arrays but do not share all their methods. You can run generic 'Array'
+		// methods on these array-like objects in browsers that support this.
+		// (alerting a,b,c)
+		Array.prototype.forEach.call('abc',function (c){alert(c);});
+		// This is not supported by some browsers.
+		//Array.forEach('abc',function (c){alert(c);});
+
+		// Some browsers support arrays destructuring, which is an experimental syntax
+		//var arr = [10,20,30];
+		//var [a,b,c] = arr;
+
+		// IS THE SAME AS
+		//var arr = [10,20,30];
+		//var a = arr[0];
+		//var b = arr[1];
+		//var c = arr[2];
+	</script>
+</body>
+</html>

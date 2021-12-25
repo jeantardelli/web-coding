@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- length stores the number of elements. isArray(o) returns true if o is an array.
+	indexOf(o[,i]) returns the index of the first found object o after the ith element.
+	lastIndexOf(o[,i]) returns the index of the last found object o before the ith item. -1 is returned if the item cannot be found.
+	join([s]) returns a string made by joining up of all the items joined together, separated by the string s.
+	concat(a1[,a2,a3...]) returns an array made up of all the arrays a,a1,a2,a3... joined together.
+	reverse() reverses the order of the item-->
+<html>
+<body>
+	<script>
+		var arr = [10,20,30,40,10];
+
+		alert(Array.isArray([]));      // true
+
+		alert(arr.indexOf(30));        // 2
+		alert(arr.indexOf(60));        // -1
+		alert(arr.indexOf(10, 2));     // 4
+		alert(arr.lastIndexOf(10));    // 4
+		alert(arr.lastIndexOf(10, 2)); // 0
+
+		alert(arr.join('-'));          // 10-20-30-40-10
+		alert(arr.concat([5,6], [7])); // 10,20,30,40,10,5,6,7
+		alert(arr.reverse());          // 10-40-30-20-10
+	</script>
+</body>
+</html>
