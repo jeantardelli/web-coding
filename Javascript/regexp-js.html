@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- A RegExp() (regular expression) allows a string to be searched and replaced efficiently
+	by matching patterns. There are two ways to create a regular expression:
+
+		var p=new RegExp(pattern,modifiers);
+		var p=/pattern/modifiers;
+
+	For example:
+
+		var p=new RegExp(“hello”,”gi”);
+		var p=/hello/gi;
+
+	properties: global, ignoreCase and multiline specify whetherthe modifier “g”,”i” or “m” is set
+	respectively (Boolean). source stores the pattern as a string. lastIndex stores the position at
+	which to start the next match.
+
+	methods:
+		compile(re,m) compiles a regular expression.
+		exec(s) returns the first match in the string s.
+		test(s) returns true if a match is found, false otherwise.
+
+	modifiers:
+		i: case-insensitive.
+		g: global.
+		m: multiline matching.
+
+	patterns:
+		[fdrw] any character within 
+		[^fdrw] any character not within
+		[0-9] any digit from 0 to 9
+		[A-Z] any uppercase letter
+		[a-z] any lowercase letter
+		[A-z] any letter
+		[\b] backspace
+		[car|bus|taxi] any options within
+		. any character except newline or line terminator
+		\w any letter, digit or _ ([A-Za-z0-9_])
+		\W any character which is not a letter, digit or _ ([^A-Za-z0-9_])
+		\d any digit ([0-9])
+		\D any non-digit ([^0-9])
+		\s any whitespace character
+		\S any non-whitespace character
+		\b a word boundary
+		\B not a word boundary
+		\0 NUL character
+		\n newline character
+		\f form feed character
+		\r carriage return character
+		\t tab character
+		\v vertical tab character
+		\xxx character specified by the octal number xxx
+		\xdd character specified by the hex number dd
+		\uxxxx character specified by the hex number xxxx
+		\cX a control character in a string, X is from A-Z
+		c+ one or more c’s
+		c+? smallest possible ? match
+		c* zero or more c’s
+		c*? smallest possible * match
+		c? zero or one c
+		c{n} a sequence of n c’s
+		c{n,m} a sequence of n to m c’s
+		c{n,} a sequence of at least n c’s
+		c$ with c at the end
+		^c with c at the beginning
+		(zzz) grouping for back references
+		(?=s) followed by s (excluding s)
+		(?!s) not followed by s (excluding s)
+
+	To escape special characters, add a \ in front of:
+	. \ + * ? [ ] ^ $ ( ) { } = ! < > | : - -->
+<html>
+<head></head>
+<body>
+	<script>
+		function print(p){
+			document.write(p.exec(s)+"<br />");
+		}
+		var s="I say that today is a good day.";
+		p=/DAy/						 ; print(p);  // null
+		p=/DAY/i					 ; print(p);  // day
+		p=/DAy[a-z]/i      ; print(p);  // null
+		p=/[A-z]DAy/i			 ; print(p);  // oday
+		p=/\Dday/					 ; print(p);  // oday
+		p=/\bday/					 ; print(p);  // day
+		p=/\B\wday/        ; print(p);  // oday
+		p=/\B.\wday/			 ; print(p);  // null
+		p=/.o{2,5}...../   ; print(p);  // good day
+		p=/^...../				 ; print(p);  // I say
+		p=/..(?=at)/			 ; print(p);  // th
+		p=/.......day(?!.)/; print(p);  // null
+		document.write(s.replace("day","doyy")+"<br />");
+		p=/day/i;
+    document.write(s.replace(p,"doyy")+"<br />");
+		p=/day/ig;
+		document.write(s.replace(p,"doyy")+"<br />");
+		p=/a/gi;
+		while (p.test(s)){document.write(p.lastIndex+",");}
+		document.write('<br/>'+s.replace(/(.....)(.....)/,'$2 $1'));
+	</script>
+</body>
+</html>
