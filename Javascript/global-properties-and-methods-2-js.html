@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- methods:
+			encodeURI(s) converts the special characters in s to %-entities and returns the resulting string.
+			encodeURIComponent(s) also encodes the characters , / ? : @ & = + $ #.
+			decodeURI(s) and decodeURIComponent(s) decode an encoded string and return the resulting string.
+      eval(s) treats the string s as Javascript statements and executes them. If s is an expression, the resulting value will be returned.
+			isFinite(n) tests if a value is finite.
+			isNaN(n) tests i fa value is not a number.
+			number(o) converts o to a number.
+			string(o) converts o to a string.
+			parseFloat(s) converts o to a float number.
+			parseInt(s,i) converts s to an integerof radix i. -->
+<html>
+<head></head>
+<body>
+	<script>
+		var s="Hello, Mike. How do you do?";
+		document.write(encodeURIComponent(s)+"<br />"+"<br />");
+		eval("var a=true, b=false, c='4545fds';");
+		document.write(Number(a)+"<br />");
+		document.write(Number(b)+"<br />");
+		document.write(Number(c)+"<br />");
+		document.write(isNaN(c)+"<br />"+"<br />");
+
+		var d=new Date(), e="1.6";
+		document.write(Number(d)+"<br />");
+		document.write(d.getTime()+"<br />");
+		document.write(parseInt(d)+"<br />");
+		document.write((e+1)+"<br />");
+		document.write(parseInt(e)+"<br />");
+		document.write((parseFloat(e)+1)+"<br />"+"<br />");
+
+		var f=undefined;
+		document.write(isNaN(s)+"<br />");
+		document.write(isFinite(s)+"<br />");
+		document.write(isFinite(1/10)+"<br />");
+	</script>
+</body>
+</html>

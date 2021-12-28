@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- properties:
+			Ifinity refers to mathematical infinity. NaN is not a number. undefined is an undefined value.
+			null represents a null value. ‘NaN’, ‘undefined’ and ‘null’ evaluate to false in a Boolean context. -->
+<html lang="en">
+<body>
+	<script>
+		var a;
+		if (!a) alert(a);         // undefined
+		if (!(a+10)) alert(a+10); // NaN
+		a = null;
+		if (!a) alert(a);         // null
+		alert(a+100);             // 100
+	</script>
+</body>
+</html>

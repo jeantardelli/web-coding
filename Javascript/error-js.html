@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- The error objects include Error, EvalError, InternalError, RangeError, ReferenceError, SyntaxError,
+	TypeError, and URIError. When throwing any of the error objects, you can specify three parameters:
+	message, filename, and lineNumber.
+
+	properties:
+		name specifies the error name. message specifies the error message. -->
+<html>
+<body>
+	<script>
+		try {
+			throw new Error('Whoops!');
+		} catch (e) {
+			alert(e.name + ': ' + e.message);
+		}
+		try {
+			foo.bar();
+		} catch (e) {
+			if (e instanceof EvalError) {
+				alert(e.name + ': ' + e.message);
+				// handle exception
+			} else if (e instanceof RangeError) {
+				alert(e.name + ': ' + e.message);
+				// handle exception
+			} else if (e instanceof ReferenceError) {
+				alert(e.name + ': ' + e.message);
+				// handle exception
+			}
+		}
+	</script>
+</body>
+</html>
