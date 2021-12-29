@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- MediaQueryList comes with a Boolean '.matches' property. It gives information about the device on
+	which the webpage is displayed.
+		alert(matchMedia('(min-width:400px)').matches); // false
+
+	postMessage(...) allows safe cross-origin communication.
+	methods (WindowBase64):
+		String btoa(String binaryData)
+		String atob(String base64Data)
+
+	btoa(…) converts a string of binary data to a string of base-64 data so that it can be transmitted without
+	any problem. atob(...) performs the reverse decoding. -->
+<html>
+<body>
+	<script>
+		bData = btoa('(hi)');
+		alert(bData); // KHhpKQ==
+		alert(atob(bData)); // (hi)
+	</script>
+</body>
+</html>

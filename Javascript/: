@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- WindowTimers
+	Methods:
+		timeoutID setTimeout(function f, Number millisec [,param...])
+		void clearTimeout(timeoutID tid)
+		intervalID setInterval(function f, Number millisec [,param...])
+		void clearInterval(intervalID iid)
+
+	setTimeout(...) executes a function once after a delay.	setInterval(...) executes a function repeatedly
+	every ‘millisec’. The latter is an important function in the sense that it allows many animation effects to be achieved. -->
+<html>
+<body>
+	<p>Growing Text</p>
+	<script>
+		var fs=10;
+		function enlargeFont(step){
+			p = document.getElementsByTagName('p')[0];
+			fs+=step;
+			if (fs>100) clearInterval(sid);
+			p.style.fontSize=fs+'px';
+		}
+		var sid=setInterval(enlargeFont,10,1);
+	</script>
+	
+</body>
+</html>

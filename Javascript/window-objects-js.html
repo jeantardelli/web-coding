@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- The 'Window' object is special in the sense that all its properties and methods can be
+	accessed without specifying the 'window.' prefix, as if they are global.
+
+	Window:
+		Inherits: EventTarget, WindowTimers, WindowBase64, WindowEventHandlers
+
+	Properties:
+		OfflineResourceList applicationCache
+		Crypto crypto
+		nsIArray dialogArguments
+		HTMLElement frameElement
+		HTMLCollection(Window) frames
+		unsigned int length
+
+		History history
+		Navigator navigator
+		Location location
+		Performance performance
+		Screen screen
+		HTMLDocument document
+
+		unsigned int innerHeight
+		unsigned int innerWidth
+		unsigned int outerHeight
+		unsigned int outerWidth
+		unsigned int screenX
+		unsigned int screenY
+
+		unsigned int pageXOffset
+		unsigned int pageYOffset
+		unsigned int scrollX
+		unsigned int scrollY
+
+		bar locationbar
+		bar menubar
+		bar personalbar
+		bar scrollbars
+		bar statusbar
+		bar toolbar
+
+		Window opener
+		Window parent
+		Window self
+		Window top
+		Window window
+
+		Boolean fullscreen
+		String name
+		String status
+
+	methods:
+		void getAttention()
+		void dump(String msg)
+		void alert(String msg)
+		Boolean confirm(String msg)
+		String prompt(String msg[, String initialText])
+
+		void blur()
+		void close()
+		void focus()
+		void print()
+		void maximize()
+		void minimize()
+		void restore()
+		void stop()
+
+		void moveBy(int xPixels, int yPixels)
+		void moveTo(int xPixels, int yPixels)
+		void resizeBy(int xPixels, int yPixels)
+		void resizeTo(int width, int height)
+		void scroll(int xPixels, int yPixels)
+		void scrollByLines(int lines)
+		void scrollTo(int xCoord, yCoord)
+		void setCursor(Sring cursorType)
+
+		iID setImmediate(function f [,Object param...])
+		void clearImmediate(iID immediateID)
+	
+		Selection getSelection()
+		find (String text, Boolean caseSensitive, Boolean backwards, Boolean wrapAround,
+					Boolean wholeWord, Boolean searchInFrames, Boolean showDialog)
+		void updateCommand(String command)
+
+		MediaQueryList matchMedia(String mediaQuery)
+		CSSStyleDeclaration getComputedStyle(Element e[, String pseudoElt])
+
+		Window open(String URL, String name [, String features])
+		Window openDialog(String URL, String name[, String features [,args...]])
+		void postMessage(Object data, String targetOrigin[, Transferable[] transfer])
+
+	One particularly useful method is the print() function, which brings up a dialog box that will allow
+	the visitor to print the webpage out onto paper with a printer. The following code illustrates how
+	to print something different from the current view. -->
+<html>
+<head>
+	<style type="text/css">
+		@media screen {
+			.print { display:none; }
+			.noPrint { display: block; }
+		}
+		@media print {
+			.print { display: block; }
+			.noPrint { display: none; }
+		}
+	</style>
+</head>
+<body>
+	<div class="noPrint">
+			What you see here will not be printed...<br/>
+			<input type="button" onclick="print()" value="print"/>
+	</div>
+	<div class="print">
+		Separate content printed succesfully...
+	</div>
+</body>
+</html>

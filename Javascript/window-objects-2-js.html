@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- You can tell if a ‘bar’ is visible with its '.visible' property.
+	alert(...) halts the script execution until the OK button on the popped-up window is clicked.
+	confirm(...) halts the script execution until the OK or Cancel button on the popped-up window is clicked.
+	prompt(...) halts the script execution, prompts for a string, until the OK or Cancel button on the popped-up window is clicked.
+
+	You can open a new window with open(...).
+	openDialog(...) is an extension to open(...) in the sense that the former allows extra data to be passed to the new window in the form of 'w.arguments[]'.
+	The features include ‘left’, ‘top’, ‘height’, ‘width’, ‘screenX’,‘screenY’, ‘centerscreen’, ‘outerHeight’, ‘outerWidth’, ‘innerHeight’, ‘innerWidth’,
+	‘menubar’, ‘toolbar’,‘location’, ‘personalbar’, ‘status’, ‘dependent’, ‘dialog’, ‘minimizable’, ‘fullscreen’, ‘resizable’, ‘scrollbars’,‘titlebar’,
+	‘alwaysRaised’, ‘alwaysLowered’ and ‘close’. If there are only two states for a feature, you can turn it on by specifying ‘feature’, ‘feature=yes’ or ‘feature=1’. -->
+<html>
+<body>
+	<script>
+		var features= "left=100, top=100,"+
+									"height=200, width=400,"+
+									"resizable=no, location,"+
+									"status=1";
+		w=open('', 'My New Window', features);
+		w.document.body.innerHTML = '<p>Hellow World</p>';
+		w.alert('Hi! Welcome to '+ w.name);
+		w.alert(w.statusbar.visible);
+		w.close();
+	</script>
+</body>
+</html>
