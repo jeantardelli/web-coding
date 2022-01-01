@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- History
+
+	Properties:
+		int length
+		any state
+
+	Methods:
+		void back()
+		void forward()
+		void go(int p)
+		void pushState(Object state, String title, String url)
+		void replaceState(Object state, String title, String url)
+
+	history allows you to revert back to webpages the visitor has visited in the tab. back() is the same as go(-1).
+	forward() is the same as go(1).
+	pushState(...) adds a new history entry.
+	replaceState(...) replaces the current history entry. -->
+<html>
+<head>
+</head>
+<body>
+	<script>
+		history.go(-1);
+	</script>
+</body>
+</html>

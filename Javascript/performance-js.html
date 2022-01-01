@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Performance
+
+	Properties:
+		PerformanceTiming timing
+		PerformanceNavigation navigation
+
+	Methods:
+		Number now()
+
+	Performance contains some handy properties and methods that allow you to measure the performance
+	at various stages of a website access.
+
+	PerformanceTiming
+
+	Properties:
+		unsigned long long navagationStart
+		unsigned long long unloadEventStart
+		unsigned long long unloadEventEnd
+		unsigned long long redirectStart
+		unsigned long long redirectEnd
+		unsigned long long fetchStart
+		unsigned long long domainLookupStart
+		unsigned long long domainLookupEnd
+		unsigned long long connectStart
+		unsigned long long connectEnd
+		unsigned long long secureConnectionStart
+		unsigned long long requestStart
+		unsigned long long responseStart
+		unsigned long long responseEnd
+		unsigned long long domLoading
+		unsigned long long domInteractive
+		unsigned long long domContentLoadedEventStart
+		unsigned long long domContentLoadedEventEnd
+		unsigned long long domComplete
+		unsigned long long loadEventStart
+		unsigned long long loadEventEnd
+
+	PerformanceNavigation
+
+	Properties:
+		int redirectCount
+		int type
+			0 TYPE_NAVIGATENEXT
+			1 TYPE_RELOAD
+			2 TYPE_BACK_FORWARD
+			255 TYPE_UNDEFINED -->
+<html>
+<head>
+</head>
+<body>
+	<pre><script>
+		now = new Date().getTime();
+		rst = performance.timing.requestStart;
+		document.writeln(performance.now());
+		document.writeln(now);
+		document.writeln(rst);
+		document.writeln((now-rst)/1000.0 + " seconds");
+	</script>
+</body>
+</html>

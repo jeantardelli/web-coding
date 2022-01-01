@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- We have seen how to redirect to another website using the <meta> tag. You can cause automatic
+	redirection in Javascript using the location object too.
+
+	Location:
+		Inherits: URLUtils (combined below)
+
+	Properties:
+		String href
+		String protocol
+		String host
+		String hostname
+		String port
+		String pathname
+		String search
+		URLSearchParams searchParams
+		String hash
+		String username
+		String password
+		String origin
+
+	Methods:
+		void assign(String url)
+		void reload([Boolean fromServer])
+		void replace(String url)
+		String toString()
+
+	The difference between replace(...) and assign(...) is that replace(...) will not save the current page in
+	history, which means that the user won’t be able to use the back button to navigate to it. If fromServeris
+	false, the reload(...) operation may retrieve the webpage from the cache instead of the server.
+
+	The three lines are equivalent:
+		location.assign('https://google.com');
+		location.href = 'https://google.com';
+		location = 'https://google.com'; -->
+<html lang="en">
+<head>
+</head>
+<body>
+	<script type='text/javascript'>
+		location.assign('https://google.com');
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- Navigator
+	Inherits: NavigatorID, NavigatorLanguage, NavigatorOnLine, NavigatorGeolocation, NavigatorPlugins,
+						NavigatorUserMedia, NetworkInformation. (all combined below).
+
+	Properties: 
+		BateryManager battery
+		Geolocation geolocation
+		String language
+		String[] languages
+		Boolean onLine
+		String oscpu
+		String userAgent
+
+	Methods:
+		voiid getUserMedia(Object constraints, function(LocalMediaStream) successFunc, function(Error) failureFunc)
+		void registerContentHandler(String mimeType, String uri, String title)
+		void registerProtocolHandler(String protocol, String uri, String title)
+		Boolean vibrate(Number[] pattern)
+
+	BatteryManager is currently only supported in Firefox.
+	geolocation lets you know the geographical location of the visitor’s device.
+	getUserMedia() prompts for the permission to use the camera or the microphone -->
+<html>
+<body>
+	<pre><script>
+		document.writeln(navigator.language);
+		document.writeln(navigator.onLine);
+
+		// This determines the browser name
+		document.writeln(navigator.userAgent);
+
+		// This vibrates a mobile device
+		navigator.vibrate([100,30,100,30,100])
+	</script></pre>
+</body>
+</html>
