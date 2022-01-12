@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<p>A</p>
+	<span>Z</span>
+	<p>B<b>1</b></p>
+	<!-- hi -->
+	<p>C</p>
+	<script>
+		ni = document.createNodeIterator(
+			document.body,
+			NodeFilter.SHOW_ELEMENT|NodeFilter.SHOW_COMMENT,
+			function(node){
+				return node.nodeName=='SPAN' ?
+					nodeFilter.FILTER_REJECT:
+					nodeFilter.FILTER_ACCEPT;
+			});
+		var i=0;
+		while (i++, n = ni.nextNode()){
+			alert(i+" "+n.textContent);
+		}
+		/* 1: (<body> text)
+			 2: A
+			 3: B1
+			 4: 1
+			 5: hi
+			 6: C
+			 7: (<script> text) */
+	</script>
+</body>
+</html>

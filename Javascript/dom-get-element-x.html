@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<p id="p1" class="c1">A</p>
+	<p id="p2" class="c1 c2">B</p>
+	<p id="p3" class="c2 c3">C<b>E</b></p>
+	<p id="p4" class="c2">D</p>
+	<input id="i1" type="text" name="it1"/>
+
+	<script>
+		document.getElementsByTagName('p')[3].innerHTML = document.getElementsByClassName('c2')['p2'].innerHTML; // D -> B
+
+		var e1 = document.getElementsByName('it1')[0];
+		e1.setAttribute('class', 'c3');
+		alert(e1.hasAttribute('class')); // true
+		e1.value = 'Hello World';
+		e1.focus();
+
+		var e2 = document.getElementById('p3');
+		alert(e2.attributes['class'].value); // c2 c3
+		alert(e2.classList.item(1)); // c3
+		alert(e2.tagName); // P
+		alert(e2.nodeName); // P
+		alert(e2.nodeType); // 1
+		alert(e2.childNodes[0].nodeValue); // C
+		alert(e2.textContent);  // CE
+		alert(e2.innerHTML); // C<b>E</b>
+		alert(e1.compareDocumentPosition(e2)==Node.DOCUMENT_POSITION_PRECEDING); // true
+		alert(e2.nextSibling.nextSibling.nextSibling.nextSibling.isEqualNode(e1)); // true
+	</script>
+</body>
+</html>

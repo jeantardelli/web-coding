@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<form>
+		<textarea>Hello</textarea>
+		<select name='sl'>
+			<option value='m'>Male</option>
+			<option value='f'>Female</option>
+		</select>
+		<input type='checkbox' name='cb' class='c1' checked/>
+		<input type='radio' name='rd' class='c1' value='r1'/>
+		<input type='radio' name='rd' class='c1' value='r2' checked/>
+	</form>
+	<script>
+		alert(document.forms[0][0].value); // hello
+		alert(document.querySelectorAll('form>.c1')[1].value); // r1
+		alert(document.querySelector('body .c1').value); // on
+		alert(document.forms[0]['rd'].value); // r2
+	</script>
+</body>
+</html>
