@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		table,id {border: 1px solid;width:100px;}
+		td {text-align:center;border:solid;border-width:1px;}
+	</style>
+</head>
+<body>
+	<script>
+		t = document.createElement('table');
+		r0 = t.insertRow(0);
+		t0 = r0.insertCell(0);
+		t1 = r0.insertCell(1);
+		t2 = r0.insertCell(2);
+		t0.appendChild(document.createTextNode('A'));
+		t1.appendChild(document.createTextNode('B'));
+		t2.appendChild(document.createTextNode('C'));
+		c = t.createCaption();
+		c.appendChild(document.createTextNode('a table'));
+		document.body.appendChild(t);
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- You can set a css property of an element using 'element.style.property'. If the property
+	name is hyphenated, convert it to came case. -->
+<html>
+<head>
+	<style type="text/css">
+		p {background-color:orange;}
+	</style>
+</head>
+	<p>ABC</p>
+	<script>
+		p=document.getElementsByTagName('p')[0];
+		ps=p.style;
+		ps.fontSize='100px';
+		ps.color='red';
+		alert(ps.fontSize); // 100px
+		alert(ps.backgroundColor); // (empty)!
+		alert(getComputedStyle(p,null).backgroundColor); // rbg(255,165,0)
+	</script>
+<body>
+</body>
+</html>

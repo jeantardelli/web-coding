@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Nodes can be added to, replaced in, or removed from the DOM tree. Note that the
+	last two lines in the script plays an mp3 in the background. -->
+<html>
+<body>
+	<div></div>
+	<script>
+		d=document.getElementsByTagName('div')[0];
+		p1=document.createElement('p');
+		p1.setAttribute('id','p1');
+		p1.appendChild(document.createTextNode('Hello '));
+		s1=document.createElement('span');
+		s1.appendChild(document.createTextNode('World'));
+		p1.appendChild(s1);
+		p1.appendChild(document.createTextNode('!!!'));
+		d.appendChild(p1);
+
+		alert(d.innerHTML); // <p id="p1">Hello <span>World</span>!!!</p>
+
+		d.innerHTML='Hello <span>World</span>!!!';
+		s=d.getElementsByTagName('span')[0];
+		alert(document.contains(s)); // true
+
+		d.insertBefore(document.createTextNode('Earth'), s);
+		d.replaceChild(document.createTextNode(''), s); // d.removeChild(s)
+		alert(d.innerHTML); // Hello Earth!!!
+
+		a=new Audio('https://www.foxdisco.info/');
+		a.play()
+	</script>
+</body>
+</html>

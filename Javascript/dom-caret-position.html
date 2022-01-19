@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- You can obtain a node if you know its position on the screen.
+	Only Firefox supports this feature at the time of writing. -->
+<html>
+<body>
+	<h4 onclick="showTag(event)">A</h4>
+	<p onclick="showTag(event)">B</p>
+	<span onclick="showTag(event)">C</span>
+	<script>
+		function showTag(e) {
+			cp = document.caretPositionFromPoint(e.clientX,e.clientY);
+			alert(cp.offsetNode.nodeName+" "+cp.offset); // #text1
+		}
+	</script>
+</body>
+</html>
