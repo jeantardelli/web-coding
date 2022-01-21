@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<select>
+		<option id="o1" value="1">A</option>
+		<option id="o2" value="2">B</option>
+		<option id="03" value="3">C</option>
+	</select>
+	<script>
+		s = document.getElementsByTagName('select')[0];
+		alert(s.namedItem('o1').text); // A
+		alert(s[1].value);  // 2
+	</script>
+</body>
+</html>
+

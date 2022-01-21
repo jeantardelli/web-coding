@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- normalize() removes empty nodes, and merges adjacent text node.
+
+	Originally <body> has 6 child nodes: 2 <p> nodes, 1 <script> node, and 3 text nodes spacing the elements. -->
+<html>
+<body>
+  <p>A</p>
+  <p>B</p>
+	<script>
+		bd = document.body;
+		alert(bd.childNodes.length); // 6
+		pb = document.getElementsByTagName('p')[1];
+		bd.insertBefore(document.createTextNode(' '), pb);
+		bd.insertBefore(document.createTextNode(' '), pb);
+		bd.appendChild(document.createTextNode(''));
+		alert(db.childNodes.length); // 9
+		bd.normalize();
+		alert(bd.childNodes.length); // 6(Chrome),7(IE)
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- adoptNode() moves a node, while importNode() copies a node.
+
+	At the time of writing, this example does not work in Chrome locally without
+	a server due to its cross-origin policy-->
+<html>
+<body>
+	<iframe src="DOM-copyB.html" onload="copy_nodes()" height="80" width="150"></iframe>
+	<script>
+		function copy_nodes(){
+			ed = document.getElementsByTagName('iframe')[0].contentDocument;
+			edp0 = ed.getElementByTagName('p')[0];
+			edp1 = ed.getElementsByTagName('p')[1];
+			p0 = document.importNode(edp0, true);
+			p1 = document.adoptNode(edp1);
+			p2 = p1.cloneNode(true);
+			document.body.appendChild(p0);
+			document.body.appendChild(p1);
+			document.body.appendChild(p2);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- execCommand() affetcs the selected region of a contentEditable element. -->
+<html>
+<body>
+	<div contenteditable="true" onmouseup="SetToBold();">
+		Select a port of this text!</div>
+	<script>
+		function SetToBold() {
+			document.execCommand('bold', false, null);
+			document.execCommand('fontSize', false, '20px');
+		}
+	</script>
+</body>
+</html>
+<!-- Other commands: backColor, bold, contentReadOnly, copy, createLink, cut, decreaseFontSize,
+	delete, enableInlineTableEditing, enableObjectResizing, fontName, fontSize, foreColor, formatBlock,
+	forwardDelete, heading,hiliteColor, increaseFontSize, indent, insertBrOnReturn, insertHorizontalRule,
+	insertImage, insertOrderedList, insertUnorderedList, insertParagraph, insertText, italic, justifyCenter,
+	justifyFull, justifyLeft, justifyRight, outdent,paste, redo, removeFormat, selectAll, strikethrough,
+	subscript,superscript, underline, undo, unlink, styleWithCSS -->

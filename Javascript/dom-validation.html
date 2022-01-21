@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- You can change the validity message to show when a visitor submits invalid data.
+
+	Notice in this example, the input element is obtained by using the form id and the input namedirectly. -->
+<html>
+<body>
+	<form id='frm'>
+		<input type="number" onkeyup="vMsg()" name='tb' />
+		<input type="submit" />
+	</form>
+	<script>
+		function vMsg(){
+			inp = document.forms.frm.tb;
+			p = document.getElementsByTagName('p')[0];
+			p.innerHTML = "<br/>willValidate: "+ inp.willValidate + "<br/>";
+			p.innerHTML += "checkValidity(): "+ inp.checkValidity() + "<br/>";
+			for (vp in inp.validity)
+				p.innertHTML += vp+":"+inp.validity[vp]+"<br/>";
+
+			// The following changes the error message when
+			// the Submit button is clicked.
+			inp.setCustomValidity("A number please!");
+		}
+</body>
+</html>
