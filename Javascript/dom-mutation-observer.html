@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Constrasting events on existing elements, a MutationObersver allows you to invoke a
+	function when a DOM tree is modified. -->
+<html>
+<body>
+	<p>A</p>
+	<p>B</p>
+	<p>C</p>
+	<script>
+		mo = new MutationObserver(function(mutations) {
+			mutations.forEach(function(mutation) {
+				alert(mutation.type); // childList
+			});
+		});
+		mo.observe(document.body,
+			{childList:true, attributes:true, characterData:true});
+		document.body.insertBefore(
+			document.createTextNode('haha'),
+			document.getElementsByTagName('p')[1]);
+		mo.disconnect();
+	</script>
+</body>
+</html>

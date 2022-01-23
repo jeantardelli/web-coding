@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- You can stop the default action of a HTML element by using event.preventDefault().
+	The default action can also be stopped by ‘return false; -->
+<html>
+<head>
+	<script>
+		function clk(e){e.preventDefault();}
+
+		function prs(e){
+			var charCode = e.charCode;
+			if (charCode < 97 || charCode > 122) {
+				e.preventDefault();
+				alert(
+					"Please use lowercase letters only."
+					+ "\n" + "charCode: " + charCode + "\n"
+					);
+			}
+		}
+	</script>
+</head>
+<body>
+	<a href="https://google.com" onclick="clk(event)">Google</a>
+	<input type='checkbox' onclick="clk(event)"/>
+	<input type='text' onkeypress="prs(event)"/>
+</body>
+</html>

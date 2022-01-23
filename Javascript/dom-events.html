@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- We have seen how to capture some mouse, keyboard and scrolling events. We did this by attaching
+	some Javascript code to the ‘onX’ event attributes in an element. There are two other ways by which
+	an event can be defined.
+
+	(1) You can attach a function directly to the 'onX' property of an element -->
+<html>
+<body>
+	<button>Click</button>
+	<script>
+		window.onload = alert(1);
+		document.onkeyup = function(e) { alert(e.keyCode); };
+		document.getElementsByTagName('button')[0].onclick = function(e) { alert(e.button); };
+	</script>
+</body>
+</html>
