@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+	<script>
+		var db;
+		const students = [
+			{id:'H423498', name: 'Mike', clss: '5D', age: 11},
+			{id:'A213123', name: 'Bill', clss: '4H', age: 10},
+			{id:'H234324', name: 'Paul', clss: '4H', age: 7}];
+
+		if(indexedDB){
+			// indexedDB.deleteDatabase('myDB');
+			var request = indexedDB.open('myDB');
+			request.onerror = function(e){
+				alert("Why didnt't you allow me to use IndexedDB?");
+			};
+			request.onsuccess = function(e){
+				// This event is fired after the 'updgradeneeded' event
+				// if the latter is ever fired.
+				db = e.target.result;
+			};
+			request.onupgradeneeded = function(e){
+				// This event is fired when you create a new database
+				// or increase the version number. Futhermore, you can
+				// only create object stores in this event.
+				db = e.target.result;
+				var os = db.createObjectStore('students', keyPath: 'id'});
+				os.createIndex('name', 'name', {unique:true});
+				os.createIndex('clss', 'clss', {unique:false});
+				os.transaction.oncomplete = function(e){
+					T = db.transaction(['students'], 'readwrite');
+					var sos = T.objectStore('students');
+					for (i in students) {sos.add(students[i]);}
+				};
+		  };
+    }
+		function addStudents(){
+			var T = db.transaction(['students', 'teachers'], 'readwrite');
+			var sos = T.objectStore('students');
+			sos.delete('C577564');
+			sos.delete('C234464');
+		}
+		function getStudent(){
+			var sos = db.transaction(['students', 'teachers'], 'readwrite').objectStore('students');
+			var index = sos.index('name');
+			index.get('Bill').onsuccess = function(e) {
+				// access by index
+				data = event.target.result;
+				document.getElementsByTagName('p')[0].innerHTML = data.id + " " + data.name + " " + data.clss + " " + data.age + "<br/>";
+			}
+		}
+	</script>
+</body>
+</html>

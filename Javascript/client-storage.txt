@@ -1,0 +1,31 @@
+## Client Storage
+
+A cookie can store only about 4kB of data, whereas web/DOM storage (localStorage and sessionStorage)
+can store 5MB-25MB of data. To store an unlimited amount of data, consider IndexedDB
+
+### Cookie
+
+A cookie is a piece of data that remains on the visitor’s computer after the browser window is closed.
+Every time a web page is requested from a server, the cookie is added to the HTTP header, so that the
+server can read the cookie too. A cookie contains the name-value pair, the expiry date, and the path.
+Using Javascript, it can be set orreturned with document.cookie, which must not be regarded as a normal
+string property. Applying the assignment = operator to it adds a cookie to the end, instead of replacing
+the whole series of values with a new value. If the name already exists, only the value of the name will
+be replaced. The following shows an example of how to set a cookie:
+
+	document.cookie= 'cname=value;
+	expires=Thu, 2 Aug 2001 20:47:11 UTC;
+	domain=google.com;
+	path=/;
+	secure';
+	expires specifies the expiry time of the cookie. If omitted, the cookie is deleted when the visitor
+                quits the browser.
+
+domain and path designate which locations have access to the cookie in the future. Sub-directories of the path
+will have access to the cookie too. Note that setting the domain to ‘www.example.com’ denies access from ‘example.com’.
+If they are not set, it becomes the domain of the page that sets the cookie.
+
+secure, if present, restricts access to the cookie to be via https only.
+
+When document.cookie is used in an expression, only the name=value pairs are returned as a string, separated by semicolons.:
+‘cname1=value1; cname2=value2……’

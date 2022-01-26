@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		o1 = {a:10, b:100, c:1000, '@':10000};
+		s1 = JSON.stringify(o1, ['a','b','@'],"  ");
+
+		// toJSON() is a special object method
+		o2 = {foo:'X', toJSON:function(){return 'bar'}};
+		s2 = JSON.stringify({a:o2}); // {"a":"bar"}
+		alert(s2);
+
+		o3 = ['a', 3, 4, 'b'];
+		s3 = JSON.stringify(o3);
+		alert(s3); // ["a", 3, 4, "b"]
+	</script>
+</body>
+</html>

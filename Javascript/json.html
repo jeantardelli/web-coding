@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- All property names in a JSON string must be double-quoted. -->
+<html>
+<body>
+	<script>
+		var JSON_string='\
+			{"students":\
+				[{"firstName":"Ali", "lastName":"Ahmad"}, \
+				 {"firstName":"Anna", "lastName": "Chan"}, \
+				 {"firstName":"Jacinta", "lastName": "May"}], \
+			 "teachers":\
+				[{"firstName":"Jason", "lastName": "Ian"},\
+				 {"firstName":"Keown", "lastName": "Deary"}]}';
+		var JObj = JSON.parse(JSON_string);
+		alert(JObj.students[1].lastName); // Chan
+		alert(JObj.teachers[0].firstName); // Jason
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+IndexedDB
+=========
+
+An IndexedDB is organized into databases. Adatabase contains object stores (comparable to tablesin SQL),
+which in turn contain objects or other types of data. An object store can be structured in 4 way
+
+keyPath autoIncrement
+(none)      false     : (1)
+‘key’       false     : (2)
+(none)      true      : (3)
+‘key’       true      : (4)
+
+(1): The object store can hold any value. You must supply a separate key argument whenever you want to add a new value.
+(2): The object store can only hold objects. The object must have a property with the same name as the key path.
+(3): The object store can hold any value. The key is generated for you automatically, or you can supply a separate key argument if you want to use aspecific key.
+(4): The object store can only hold objects. Usually a key is generated and the value of the generated key is stored in the object in a property with the same
+     name as the key path. If such a property already exists, the value of that property is used as the key rather than generating a new key.
+
+The operations for IndexedDB are mostly asynchronous, which means that before a function returns, other code may continue.
+For information about how to store files and images in IndexedDB, refer to: https://hacks.mozilla.org/2012/02/storing-images-and-files-in-indexeddb/
+
+
+

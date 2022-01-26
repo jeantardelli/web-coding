@@ -1,0 +1,14 @@
+JSON
+====
+
+JSON stands for Javascript Object Notation. It is a syntax for serializing objects and arrays. A JSON string can
+be easily stored or transmitted. Although it uses Javascript syntax for storing information, it is language
+independent and may be used in various programming languages.
+
+Methods:
+    JSON.parse(s1[, f(s2,a)]) converts the string s1 to a JSON object. f(s2,a) transforms the returned value,
+    using the key s2 and the value a.
+
+    JSON.stringify(o [,f(s1,a) [, s2]]) or JSON.stringify(o [,arr [, s2]]) converts a JSONobject o to a string.
+    f(s1,a) transforms the returned value, using the key s1 and the value a. arr specifies the set of properties
+    included. s2 is a string of space that causes the resulting string to be pretty-printed.

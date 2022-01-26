@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- A sessionStorage variable is like a localStorage variable, except that it is deleted
+	when the visitor closes the browser window or tab.
+
+	Here ‘test’ is an arbitrarily defined property, and can only be assigned a string value.
+	When the page first loads, localStorage.test and sessionStorage.test are undefined. As
+	the user refreshes the page, the browser alerts the messages. -->
+<html>
+<body>
+	<script>
+		if(Storage){
+			alert(localStorage.test);
+			localStorage.test = "Local Storage Detected";
+
+			alert(sessionStorage.test);
+			sessionStorage.test = "Session Storage Detected";
+		} else {
+			alert("Sorry, your browser does not support web storage...");
+		}
+	</script>
+</body>
+</html>

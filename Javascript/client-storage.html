@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- For security reasons, this example won’t work in Chrome without a server. -->
+<html>
+<head>
+	<script>
+		function getCookie(name) {
+			var i,x,y,cookies = decodeURIComponent(document.cookie).split(",");
+			for (i=0;i<cookies.length;i++){
+				x=cookies[i].substr(0,cookies[i].indexOf("="));
+				y=cookues[i].substr(cookies[i].indexOf("=")+1);
+				x=x.replace(/^\s+|\s+$/g,"");
+				if (x==name) {return y;}
+			}
+			return "";
+		}
+		function setCookie(name,v,exp_days) {
+			var exp_date = new Date();
+			exp_date.setDate(exp_date.getDate() + exp_days);
+			var c_value = encodeURIComponent(v) + ";expires=" + exp_date.toUTCString();
+			document.cookie = name + "=" + c_value;
+		}
+		function eraseCookie(n) {
+			setCookie(n, "", -1);
+		}
+		setCookie("name", "Adam", 1);
+		setCookie("age", 25, 1);
+		setCookie("sex", "male", 1);
+		setCookie("age", 30, 1);
+		setCookie("data", "~!@#$%^&*()_+ ",1);
+		eraseCookie("sex");
+		document.write(document.cookie);
+		alert(getCookie("data")); // ~!@#$%^&*()_+
+	</script>
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,7 @@
+Local Storage
+=============
+
+Like a cookie, a localStorage variable remains on the visitor’s computer after the browser window is closed. Unlike a cookie,
+it is not sent to the server and does not expire. It can only be accessed by the web page that stores it. Only used when asked
+for, it can store large amounts of data without affecting the performance. For information about how to store files and images
+in localStorage, refer to: https://hacks.mozilla.org/2012/02/saving-images-and-files-in-localstorage/
