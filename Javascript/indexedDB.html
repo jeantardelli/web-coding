@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-</head>
-<body>
 	<script>
 		var db;
 		const students = [
@@ -12,7 +10,7 @@
 
 		if(indexedDB){
 			// indexedDB.deleteDatabase('myDB');
-			var request = indexedDB.open('myDB');
+			var request = indexedDB.open('myDB', 3);
 			request.onerror = function(e){
 				alert("Why didnt't you allow me to use IndexedDB?");
 			};
@@ -26,7 +24,7 @@
 				// or increase the version number. Futhermore, you can
 				// only create object stores in this event.
 				db = e.target.result;
-				var os = db.createObjectStore('students', keyPath: 'id'});
+				var os = db.createObjectStore('students', {keyPath: 'id'});
 				os.createIndex('name', 'name', {unique:true});
 				os.createIndex('clss', 'clss', {unique:false});
 				os.transaction.oncomplete = function(e){
@@ -37,13 +35,19 @@
 		  };
     }
 		function addStudents(){
-			var T = db.transaction(['students', 'teachers'], 'readwrite');
+			var T = db.transaction(['students'], 'readwrite');
 			var sos = T.objectStore('students');
 			sos.delete('C577564');
 			sos.delete('C234464');
 		}
+		function removeStudents(){
+			var T = db.transaction(['students'], 'readwrite');
+			var sos = T.objectStore('students');
+			sos.delete('C577546');
+			sos.delete('C234464');
+		}
 		function getStudent(){
-			var sos = db.transaction(['students', 'teachers'], 'readwrite').objectStore('students');
+			var sos = db.transaction(['students'], 'readwrite').objectStore('students');
 			var index = sos.index('name');
 			index.get('Bill').onsuccess = function(e) {
 				// access by index
@@ -51,6 +55,61 @@
 				document.getElementsByTagName('p')[0].innerHTML = data.id + " " + data.name + " " + data.clss + " " + data.age + "<br/>";
 			}
 		}
+		function getStudents(){
+			document.getElementsByTagName('p')[0].innerHTML = "";
+			var sos = db.transaction(['students'], 'readwrite').objectStore('students');
+			var index = sos.index('clss'); // access by index
+			var range = IDBKeyRange.bound('1A', '4H', false, false); // including 1A and 4H
+			index.openCursor(range, 'prev').onsucess = function(e){
+				var cursor = e.target.result;
+				if (cursor){
+					document.getElementsByTagName('p')[0].innerHTML += cursor.value.id + " " + cursor.key + " " + cursor.value.clss + " " + cursor.value.age + "<br/>";
+					cursor.continue();
+					};
+			};
+		}
+		function changeStudent(){
+			var sos = db.transaction(['students'], 'readwrite').objectStore('students');
+			var request = sos.get('C577564'); // access by key
+			request.onsucess = function(e) {
+				data = request.result;
+				data.age = 9;
+				request2 = sos.put(data);
+			}
+		}
+		function printStudents(){
+			document.getElementsByTagName('p')[0].innerHTML = "";
+
+			// A transaction will become inactive if you return to
+			// the event loop without using it. 'T' here must
+			// not be declared globally once only.
+			var T = db.transaction(['students'], 'readwrite');
+	
+			var sos = T.objectStore('students');
+			sos.openCursor().onsucess = function(e) {
+				// access by key
+				var cursor = e.target.result;
+				if (cursor){
+					document.getElementsByTagName('p')[0].innerHTML += cursor.key + " " + cursor.value.name + " " + cursor.value.clss + " " + cursor.value.age + "<br/>";
+					cursor.continue();
+			};
+		};
+	}
 	</script>
+</head>
+<body>
+	<p></p>
+	<button onclick="addStudents();">
+		Add students</button>
+	<button onclick="removeStudents();">
+		Remove students</button>
+	<button onclick="getStudent();">
+		Get by name</button>
+	<button onclick="getStudents()";>
+		Get by class</button>
+	<button onclick="changeStudent();">
+		Change by id</button>
+	<button onclick="printStudents();">
+		Print students</button>
 </body>
 </html>
