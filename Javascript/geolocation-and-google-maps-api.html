@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- The Geolocation object is part of Navigator. It allows you to track the geographical position of
+	the visitor. Different browsers have different security policies with regard to the use of geolocation.
+
+	watchPosition(...) registers a function that is invoked whenever the location changes. It returns an id that
+	may be passed to clearWarch(...). -->
+<html>
+<body>
+	<script>
+		var options = {
+			enableHighAccuracy: true,
+			timeout: 5000, // 5000ms
+			maximumAge: 0 // 0ms, ie. don't use cache
+		};
+		function success(pos) {
+			var crd = pos.coords;
+			alert('Timestamp: ' + pos.timestamp);
+			alert('Latitude: ' + crd.latitude);
+			alert('Longitude: ' + crd.longitude);
+			alert('Altitude: ' + crd.altitude);
+			alert('More or less: ' + crd.accuracy + ' meters.');
+			alert('More or less: ' + crd.altitudeAccuracy + ' meters for altitude.');
+			alert('Heading: ' + crd.heading);
+			alert('Speed: ' + crd.speed);
+		};
+		function error(err) {
+			alert('ERROR(' + err.code + '): ' + err.message);
+		};
+		p = navigator.geolocation.getCurrentPosition(success, error, options);
+</script>
+</body>
+</html>

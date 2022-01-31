@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- FileReader allows you to read the contents of a local file stored on the client computer.
+
+	This shows how to preview an image. It also shows how to check the file size and type. -->
+<html>
+<head>
+	<script>
+		function previewImg(){
+			var i = document.querySelector('img');
+			var f = document.querySelector('input[type=file]').files[0];
+			var r = new FileReader();
+			if (!f) return;
+			r.onloadend = function () {i.src = r.result;}
+			if (f.size >1024*1024) {
+				alert('The file size must be smaller than 1MB.');
+				return;
+			}
+			if (f.name.substr(-4)!='.jpg'){
+				alert('The file type musb be .jpg');
+				return;
+			}
+			r.readAsDataURL(f);
+		}
+	</script>
+</head>
+<body>
+	Choose a .jpg file:
+	<input type="file" onchange="previewImg()"/><br/>
+	<img/>
+</body>
+</html>
