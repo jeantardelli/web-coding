@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- A web worker is an external Javascript that runs in the background independently.
+
+	This example won't work in Chrome without a server -->
+<html>
+<body>
+	<p>Prime numbers: <output id="result"></output></p>
+	<button onclick="startWorker()">Start Worker</button>
+	<button onclick="stopWorker()">Stop Worker</button>
+	<br /><br />
+	<script>
+		var w;
+		function startWorker() {
+			if(Worker) {
+				if(w) return;
+				w = new Worker("primes.js");
+				w.onmessage = function(e) {
+					document.getElementById("result").innerHTML = e.data;
+				};
+			} else {
+				document.getElementById("result").innerHTML = "Your browser does not support Web Workers...";
+			}
+		}
+		function stopWorker(){w.terminate();}
+	</script>
+</body>
+</html>

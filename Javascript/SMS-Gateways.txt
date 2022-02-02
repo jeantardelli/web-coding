@@ -1,0 +1,5 @@
+If you wish to send an SMS from a computer, you should first sign up for an account at an SMS gateway
+such as Clickatell, ViaNett, Nexmo etc. While it is possible to send an SMS through Javascript alone via
+HTTP GET (or POST), it is possibly a better idea to send it through PHP cURL (Chapter 16) so that your
+account credentials are hidden from the user at the client end. The official websites of the gateways
+contain information about how to send an SMS invarious ways.

@@ -1,0 +1,18 @@
+The Facebook Like and Share Buttons can be clicked to create a connection between a piece of content
+and the person clicking the button. A count of all the likes can be displayed. To integrate the Facebook
+Like and Share Buttons, first create a Facebook App at:
+
+	https://developers.facebook.com/apps
+
+Then go to:
+
+	https://developers.facebook.com/docs/plugins/like-button
+
+to configure the buttons and get the JavaScript code. Similarly, after you have registered an App, you
+can implement Facebook Comments at:
+
+	https://developers.facebook.com/docs/plugins/comments/
+
+A list of possible Facebook plugins can be found at:
+
+	https://developers.facebook.com/docs/plugins
