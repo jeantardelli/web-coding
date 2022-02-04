@@ -1,0 +1,30 @@
+PHP runs on the server. Particularly, it can process forms, files and databases over the internet.
+
+To use PHP, you must first rent a server from a webhost such as iPage, or set up your own server (Chapter 13).
+There are all-in-one packages that allow PHP to be run on a local computer, such as XAMPP and WampServer.
+These distributions contain Apache, PHP, MySQL and other applications.
+
+Usage of Server-Side Languages, 15 Nov 20148
+
+PHP              82.0%
+ASP.NET          17.3%
+Java              2.7%
+ColdFusion        0.7%
+Perl              0.6%
+Ruby              0.5%
+Python            0.2%   
+JavaScript        0.1%
+Erlang            0.1%
+
+Others            (<0.1% each):
+Lasso, Scala, Tcl, Smalltalk, C++, Haskell, Lisp, Ada
+
+A manual for PHP, protected by the CreativeCommons Attribution 3.0 License,
+can be found at the PHP official website:
+
+	http://php.net/manual/en/
+
+When a PHP file is requested from the server, the server first executes blocks
+of PHP code within the file. A ‘normal HTML file’ is then returned to the client’s browser.
+As such, there is no way for a casual visitor to read the PHP code. These blocks of code are
+contained by the symbols <?php … ?>.

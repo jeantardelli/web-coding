@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<!-- If ‘display_errors’ is set to ‘on’ in php.ini, error and warning messages will be displayed.
+
+	These messagescan be suppressed with the @ operator. -->
+<html>
+<body>
+	<?php
+		ini_set("display_errors", "on");
+		echo @(10/0);
+		$my_file = @file ('non_existent_file') or die("Failed opening file");
+	?>
+</body>
+</html>

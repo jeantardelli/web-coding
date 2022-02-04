@@ -1,0 +1,80 @@
+The operators, in order of decreasing precedence, are:
+
+clone new                             clone, new                       
+[]                                    array
+++ -- ~ @                             pre-ncrement,
+(bool) (int) (float) (string)         pre-decrement,
+(array) (object) ...                  error suppression
+                                      type casting
+instanceof                            types
+!                                     logical
+* / %                                 arithmetic
++ - .                                 arithmetic and string
+<< >>                                 bitwise
+< <= > >=                             comparison
+== != === !== <>                      comparison
+&                                     bitwise and references
+^                                     bitwise
+|                                     bitwise
+&&                                    logical
+||                                    logical
+?:                                    ternary
+= += -= *= /= .= %=                   assignment
+&= |= <<= >>= =>
+and                                   logical
+xor                                   logical
+or                                    logical
+,                                     many uses
+++ --                                 post-increment
+                                      post-decrement
+
+Note the shorthand notations for assignment operators. ($a = $a % 5) is the same as ($a%=5), which is
+the remainder of $a divided by 5. An assignment evaluates to the value of the assignment, so ($a=$b=5)
+assign 5 to $a because ($b=5) evaluates to 5.
+
+Placing ++ at the back of a variable increases its value by one after the whole statement has been executed.
+Placing it in front of a variable increases its value by one before the statement is executed. The comparison
+operators are:
+
+	== equals
+	=== equals in value and type
+	!=,<> does not equal
+	!== equals in neither value nor type
+	> is strictly greater than
+	< is strictly less than
+	>= is greater than or equal to
+	<= is less than or equal to
+
+Caution must be taken when comparing floats for equality, for the internal representation of floats may
+offset the precise value slightly.
+
+The logical operators are: !(not), &&(and), ||(or),and, xor and or. Notice that the two variations of the logical
+operators and and or operate at different precedences. A xor expression evaluates to true only if one of the
+operands (but not both) evaluates to true. For example,
+
+	echo ($b=(”5”==5) xor $d=(“5”===5));
+
+The resulting output is 1 because $b=(”5”==5) evaluates to true while $d=(“5”===5) evaluates to false.
+
+For bitwise operators:
+
+	$a&$b: 1 for which both corresponding bits are 1s
+	$a|$b: 1 for which either corresponding bit is 1
+	$a^$b: 1 for which either but not both bit is 1
+	  ~$a: inverts the bits
+	$a >> 3: shifts the binary form 3 bits to the right
+	$a << 2: shifts the binary form 2 bits to the left
+
+To cast a type out of an expression, include the bracketed type in front of the expression:
+
+	echo ((int)4.7+1);  # 5
+	echo ((bool)5.7);   # 1
+
+The casts available are:
+
+	(int), (integer) -- integer
+	(bool), (boolean) -- boolean
+	(float), (double), (real) -- float
+	(string) -- string
+	(array) -- array
+	(object) -- object(unset) -- null
