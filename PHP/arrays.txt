@@ -1,0 +1,28 @@
+In PHP, an array is an ordered map that associates keys to values. A key can be an integer or a string.
+These two statements do the same assignment:
+
+	$arr = array(“a” => ”Hello”, 5 => “World”);
+	$arr = [“a” => ”Hello”, 5 => “World”];      // PHP 5.4+
+
+If a key is a float, a string containing an integer or a boolean, it will be cast to an integer. If the key is not
+specified, it will be regarded as the largest integer index plus 1. Eg.:
+
+	$arr = [“orange”,           // key 0
+		”apple”,            // key 1
+		5.7 => “pineapple”, // key 5
+		“watermelon“];      // key 6
+	$arr[]=”pear”;              // key 7
+
+To access $arr, user the square brackets [], eg.:
+
+	$arr[1], $arr[”special”]
+
+Assign an array to a key in an array to create a multidimensional array.
+
+	$arr = [“ma” => [“foo” => ”bar”]];
+	$arr[1][2] = “live”;
+
+To access the value “foo”, use $arr[“ma”][“foo”].
+
+Applying the + operator to two arrays returns an array which is a union of the two arrays. If the arrays contain
+the same keys, the key-value pairs of the left operand will be preserved.

@@ -1,0 +1,22 @@
+A string may span multiple lines without using any multiline character. Strings can be joined with the . operator.
+Applying an arithmetic operator to a string converts the string to a number, while applying ++ and to a string
+variable shifts its last character to the next character. Eg:
+
+	echo(30+"10.5 meters"); // outputs 30.5
+	$a="bus"; a++;          // $a is now "but"
+
+<, <=, > and >= compare the character codes of the first characters of the strings. If they are the same,
+the second characters will be compared, and so on. For example: "ACD">"ABD" is true.
+
+In double-quoted strings, the following will escape: $variable, \n (new line), \r (carriage return),
+\t (horizontal tab), \v (vertical tab), \e (escape), \f (formfeed), \\ (backslash),\$ (dollar sign),
+\” (doublequote),\ddd (octal sequence), and \xdd (hexadecimalsequence).
+
+In single-quoted strings, only \\ (backslash) and \’ (single quote) will escape.
+
+A string may be specified with <<<. An identifier immediately follows the operator, then a new line, then
+the string. The string is closed when the identifier is again encountered in a line with nothing else except
+possibly the closing ;. The line with the closing identifier must not contain any extra spaces or characters.
+
+If the opening identifier is not quoted or double-quoted, characters expand and escape as in double quoted strings.
+If the opening identifier is single-quoted, nothing expands nor escapes, not even \\ and\’.

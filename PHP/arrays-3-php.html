@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- The values of an array can be assigned to a list() of variables directly. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays 3</title>
+</head>
+<body><?php
+				$arr = ["apple", 2=>"orange", "mango"];
+				list($a0,,,$$a3) = $arr;  // index 1 and 2 skipped
+				echo($a0." ".$a3."<br />");
+				list($a, list($b,$c)) = ["fruits", ["vege", "meat"]]; // nested
+				echo($a." ".$b." ".$c);
+			?>
+</body>
+</html>

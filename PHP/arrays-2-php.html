@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- Arrays may be compared with comparison operators. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Arrays 2</title>
+</head>
+<body><?php
+				$a=["hello","hi"];
+				$b=[1=>"hi",0=>"hello"];
+				var_dump($a==$b);   // true; same key-value pairs
+				var_dump($a===$b);  // false; different order
+				var_dump($a!==$b);  // true; different order
+				var_dump($a<>$b);   // false; same key-value pairs
+				var_dump($a!=$b);   // false; sampe key-value pairs
+			?>
+</body>
+</html>
