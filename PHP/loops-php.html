@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--The reference, ‘&’, allows the values in the array to be changed. Note that the variables retain
+	their last values after the loop. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loops</title>
+</head>
+<body><?php
+				$a=[3,4,"foo"=>5,6,100];
+				foreach($a as $k => &$v) {
+					$v*=2;
+					echo $k.$v."<br />";
+				}
+				echo $k.$v."<br />";
+				foreach($a as $v2) {
+					echo $v2."<br />";
+				}
+			?>
+</body>
+</html>

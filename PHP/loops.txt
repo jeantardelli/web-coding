@@ -1,0 +1,25 @@
+There are several ways to run a block of statements repeatedly:
+
+	while(cycle condition){statements;}
+	do {statements;} while(cycle condition);
+	for (pre-loop statements;
+	     cycle condition;
+	     cycle statements;){statements;}
+	foreach($array as $value){statements;}
+	foreach($array as $key => $value){statements;}
+
+Each of these code segments calculates the sum of 0 to 9.
+
+	$a=0; $sum=0;
+	while($a<10) $sum += $a++;
+
+	$a=0; $sum=0;
+	do {$sum += $a++;} while ($a<10);
+
+	for($a=0, $sum=0; $a<10; $a++) $sum+=$a;
+
+foreach is used to loop through the values of anarray or class object.
+
+break [i]; ends the loop instantly. continue [i]; ends the current iteration of loop and starts the next iteration by
+evaluating the cycle condition. i is an optional integer that tells how many levels of loops to end. If omitted, it will be regarded as 1,
+ie. the current level.

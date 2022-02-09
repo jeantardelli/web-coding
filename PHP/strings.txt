@@ -20,3 +20,17 @@ possibly the closing ;. The line with the closing identifier must not contain an
 
 If the opening identifier is not quoted or double-quoted, characters expand and escape as in double quoted strings.
 If the opening identifier is single-quoted, nothing expands nor escapes, not even \\ and\’.
+
+A single character in a string may be accessed with [] or {}:
+
+	$str=”abcd”;
+	$str[2]=”e”;    // changes the string to “abed”
+	echo ($str{0}); // outputs “a”
+
+A string can be executed as if it is some PHP code with eval(...).Eg.:
+
+	eval(“echo 100; return 100;”);
+
+will return 100. eval(...) returns NULL by default, and returns false if there is a parse error within.
+A string may be used as the name of a variable. For instance, {$a=”hello”; $$a=”world”;} is equivalent to {$a=”hello”; $hello=world;}. In the
+case of an array, ${$a[1]} treats $a[1] as the variable name while$ {$a}[1] treats $$a as the variable name.

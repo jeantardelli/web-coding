@@ -1,0 +1,42 @@
+A conditional statement can be specified by if:
+
+	if (condition1) {statements1;}
+	elseif (condition2) {statements2;}
+	elseif.....
+	else {statements3;}
+
+If condition1 evaluates to true, statements1 will be executed. Otherwise condition2 will be checked, and so on. If all
+the conditions are false, statements3 will be executed. The elseif and else clauses are optional, and there may be any
+number of elseif clauses. If the expression that is compared needs to be evaluated only once, switch may be used instead.
+
+	switch(expression){
+		case value1: statements1; break;
+		case value2: statements2; break;
+		case value3: statements3; break;
+		.....
+		default: statements4;}
+
+On the other hand, the ternary operators ?: allow a value to be chosen among multiple values within an expression.
+
+Note: Syntactically PHP allows a second form for if, while, for, foreach, and switch. ‘{‘ is changed to ‘:’ and ‘}’ to endif;,
+endwhile;, endfor;, endforeach;, or endswitch;, respectively.
+
+The following three code segments are similar:
+
+	if ($a+$b==2): $x="two";
+	elseif ($a+$b==1): $x="one";
+	else: $x="zero";
+	endif;
+
+	switch($a+$b){
+		case 2: $x="two"; break;
+		case 1: $x="one"; break;
+		default: $x="zero";
+	}
+
+	$x = ($a+$b==2)?"two"
+	   : ($a+$b==1)?"one"
+	   : "zero";
+
+If break; is omitted at the end of a case clause in the switch statement, PHP will go on running the
+statements in the next case.

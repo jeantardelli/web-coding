@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- Arrays and object properties can also be expanded in double-quoted strings. Enclose the identifier with {}
+	so that the parser will not regard any irrelevant characters as part of the identifier. Functions, static class
+	variables, and class constants inside {} will cause the return value to be interpreted as variable names for expansion.
+
+	Ommitting the curly bracktes will cause error because $fruits is undefined -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Strings 3</title>
+</head>
+<body><?php
+				$drinks=['Cola','7 Up','Sarsi'];
+				$fruit='apple';
+				echo("He drank some $drinks[1]. ");
+				echo("He ate some {$fruit}s. ");
+				echo("I said ${fruit}s.");
+			?>
+</body>
+</html>
