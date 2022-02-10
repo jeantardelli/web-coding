@@ -1,0 +1,12 @@
+A function is a piece of code which may be called using its name. It can take in arguments and return a value.
+Unlike variable names, function names are case-insensitive. Structuring a code with functions makes it readable and maintainable.
+
+Default values, when passed to arguments after =, must appear at the end of the arguments list.
+
+A string may be used as a function name.
+
+A function needs not exist in a place before where it is called. However, if it is defined within an if-block or within a function,
+it needs to be 'executed' before it becomes visible globally.
+
+Variables inside a function are not visible outside the function. For global variables outside a function to be visible inside a
+function, they must first be referenced with global.

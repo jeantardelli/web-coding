@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions 5</title>
+</head>
+<body><?php
+				shout();
+				shout_again(); // error without first calling shout();
+
+				function shout(){
+					echo "Hello World <br/>";
+					function shout_again(){
+						echo "Hello World";
+					}
+				}
+			?>
+</body>
+</html>

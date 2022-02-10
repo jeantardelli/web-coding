@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- This function takes an array as an argument and returns an array -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions</title>
+</head>
+<body><?php
+
+				function sum_product($arr){
+					$s=0; $p=1;
+					foreach ($arr as $v) {
+						$s+=$v;
+						$p*=$v;
+					}
+					return [$s,$p];
+				}
+
+				$a=[10,20,30,40];
+				list($sum,$product)=sum_product($a);
+				echo $sum.",".$product;
+			?>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- This calculates the sum of 0 to 9 -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Loops 3</title>
+</head>
+<body><?php
+				$i=0; $sum=0;
+
+				sectionA:
+				$sum+=$i++;
+				if ($i<10) goto sectionA;
+
+				echo $sum;
+			?>
+</body>
+</html>

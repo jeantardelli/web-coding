@@ -23,3 +23,6 @@ foreach is used to loop through the values of anarray or class object.
 break [i]; ends the loop instantly. continue [i]; ends the current iteration of loop and starts the next iteration by
 evaluating the cycle condition. i is an optional integer that tells how many levels of loops to end. If omitted, it will be regarded as 1,
 ie. the current level.
+
+goto causes the exectution to jump to a point specified by a label, which is a name followed by a ‘:’. It can also be used to run the same
+statements repeatedly, or get out of multi-level loops.

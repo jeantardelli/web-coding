@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions 6</title>
+</head>
+<body><?php
+				$a=2; $b=3;
+				function add(){
+					global $a, $b; // binds
+					$a=&$GLOBALS["a"];
+					$b=&$GLOBALS["b"];
+					$a+=$b;
+					unset($a);  // no effect on global $a, local $a unbound only
+					$c=10;
+				}
+				add();
+				echo $a."<br />";
+				echo isset($c); // false, NULL
+			?>
+</body>
+</html>
