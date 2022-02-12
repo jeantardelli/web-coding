@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions 12</title>
+</head>
+<body><?php
+				function f($v1, $v2){
+					for ($i=0; $i<func_num_args(); $i++){
+						echo func_get_arg($i);
+				  }
+				  echo "<br />";
+				  echo func_get_args()[0].func_get_args()[1].func_get_args()[2];
+				}
+				f(1,2,3,4,5,6,7);
+			?>
+</body>
+</html>

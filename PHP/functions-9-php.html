@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function 9</title>
+</head>
+<body><?php
+				$a=5;
+				function &ref(){
+					global $a;
+					return $a;
+				}
+				$b =& ref();
+				$a = 10;
+				echo $b;
+			?>
+</body>
+</html>

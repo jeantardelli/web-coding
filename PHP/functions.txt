@@ -10,3 +10,18 @@ it needs to be 'executed' before it becomes visible globally.
 
 Variables inside a function are not visible outside the function. For global variables outside a function to be visible inside a
 function, they must first be referenced with global.
+
+The value of a static variable in a function is preserved after the function ends. It resumes its value on the next function call.
+
+To  allow a function to change the value of an external variable passed to it, use a reference symbol ‘&’ in the arguments list.
+
+To return a reference, include ‘&’ before the function name, and include it again when assigning the function.
+
+An anonymous function can be assigned to a variable, or passed in as an argument to another function. When you declare an anonymous function,
+remember to add the semicolon at the end of the statement.
+
+Sometimes we need to use variables in the parent scope in an anonyous function in PHP (unlike a Javascript closure).
+
+A function can take in any number of additional arguments. These arguments can be retrieved with func_num_args(), func_get_arg(i), func_get_args().
+
+A function may enforce its arguments to be of particular types. An enforced type can be an array, a callable, a class, or an interface.

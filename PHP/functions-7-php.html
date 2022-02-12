@@ -1,0 +1,16 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Functions 7</title>
+	</head>
+	<body><?php
+					function f() {
+						static $a = 0;
+						echo $a;
+						$a++;
+					}
+					f();f();f();
+				?>
+	</body>
+	</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Functions 13</title>
+</head>
+<body><?php
+				function f(array $v1, callable $fa, MyClass $ca){
+					echo $fa().$ca->v2.$v1[1];
+				}
+
+				$g = function(){echo "Hello World";};
+				class MyClass{public $v2=100;}
+				$c = new MyClass;
+
+				f([100,200], $g, $c);
+			?>
+</body>
+</html>
