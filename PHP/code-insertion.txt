@@ -1,0 +1,18 @@
+To use the code from another file, include the file. The scope applied is the scope at the point of 
+inclusion. The indluded file must start with <?php and end with ?>, otherwise it will be treated as
+HTML code. 1 is returned if the inclusion is successful, otherwise false is returned. An arbitrary
+value may be returned in the middle of the included file.
+
+An alternative is to use require. The only difference is that upon failure, include merely generates
+a warning, whereas require results in an error and halts the script. To make sure files that have been
+included will not be included again, use include_once or require_once instead.
+
+Try declare a tick diretive for a function to be called automatically after every one or more (tickable)
+statements.
+
+Another directive to declare would be the encoding directive.
+
+<?php
+declare(encoding='ISO-8859-1');
+// code here
+?>

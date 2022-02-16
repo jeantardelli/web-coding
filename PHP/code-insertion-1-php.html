@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Code Insertion 2</title>
+</head>
+<body><?php
+
+				declare(ticks=1); // calls the tick handler after every tickable statement for the rest of the code
+
+				function f(){
+					echo "Tick Handler f Called.<br />";
+				}
+				register_tick_function('f'); // register the tick handler
+
+				echo "testing..."; $a=1;
+				echo "testing..."; $a=1;
+				echo "testing..."; $a=1;
+				echo "testing..."; $a=1;
+	
+				declare (ticks=2) { // calls the tick handler after every 2 tickable statementes for the block
+					echo "testing..."; $a=1;
+					echo "testing..."; $a=1;
+					echo "testing..."; $a=1;
+					echo "testing..."; $a=1;
+				}
+				unregister_tick_function('f');
+			?>
+</body>
+</html>

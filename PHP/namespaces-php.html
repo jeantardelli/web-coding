@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- A namespace can take on the brace {} form, or the free statement form. However, the two
+	different forms must no appear within a single file. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Namespace</title>
+</head>
+<body><?php
+				include "foo.php";
+				echo a;       // 50, resolves to \a
+				echo \Bar\a;  // 10, resolces to \Bar\a
+			?>
+</body>
+</html>

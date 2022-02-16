@@ -1,0 +1,3 @@
+A namespace is used to prevent the name collisions of constants, functions, classes and interfaces.
+Its declaration must precede all other statements in a file, including any HTML code. The only statement
+that can precede it is the declare() statement used for the encoding directive.
