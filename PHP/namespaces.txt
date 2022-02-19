@@ -1,3 +1,8 @@
 A namespace is used to prevent the name collisions of constants, functions, classes and interfaces.
 Its declaration must precede all other statements in a file, including any HTML code. The only statement
 that can precede it is the declare() statement used for the encoding directive.
+
+If a namespaced function or constant does not exist, PHP will automatically fall back to global functions or
+constants. On the other hand, class names always resolve to the current namespace.
+
+We can use an alias for a class name, an interface name or a namespace.

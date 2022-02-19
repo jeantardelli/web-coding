@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classes and Objects - 1</title>
+</head>
+<body><?php
+				class MyClass{
+					public $v=10; // a property
+					function shout(){ // a method
+						echo "Hello World! <br />";
+					}
+					function smile(){ // another method
+						echo "Smile World! <br />";
+					}
+				}
+	
+				$test = new MyClass;
+				$test->shout();
+				echo $test->v."<br />";
+
+				$s="MyClass";
+				$test2=new $s;
+				$test2->smile();
+
+				$s="shout";
+				$test->$s();
+
+				$s="test";
+				$$s->smile();
+		?>
+</body>
+</html>

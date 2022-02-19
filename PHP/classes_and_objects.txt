@@ -1,0 +1,3 @@
+Not to be confused with the HTML/CSS ‘class’ attribute, a class in PHP may be regarded as a data type. It can contain
+properties (variables) and methods (functions). Use new to instantiate an object out of a class. Use -> on an instantiated
+object to access the object properties and methods. A string may be used as the class name, the method name or the object name.
