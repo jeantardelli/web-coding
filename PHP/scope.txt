@@ -1,0 +1,14 @@
+A class often extends another class and inherits its members. The child may override a property or method from the parent class
+(using the same arguments and visibility signature). Methods declared final must not be overridden, whereas final classes must not
+be inherited. Properties and method declared public are accessibl eeverywhere.
+
+If they are declared as private, they are accessible only within the class and are not inheritable. If they are declared protected,
+they are only accessible within the class, any inheriting classes, and any inherited classes. If undeclared, a method in a class is
+public by default. Properties, when being initialized, must take constant values, instead of other variables or expressions.
+
+The properties of an object can be looped throug hwith foreach.
+
+Two objects are equal (==) if they belong to the same class, and their properties have equal values. Two objects are identical (===)
+only if they refer to the same instance. The instanceof operator tests if an object belongs to a class.
+
+If two objects are of the same class, they will have access to each other’s private and protected members.

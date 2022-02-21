@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope 2</title>
+</head>
+<body><?php
+				class MyClass{
+					public $a=1;
+					public $b=2;
+					private $c=3;
+					function f(){
+						foreach ($this as $key => $value)
+							echo $key.":".$value."<br />";
+					}
+				}
+
+				$Obj = new MyClass;
+				foreach ($Obj as $key => $value){ // $c not printed
+					echo $key.":".$value."<br />";
+				}
+				$Obj->f(); // $c printed
+			?>
+</body>
+</html>

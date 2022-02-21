@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- $this-> is used within a class method to represent the current object. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope</title>
+</head>
+<body><?php
+				class P{
+					public $v1=1;
+					protected $v2=2;
+					private $v3=3;
+					function smile(){ // accessible everywhere
+						echo $this->v1.") Smile, Universe!<br />";
+					}
+					final protected function laugh(){ // inheritable
+						echo $this->v3.") Laugh, Earth!<br />";
+					}
+					private function shout(){ // accessible within P only
+						echo "Hello World! <br />";
+					}
+
+				}
+
+				final class C extends P{ // cannot extend C due to ‘final’
+					function smile(){ // method overriding
+						echo $this->v2.") Smile, World!<br />";
+					}
+					//protected function laugh(){} // error due to ‘final’
+				}
+	
+				$p = new P();
+				$c = new C; // () are optional when creating an instance with new
+				$p->smile();
+				$c->smile();
+				//$p->shout(); // error
+				?>
+</body>
+</html>
