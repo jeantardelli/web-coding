@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Static Keyword</title>
+</head>
+<body><?php
+				class C{
+					static function getNew(){
+						return new static;
+					}
+				}
+				$a=C::getNew();
+				var_dump($a instanceof C);
+			?>
+</body>
+</html>

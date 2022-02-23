@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Static 3</title>
+</head>
+<body><?php
+				class P1 {
+					public static function which() {
+						echo __CLASS__;
+					}
+					public static function test() {
+						self::which();     // P1
+						static::which();   // C1
+						P1::which();       // P1
+						C1::which();       // C1
+					}
+				}
+				class C1 extends P1 {
+					public static function which() { // overriding method
+						echo __CLASS__;
+					}
+				}
+				C1::test();
+
+				class P2 {
+					private function which() {
+						echo __CLASS__;
+					}
+					public function test() {
+						$this->which();  // P2
+						self::which();   // C2
+					}
+				}
+
+				class C2 extends P2 {
+					public function which() {
+						echo __CLASS__;
+					}
+				}
+				$v2=new C2;
+				$v2->test();
+			?>
+</body>
+</html>

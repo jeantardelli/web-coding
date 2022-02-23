@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Only constants and static members may be accessed without any instantiation. They must be accessed with ::,
+	with the exeception of $obj->static_func(). parent:: and self:: refer to the parent class and current class, respectively.
+	$this must not be used in a static method. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body><?php
+				class P{
+					const c=1;
+					static private $v1=2;
+					static $v2=3;
+					static $v3=4;
+					static function f(){
+						echo self::$v1;
+						//echo $this->v3=1; // error
+					}
+					function g(){
+						echo 5;
+					}
+				}
+
+				class C extends P{
+					static function f(){ // method overriding
+						echo parent::c;
+						echo self::c; // also visible
+					}
+				}
+
+				echo P::c;       // 1
+				echo P::$v2;     // 3
+				P::f();          // 2
+				C::f();          // 11
+				$c="P"; $c::f();  // 2
+				$s="f"; P::$s(); // 2
+				$a=new P;
+				echo $a::c;      // 1
+				echo $a::$v2;    // 3
+				$a::f();         // 2
+				$a->f();         // 2
+				P::g();          // 5, warning
+        $a::g();         // 5, warning
+				//echo $a->c;    // error
+				//echo $a->$v2;  // error
+				//echo $a::$v3;  // error
+				//echo P::$v3;   // error
+				//P->f();        // error
+				//P->c1;         // error
+			?>
+</body>
+</html>

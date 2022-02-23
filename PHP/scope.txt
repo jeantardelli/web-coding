@@ -12,3 +12,17 @@ Two objects are equal (==) if they belong to the same class, and their propertie
 only if they refer to the same instance. The instanceof operator tests if an object belongs to a class.
 
 If two objects are of the same class, they will have access to each other’s private and protected members.
+
+When an object’s variable is assigned to another variable, or passed into a function as an argument, the new variable points to the same
+object instance. Hence any change made to the one variable affects the other. This form of assignment by reference, is different from the
+assignment by value form used in the assignment of scalar values and arrays. Use clone to get another copy of the object.
+
+The 'static' keyword and constants
+
+A constant, value of which does not change, can be declared for a class. It can be overridden in the child class. A static property or method
+can be accessed without any instantiation of the class. While a class constant can only be public, a static property can be protected or private.
+A constant or a static member can be accessed with ::.
+
+An object can be created out of a static function.
+
+Late static binding can be achieved with static ::. It allows an overriding member to be chosen, when the member is used from the base class.

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope Example</title>
+</head>
+<body><?php
+				class MyClass{
+					public $v=1;
+				}
+				$a = new MyClass;
+
+				$b=$a; $a->v=2; echo $b->v;
+				$c=&$a; $a->v=3; echo $c->v;
+
+				function f($o){$o->v=4;} f($a); echo $a->v;
+				$d = clone $a; $a->v=5; echo $d->v;
+				echo $c->v; // error
+			?>
+</body>
+</html>
