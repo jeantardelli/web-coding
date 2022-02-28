@@ -1,0 +1,17 @@
+An abstract method is an undefined method. A class containing an abstract method must be declared
+abstract, and may not be instantiated. If a child class extending an abstract class does not define
+all its abstract methods, the child class must be declared abstract too.
+
+An interface contains only constants and undefined public methods. It may not be instantiated on its
+own. Any class that implements an interface must define all its methods must define all its methods. A
+class cannot implement two interfaces that share function or constant names, and an interface constant
+cannot be overriden.
+
+A trait cannot be instantiated on its own. A class can use multiple traits at once. A method defined inside a
+class overrides the trait method, which in turn overrides the method from the parent class.
+
+A trait can use another trait. If two traits used contain the same function names, they need to be resolved with
+insteadof. An alias name can be assigned to a function with as, which may also change the visibility.
+
+A trait method can be static. It can also be abstract, which forces the class that uses it to define it. Traits
+can’t contain constants.

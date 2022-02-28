@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Abstract Class</title>
+</head>
+<body><?php
+		abstract class P{
+			protected $v1=3;
+			protected $v2=2;
+			abstract function calculate();
+		}
+		class product extends P{
+			function calculate(){
+				echo $this->v1*$this->v2;
+			}
+		}
+		$a = new product;
+		$a->calculate();
+	?>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Magic functions are functions that are triggered automatically when special events happen. They can be defined in any class.
+
+__construct([$m1,$m2...]) is called when an object is created. A child class can override the parent’s ‘constructor’ with a
+different arguments signature. $m1, $m2 can be any content type (mixed). __destruct() is called when there are no more references
+to an object. __clone() is called when an object is cloned.

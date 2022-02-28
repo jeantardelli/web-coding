@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Traits 2</title>
+</head>
+<body><?php
+				trait T1 {
+					function shout(){
+						echo "Hello World!<br />";
+					}
+				}
+				trait T2 {
+					use T1 {shout as protected;}
+					function smile(){
+						echo "Smile Wordl!<br />";
+					}
+				}
+				trait T3{
+					function shout(){
+						echo "Hello Universe!<br />";
+					}
+					function smile(){
+						echo "Smile Universe!<br />";
+					}
+				}
+				class C {
+					use T2,T3{
+						T2::shout insteadof T3;
+						T3::smile insteadof T2;
+						T2::smile as private sm;
+					}
+					function start(){
+						$this->shout();
+						$this->smile();
+						$this->sm();
+					}
+				}
+				$o = new C;
+				$o->start();
+			?>
+</body>
+</html>

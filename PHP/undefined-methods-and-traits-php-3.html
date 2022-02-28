@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Traits</title>
+</head>
+<body><?php
+				trait T {
+					public $v=3;
+					private function shout(){
+						echo "Hello World!<br />";
+					}
+				}
+				class P {
+					function shout(){
+						echo "Hello Universe!<br />";
+					}
+				}
+				class C extends P{
+					use T; // overrides shout() from P
+					function shout(){ // overrides shout() from T
+						echo "Smile World!<br />";
+					}
+				}
+				$o = new C;
+				$o->shout();
+				echo $o->v;
+			?>
+</body>
+</html>

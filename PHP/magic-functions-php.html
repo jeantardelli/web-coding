@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!-- The destructor is called before the script ends. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Destructor</title>
+</head>
+<body><?php
+				class C{
+					function __contruct($s){ echo "Contructor".$s;}
+					function __destruct(){ echo "Destructor called. ";}
+					function __clone(){ echo "__clone() called. ";}
+				}
+				$a = new C(" called. ");  // Constructor called.
+				$b = clone $a;            // __clone() called.
+				$a = $b;                  // Destructor called;
+				$c = clone $a;            // __clone called().
+			?>
+</body>
+</html>
