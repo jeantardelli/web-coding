@@ -1,0 +1,3 @@
+An Exception object is thrown when an error occurs. It can be caught in a try block, and handled in a catch block.
+More than one catch blocks may be used to catch various exception classes, and the first matching clause will be
+used. We can throw our own exceptions.

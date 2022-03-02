@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Serialization 2</title>
+</head>
+<body><?php
+				class A{
+					public $v1;
+					public $v2;
+					public static function __set_state($arr){
+						$obj = new A;
+						$obj -> v1 = $arr["v1"];
+						$obj -> v2 = $arr["v2"];
+						return $obj;
+					}
+				}
+				$a = new A;
+				$a->v1 = 5;
+				$a->v2 = "Hello";
+				var_export($a);
+				eval('$b = ' . var_export($a, true) . ';');
+				echo "<br />";
+				var_export($b);
+			?>
+</body>
+</html>

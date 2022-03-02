@@ -1,0 +1,6 @@
+An object can be serialized to a string (and stored into a file). As serialize($o) is called, PHP first runs the
+magic function __sleep(), which returns an array of the variable names to be serialized. To restore a serialized
+string to an object, use unserialize($s). __wakeup() will be called after an object has been unserialized.
+
+__set_state($arr) is called when var_export($o) is called on an object. The latter is a function similar to var_dump(),
+which outputs the content of avariable, except that the output is PHP code.

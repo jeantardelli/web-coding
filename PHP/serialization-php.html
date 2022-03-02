@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Serialization</title>
+</head>
+<body><?php
+				class MyClass{
+					public $a;
+					public $b;
+					public $c;
+					public $arr=["hello","world"];
+					function __sleep(){
+						return ["a", "b", "arr"];
+					}
+					function __wakeup(){
+						$this->c=50000;
+					}
+				}
+				$o = new MyClass;
+				$o->a=100;
+				$o->b=2000;
+				$o->c=30000;
+				$s=serialize($o);
+				echo $s;
+
+				$o2 = unserialize($s);
+				echo "<br />$o2->a";
+				echo "<br />$o2->b";
+				echo "<br />$o2->c";
+			?>
+</body>
+</html>

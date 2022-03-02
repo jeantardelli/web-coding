@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Magic Functions 2</title>
+</head>
+<body><?php
+				class C{
+					function __set($name,$value){
+						echo "Trying to set \$$name to $value...<br />";
+					}
+					function __get($name){
+						echo "Trying to get a value from \$$name...<br />";
+						return 5;
+					}
+					function __isset($name){
+						echo "Checking if \$$name is set...<br />";
+						return true;
+					}
+					function __unset($name){
+						echo "Trying to unset \$$name...<br />";
+					}	
+					function __call($name,$arr){
+						echo "Trying to call $name() with $arr[0]...<br />";
+					}
+					static function __callStatic($name,$arr){
+						echo
+							"Trying to call $name() statically with $arr[0]...<br />";
+					}
+					function __invoke($s){
+						echo "Trying to invoke a function with $s...<br />";
+					}
+					function __toString(){
+						return "Trying to be trated like a strin...<br />";
+					}
+				}
+				$a = new C; // $a->x is an undeclared property
+				$a->x=5;
+				$b=$a->x;
+				$c=isset($a->x);
+				unset($a->x);
+				$a("TEST");
+				$a::x("TEST");
+				$a("TEST");
+				echo $a;
+			?>
+</body>
+</html>

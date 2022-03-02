@@ -3,3 +3,13 @@ Magic functions are functions that are triggered automatically when special even
 __construct([$m1,$m2...]) is called when an object is created. A child class can override the parent’s ‘constructor’ with a
 different arguments signature. $m1, $m2 can be any content type (mixed). __destruct() is called when there are no more references
 to an object. __clone() is called when an object is cloned.
+
+__set($s,$m) is called when writing data to undeclared properties. __get($s) is called when reading data from undeclared properties.
+It can return any type. __isset($s) is triggered by calling isset() or empty() on undeclared properties. It returns a boolean value
+ __unset($s) is triggered when unset() is used on undeclared properties.
+
+__call($s,$arr) is called when invoking undeclared methods in an object context. It can return any type. __callStatic($s,$arr) is
+triggered when invoking undeclared methods in a static context. It can return any type. __invoke([$m1,$m2...]) is called when a
+script tries to call an object as a function. It can return any type.
+
+__toString*( is called when the object is treated like a string. It returns a string.
