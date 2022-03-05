@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- If the form method “get” is used instead of “post”, the data will be stored in the array $_GET. For the “get”
+	method, because the parameters are added to the URL, the page can be bookmarked with all the parameters intact.
+	However, the “get” method is not a secure way of passing sensitive data to the server. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Retrieving Form Data</title>
+</head>
+<body>
+	<form id="test" method="post" action="action.php">
+		Username:
+		<input type="text" name="username" size="15"/>
+		<br /><br />
+		Password:
+		<input type="password" name="password" size="15"/>
+		<br /><br />
+		Country:
+		<select name="country">
+			<option>France</option>
+			<option>Italy</option>
+			<option>Germany</option>
+			<option>United Kindgom</option>
+		</select>
+		<br /><br />
+		Sex:
+		<input type="radio" name="sex" value="female" /><label for "female">Female</label>
+		<input type="radio" name="sex" value="male" /><label for "male">Male</label>
+		<br /><br />
+		Conditions read:
+		<input type="checkbox" name="cond[read]"/>
+		<br /><br />
+		Conditions agreed:
+		<input type="checkbox" name="cond[agreed]"/>
+		<br /><br />
+		<input type="image" src="../src/images/submit-button.webp" height="150" width="150"/>
+	</form>
+</body>
+</html>

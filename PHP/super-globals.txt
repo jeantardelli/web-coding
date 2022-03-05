@@ -1,0 +1,6 @@
+Superglobals are built-in arrays that are available in all scopes. They can be accessed in functions without having
+to do global $variable first. 
+
+Accessing Global Variables
+
+$GLOBALS[s] provides a means to manipulate global variables directly in functions.

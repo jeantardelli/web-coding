@@ -1,0 +1,4 @@
+Any form data passed to a PHP script is stored in the $_POST or $_GET array. Dots and spaces in variable names are converted
+to underscores. (eg. <inputname="a.b" /> becomes $_GET["a_b"]. Unlike AJAX data, form data is automatically URL-encoded when
+the form is submitted. The form data is automatically URL-decoded again at the PHP end, so that you can use $_GET, $_POST,
+and $_REQUEST directly. If you wish to prevent spamming, you should consider Akismet and Google’s reCAPTCHA.

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exception 2</title>
+</head>
+<body><?php
+				function Exc_Handler($E) {
+					echo $E -> getMessage();
+				}
+				set_exception_handler('Exc_Handler');
+				throw new Exception('Testing the exception handler...');
+			?>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exception 1</title>
+</head>
+<body><?php
+				class E extends Exception {};
+				class F extends Exception {};
+				class G extends Exception {};
+				try {
+					try {
+						throw new E;
+					} catch (F $exc) {
+						echo "Caugh in inner try block F.";
+				  } catch (G $exc) {
+						echo "Caught in the inner try block G.";
+					} 
+				}
+				catch (E $exc) {
+						echo "Caught in the outer try block E.";
+				}
+			?>
+</body>
+</html>

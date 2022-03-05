@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accessing Global Variables</title>
+</head>
+<body><?php
+				function f() {
+					$v=1;
+					echo $v;              // 1, local variable
+					echo $GLOBALS['v'];   // 2, global variable
+					$GLOBALS['w'] = 3;
+					unset($GLOBALS['v']); // global variables can now be unset
+				}
+				$v=2;
+				f();
+				echo $w;    // 3, global variable
+				echo $v;    // Notice, aready unset
+			?>
+</body>
+</html>
