@@ -1,0 +1,3 @@
+Here, $_FILE is a two-dimensional array that stores information about an uploaded file.
+
+To upload a large file, make sure memory_limit, post_max_size and upload_max_filesize in php.ini have been set appropriately.

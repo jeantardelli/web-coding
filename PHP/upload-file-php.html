@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- After the user has chosen a file and clicked the “Submit” button, the file is copied to the server
+    and stored as a temporary file, which is then again moved to a new location in the server. Any temporary
+		files are automatically deleted as the PHP script exits. You must first create the directory 'upload' for
+		this code to work -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Uploading a File</title>
+</head>
+<body>
+	<form action="./upload.php" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="MAX_FILE_SIZE" value="30000000"/>
+		<label for="file">Filename:</label>
+		<input type="file" name="file" /><br />
+		<input type="submit" value="Submit" />
+	<form>
+</body>
+</html>
