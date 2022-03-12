@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Uploading Multiple Files</title>
+</head>
+<body>
+	<form action="upload2.php" method="post" enctype="multipart/form-data">
+		<label for="file">Filename:</label>
+		<input type="file" name="file[]" multiple /> <br />
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

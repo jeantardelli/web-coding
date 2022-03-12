@@ -1,0 +1,16 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Session Start Variables</title>
+</head>
+<body><?php
+				if (isset($_SESSION["views"]))
+					$_SESSION["views"] = $_SESSION["views"]+1;
+				else
+					$_SESSION["views"] = 1;
+				echo "Views = ".$_SESSION["views"];
+			?>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?php
+$t=time()+60*60; // expires in 1 hour
+setcookie("test", "abc", $t, "/"); // for the current domain
+setcookie("arr[a]", "123", $t, "/"); // storing into an array
+?>
+<!DOCTYPE html>
+<!-- As the user refreshes the page, the browser prints "abc123". --> 
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookies</title>
+</head>
+<body><?php
+				if (isset($_COOKIE["test"])) echo $_COOKIE["test"]; // abc
+				if (isset($_COOKIE["arr"]["a"])) echo $_COOKIE["arr"]["a"]; // 123
+			?>
+</body>
+</html>

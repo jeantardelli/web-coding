@@ -1,0 +1,14 @@
+PHP can send a cookie for it to be stored on the user’s computer using the function:
+
+	setcookie ($s1,$s2[,$i[,$s3[,$s4[,$b1=false[,$b2=false]]]]]);
+
+This function must precede any output, including the <html> tag as well as any whitespace. $s1 is the name of the cookie.
+$s2 is the value. i is the expiration time in seconds. The default is 0, which means that the cookie expires when the
+browser closes. $s3 is the path which will have access to the cookie. $s4 is the domain which will have access to the cookie.
+If $b1 is true, the cookie will be sent only over a secure HTTPS connection, if one exists. If $b2 is true, the cookie will
+be accessible only through HTTP, which means that JavaScript won’t be able to access it.
+
+Every time a page is requested from the server, all associated cookies are sent along from the local computer. All cookies,
+including those saved by JavaScript, can be accessed using the array $_COOKIE. To delete a cookie, set the expiration time
+to an expired time. The array $_REQUEST stores the combined key-value pairs of $_GET, $_POST and $_COOKIE. These super globals
+are already decoded. Using urldecode() on them could have unexpected and dangerou sresults.

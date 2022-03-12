@@ -1,0 +1,5 @@
+Accessible to all web pages, a session variable can be set or accessed with $_SESSION. It lasts until the
+user has closed the browser. One must first start up a session before information can be stored in a session.
+session_start() has to be used before the <html> tag.
+
+session_destroy() closes a session, deleting all session variables.
