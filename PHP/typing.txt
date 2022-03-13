@@ -1,0 +1,3 @@
+strval($m) returns the string value of $m.
+floatval($m) returns the float value of $m.
+intval($m[,$i]) returns the integer value of $m, using base $i.

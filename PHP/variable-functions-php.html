@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Variable Functions</title>
+</head>
+<body><?php
+				function func() {}
+				$fv = 'func';
+				var_dump(is_callable($fv, false, $callable_name));
+				echo $callable_name."<br />";
+
+				$fv = function(){};
+				var_dump(is_callable($fv, false, $callable_name));
+				echo $callable_name."<br />";
+
+				class C{function method(){}}
+				$obj = new C;
+				$mv = array('C', 'method');
+				var_dump(is_callable($mv, false, $callable_name));
+				echo $callable_name."<br />";
+	
+				$mv = array($obj, 'method');
+				var_dump(is_callable($mv, false, $callable_name));
+				echo $callable_name."<br />";
+
+				var_dump(is_callable('funX', true, $callable_name));
+				$fv = 10;
+				var_dump(is_callable($fv, true, $callable_name));
+				$mv = ["CX", "methodX"];
+				var_dump(is_callable($mv, true, $callable_name));
+				$mv = [1,2,3];
+				var_dump(is_callable($mv, true, $callable_name));
+			?>
+</body>
+</html>

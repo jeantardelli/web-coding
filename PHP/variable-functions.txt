@@ -1,0 +1,32 @@
+To save space, the following sections abbreviate function prototypes by using a short form for the
+parameters. Some of the data types are listed below:
+
+	$b : boolean
+	$i : integer
+	$f : float
+	$e : exception
+	$m : mixed
+	$s : string
+	$r : $resource
+	$arr : array
+	$cf() : comparison function
+	$ts : timestamp in integer
+
+Identity Booleans
+
+is_null($m) returns true if $m is NULL. empty($m) returns true if $m does not exist or equals false. isset($m1[,$m2...]) returns true
+if $m1, $m2 are set and are not NULL. unset ($m1[,$m2...]) destroys the specified variables.
+
+is_array($m) returns true if $m is an array.
+is_bool($m) returns true if $m is a boolean.
+is_float($m), is_double($m) or is_real($m) returns true if $m is a float.
+is_int($m), is_integer($m) or is_long($m) returns true if $m is an integer.
+is_numeric($m) returns true if $m is a number or a numeric string.
+is_object($m) returns true if $m is an object.
+is_resource($m) returns true if $m is a resource.
+is_scalar($m) returns true if $m is an integer, float, string or boolean.
+is_string($m) returns true if $m is a string.
+is_callable($m[,$b=false[,&$s]]) returns true if $m can be called as a function.
+$s stores the callable name. If $b is true, the function returns true as long as $m is a valid function name, even if the function
+does not exist. It then only rejects non-string variables or invalid arrays. The valid arrays have only two entries, the frst of
+which is an objet or a string, and the second a string.

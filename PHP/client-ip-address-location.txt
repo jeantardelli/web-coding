@@ -1,0 +1,3 @@
+$_SERVER['REMOTE_ADDR'] may not contain the real client’s IP address. It will give you a proxy address for
+a client connected through a proxy, for example. With the client’s IP address, you can determine its
+location using a service by https://ipinfo.io
