@@ -1,3 +1,8 @@
 strval($m) returns the string value of $m.
 floatval($m) returns the float value of $m.
 intval($m[,$i]) returns the integer value of $m, using base $i.
+gettype($m) returns the type of $m as a string, which can be “boolean”, “integer”, “double”,
+“string”, “array”, “object”, “resource”, “NULL”, or “unknown type”.
+settype($m,$s) sets the type of $m to $s, which can be “boolean”, ”integer”, ”float”, ”string”,
+”array”, ”object” or ”null”. 
+get_resource_type($r) returns the resource type as a string.

@@ -1,0 +1,7 @@
+get_defined_vars() returns an array of all defined variables, be them environment, server, or user-defined variables.
+print_r($m[,$b=false]) displays information about $m. If $b is true, the function will return the information rather
+than print it.
+var_dump($m1[,$m2……]) displays information about $m1,$m2...
+var_export($m[,$b=false]) displays information about $m. The output is valid PHP code. If $b is true, the function will
+return the information rather than print it.
+debug_zval_dump($m) displays information about an internal zend value $m

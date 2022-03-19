@@ -1,0 +1,41 @@
+Searching and Counting
+
+array_key_exists($m,$arr) returns true if the key $m can be found in $arr.
+in_array ($m,$arr[,$b=false]) returns true if the value $m can be found in $arr. If $b is true, the types are also compared.
+array_search($m,$arr[,$b=false]) returns the first matching key of the value $m. FALSE is returned if the value does not exist.
+If $b is true, the types are also compared.
+count($arr[,$i]) or sizeof($arr[,$i]) returns the number of elements in $arr. If $i is set to COUNT_RECURSIVE, the elements in
+sub arrays will be counted as well.
+array_count_values($arr) returns an array which uses the values of $arr as keys, and their frequencies as values.
+
+New Formation
+
+range($m1, $m2[,$num=1]) returns an array with values from $m1 to $m2, with $num as the incrementing step.
+array_fill($i1,$i2,$m) returns an array with $i2 elements, all with value $m, starting from index $i1.
+array_fill_keys($arr,$m) returns an array that uses the values of $arr as keys, and uses $m as the value.
+array_pad($arr,$i,$m) returns a copy of $arr, padded to the size of $i with value $m. If $i >= 1 then the array is padded on the
+right, if $i <= -1 then on the left. If |$i| <= the length of $arr then no padding takes place.
+
+array_values($arr) returns an array with the values of $arr as values, indexed numerically.
+array_keys($arr[,$m[,$b=false]]) returns an array with keys of $arr as values, indexed numerically. If $m is specified, then only
+the keys for that value are returned. If $b is true, then the types are compared as well.
+array_combine($arr1, $arr2) returns an array with the values of $arr1 as keys, and the values of $arr2 as the corresponding values.
+
+array_merge($arr1[,$arr2...]) returns an array that combines $arr1, $arr2... If the input arrays have the same string keys, then the
+later value will overwrite the previous one. Values with numeric keys will be renumbered starting from zero.
+array_merge_recursive($arr1[$,arr2...]) is similar to array_merge(), except that when the input arrays have the same string keys,
+the values will be merged into an array. Any array values will be merged recursively.
+array_chunk($arr,$i[,$b=false]) returns a multidimensional array that is formed by splitting $arr into chunks, each containing $i elements.
+If $b is true, the keys will be preserved
+
+array_slice($arr,$i1[,$i2[,$b=FALSE]]) returns an array which is a sequence of $i2 elements from $arr, starting from $i1. If $i1 is negative,
+the sequence will start that far from the end. If $i2 is negative, the sequence will stop that many elements from the end. If $i2 is omitted,
+the sequence will have everything from $i up until the end. If $b is true, the keys will be preserved.
+array_splice (&$arr1,$i1[,$i2=0[,$arr2]]) removes $i2 elements from $arr1, starting from $i1, and then inserts the elements of $arr2 into the
+position of removal. An array consisting of the extracted elements is returned. If $i1 is negative, the removal starts that far from the end.
+If $i2 is omitted, everything from $i1 to the end will be removed. If $i2 is negative, the end of the removed portion will be that many elements
+from the end.
+array_replace($arr1,$arr2[,$arr3...]) returns an array formed by replacing the values in $arr1 with values of the same keys from $arr2. If three
+or more arrays are passed, then the values of the later arrays will be used.
+array_replace_recursive ($arr1,$arr2[,$arr3...]) is similar to array_replace(...), except that the replacement will recurse into deeper arrays,
+when both values are arrays.

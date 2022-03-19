@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Formation 2</title>
+</head>
+<body><?php
+				$a1=['apple','banana','special'=>'pear'];
+				$a2=['cat','dog','special'=>'fish'];
+				print_r(array_values($a1)); echo "<br /><br />";
+				print_r(array_keys($a1)); echo "<br /><br />";
+				print_r(array_combine($a1, $a2)); echo "<br /><br />";
+				print_r(array_merge_recursive($a1, $a2)); echo "<br /><br />";
+				print_r(array_chunk(['a','b','c','d','e'], 2));
+			?>
+</body>
+</html>
