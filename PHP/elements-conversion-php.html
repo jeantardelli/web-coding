@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body><?php
+				function filter($m){
+					return ($m>'b');
+				}
+				function map($m1,$m2){
+					return ($m2.' '.$m1);
+				}
+				function walk(&$m1, $m2, $m3){
+					$m1 = "$m3 $m1";
+				}
+				$a=['a'=>'apple', 'b'=>'banana', 'c'=>'pear', 'd'=>'banana'];
+				$b=['sweet', 'nice', 'delicious', 'awesome'];
+				print_r(array_change_key_case($a, CASE_UPPER)); echo "<br /><br />";
+				print_r(array_flip($a)); echo "<br /><br />";
+				print_r(array_unique($a)); echo "<br /><br />";
+				print_r(array_filter($a,'filter')); echo "<br /><br />";
+				print_r(array_map('map', $a, $b)); echo "<br /><br />";
+				print_r(array_map(NULL, $a, $b)); echo "<br /><br />";
+				array_walk($a, 'walk', 'the');
+				print_r($a);
+			?>
+</body>
+</html>

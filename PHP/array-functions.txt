@@ -39,3 +39,44 @@ array_replace($arr1,$arr2[,$arr3...]) returns an array formed by replacing the v
 or more arrays are passed, then the values of the later arrays will be used.
 array_replace_recursive ($arr1,$arr2[,$arr3...]) is similar to array_replace(...), except that the replacement will recurse into deeper arrays,
 when both values are arrays.
+
+Elements Conversion
+
+array_change_key_case($arr[, $i=CASE_LOWER]) returns a copy of $arr with the keys uppercased or lowercased. $i can be CASE_LOWER or
+CASE_UPPER.
+array_flip ($arr) returns an array with the values of $arr as keys, and the keys of $arr as corresponding values. If a value has several
+occurrences, the latest key will be used as its value.
+array_unique ($arr [,$i= SORT_STRING]) returns a copy of $arr without all duplicate values. $i can be SORT_REGULAR, SORT_NUMERIC, SORT_STRING, or
+SORT_LOCALE_STRING.
+array_filter($arr[,$f($m)=""""]) returns a copy of $arr with the key-value pairs filtered out by the function $f. $m corresponds a value in $arr.
+Only if $f($m) returns true on a value, the value will be added to the returned array. Array keys are preserved. If $f is not supplied, all entries
+of $arr equal to FALSE will be removed.
+array_map($f($m1[,$m2...]), $arr1[,$arr2...]) returns an array that contains the resultant elements after applying $f to each elementin $arr1...
+The number of parameters that $f accepts should match the number of arrays passed. If $arr1 contains string keys, then the returned array will
+contain string keys if and only if exactly one array is passed. If $f is NULL, an array of arrays will be returned from the arrays passed.
+array_walk(&$arr, $f(&$m1,$m2[,$m3])[,$m4=NULL]) applies $f to each element in $arr, with $m1 and $m2 corresponding to the value and key
+respectively. $m4 is the optional data supplied to $f as the third parameter $m3. Only the values of $arr may be changed, with the reference symbol
+& added in front of $m1. This function returns TRUE on success.
+array_walk_recursive(&$arr, $f(&$m1,$m2[,$m3])[,$m4= NULL]) is similar to array_walk() except that the function will recurse into deeper arrays.
+
+Reduction
+
+array_sum($arr) returns the sum of the values in $arr.
+array_product($arr) returns the product of the values in $arr.
+array_reduce($arr, $f(&$m1,$m2)[,$m3=NULL]) returns a single value obtained by applying $f to the elements in $arr iteratively, with $m3 being the initial value.
+
+Symbols Table
+
+compact($m1[,$m2...]) returns an array containing all variables named in $m1... extract(&$arr[,$i=EXTR_OVERWRITE[,$s=NULL]]) imports variables from an array into the symbols
+table. $i can be EXTR_OVERWRITE, EXTR_SKIP, EXTR_PREFIX_SAME, EXTR_PREFIX_ALL, EXTR_PREFIX_INVALID, EXTR_IF_EXISTS, EXTR_PREFIX_IF_EXISTS, EXTR_REFS. $s is the
+prefix attached to a variable name.
+
+Interation and Selection
+
+array_push(&$arr,$m1[,$m2...]) adds $m1... onto the the end of $arr. It returns the new number of elements in $arr.
+array_pop(&$arr) removes and returns the last value of $arr. The array pointer will be reset.
+array_unshift(&$arr, $m1 [,$m2...]) adds $m1... onto the front of $arr. It returns the new number of elements in $arr. All numerical keys will be
+modified to start counting from zero.
+array_shift(&$arr) removes and returns the first value of $arr. The array pointer will be reset. All numerical keys will be modified to start counting from
+zero.
+array_rand($arr[,$i=1]) picks $i random keys from $arr. If more than one entries are picked, an array will be returned.

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reduction</title>
+</head>
+<body><?php
+				function minus($result, $item){
+					return ($result-$item);
+				}
+				$a=[1,2,3,4,5];
+				echo array_sum($a); echo "<br />";
+				echo array_product($a); echo "<br />";
+				echo array_reduce($a, 'minus', 100);
+			?>
+</body>
+</html>

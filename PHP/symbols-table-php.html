@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Symbols Table</title>
+</head>
+<body><?php
+				$v1=1; $v2=2; $v3=3; $v4=4; $v5=5; $v6=6;
+				print_r(compact('v1',['v2','v3',['v4','v5']],'v6'));
+				echo "<br />";
+
+				$a=["c"=>"lemon","orange","banana"];
+				extract($a, EXTR_PREFIX_INVALID, 'v');
+				echo "$c $v_0 $v_1 <br />";
+
+				$b=["v_0"=>"watermelon", "v_1" => "apple", "v_2"=> "pear"];
+				extract($b, EXTR_SKIP|EXTR_REFS); // skip if names collid; ref.
+				echo "$v_0 $v_1 $v_2 <br />";
+
+				$v_2="mango";
+				echo $b["v_2"];
+			?>
+</body>
+</html>
