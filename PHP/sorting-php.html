@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sorting</title>
+</head>
+<body><?php
+				function s($m1, $m2){
+					return strcmp($m1,$m2);
+				}
+				$a = ["c" =>"lemon", "a"=>"orange", "z"=>"banana", "e"=>"apple", "g"=>"watermelon"];
+				$b = $a; sort($b); print_r($b); echo "<br />";
+				$b = $a; usort($b,'s'); print_r($b); echo "<br />";
+				$b = $a; ksort($b); print_r($b); echo "<br />";
+				$b = $a; asort($b); print_r($b); echo "<br /><br />";
+
+				$a = ["img.gif", "img1.gif", "img11.gif", "img2.gif"];
+				$b = $a; sort($b); print_r($b); echo "<br />";
+				$b = $a; natsort($b); echo "<br /><br />";
+
+				$a = ["c"=>"Lemon", "a"=>"orange", "z"=>"Banana", "e"=>"apple", "g"=>"watermelon"];
+				$b = $a; sort($b); print_r($b); echo "<br />";
+				$b = $a; sort($b, SORT_STRING|SORT_FLAG_CASE);
+				print_r($b); echo "<br />";
+			?>
+</body>
+</html>

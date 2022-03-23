@@ -80,3 +80,64 @@ modified to start counting from zero.
 array_shift(&$arr) removes and returns the first value of $arr. The array pointer will be reset. All numerical keys will be modified to start counting from
 zero.
 array_rand($arr[,$i=1]) picks $i random keys from $arr. If more than one entries are picked, an array will be returned.
+current(&$arr) or pos(&$arr) returns the value of the element in $arr currently pointed to by the internal pointer.
+key(&$arr) returns the key of the element in $arr currently pointed to by the internal pointer.
+prev(&$arr) rewinds the internal array pointer one place backward and returns the value at that position in $arr. FALSE is returned if there are no more elements.
+next(&$arr) advances the internal array pointer one place forward and returns the value at that position in $arr. FALSE is returned if there are no more elements.
+each(&$arr) returns an array containing the current key-value pair and advances the array cursor.
+reset(&$arr) rewinds $arr’s internal pointer to the first element and returns itsvalue.
+end(&$arr) advances $arr’s internal pointer to the last element and returns its value.
+
+Difference and Intersection
+
+The difference functions are:
+
+array_diff($arr1,$arr2[,$arr3...])
+array_diff_ key($arr1,$arr2[,$arr3...])
+array_diff_ukey($arr1, $arr2 [,$arr3...],$cf($m1,$m2))
+array_diff_assoc($arr1,$arr2[,$arr3...])
+array_diff_uassoc($arr1, $arr2 [,$arr3...],$cf($m1,$m2))
+array_udiff($arr1, $arr2 [,$arr3...],$cf($m1,$m2))
+array_udiff_assoc($arr1, $arr2 [,$arr3...],$cf($m1,$m2))
+array_udiff_uassoc($arr1, $arr2 [,$arr3...],$cf($m1,$m2), $cf2($m3,$m4))
+
+array_diff() returns a copy of $arr1, removing entries with values repeated in the subsequent arrays.
+array_diff_key() is similar, but compares the keys instead.
+‘assoc’ requires the keys to be repeated too for an entry to be removed. ‘u’ requires a comparison function to be supplied.
+The comparison function $cf has to return an integer < 0 if the first argument is less than the second, 0 if the first argument
+equals the second, > 1 if the first argument is greater than the second.
+
+The intersection functions are:
+
+array_intersect($arr1,$arr2[,$arr3...])
+array_intersect_ key($arr1,$arr2[,$arr3...])
+array_intersect_ukey($arr1, $arr2 [,$arr3...], $cf($m1,$m2))
+array_intersect_assoc($arr1,$arr2[,$arr3...])
+array_intersect_uassoc($arr1, $arr2[,$arr3...], $cf($m1,$m2))
+array_uintersect($arr1, $arr2 [,$arr3...],$cf($m1,$m2))
+array_uintersect_assoc($arr1, $arr2[,$arr3...], $cf($m1,$m2))
+array_uintersect_uassoc($arr1, $arr2[,$arr3...], $cf($m1,$m2), $cf2($m3,$m4))
+
+While the difference functions remove repeated elements, these intersection functions return only the repeated elements.
+
+Sorting
+
+The sorting functions are:
+
+sort(&$arr[,$i=SORT_REGULAR])
+rsort(&$arr[,$i=SORT_REGULAR])
+usort(&$arr,$cf($m1,$m2))
+ksort(&$arr[,$i=SORT_REGULAR])
+krsort(&$arr[,$i=SORT_REGULAR])
+uksort(&$arr,$cf($m1,$m2))
+asort(&$arr[,$i=SORT_REGULAR])
+arsort(&$arr[,$i=SORT_REGULAR])
+uasort(&$arr,$cf($m1,$m2))
+natsort(&$arr)
+natcasesort(&$arr)
+
+‘k’ sorts the keys instead of the values. ‘a’ maintains the associations with keys. ‘r’ sorts the elements in reverse order.
+‘nat’ sorts the elements in natural order. ‘natcase’ performs a case-insensitive sort on the elements, in natural order.
+‘u’ requires acomparison function to be supplied. The comparison function $cf has to return an integer < 0 if the first argument
+is less than the second, 0 if the first argument equals the second, > 1 if the first argument is greater than the second. $i can be SORT_REGULAR,
+SORT_NUMERIC, SORT_STRING, SORT_FLAG_CASE, SORT_LOCALE_STRING, SORT_NATURAL. These functions return TRUE on success, FALSE on failure.

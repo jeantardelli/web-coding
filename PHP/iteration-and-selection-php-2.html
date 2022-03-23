@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Interaction and Selection</title>
+</head>
+<body><?php
+				$a=['a','b','c','test'=>'d','e','f'];
+				do{
+					echo "[".key($a)."=>".pos($a)."]";
+				} while (next($a));
+				reset($a); echo "<br />";
+				print_r(each($a)); echo "<br />";
+				print_r(each($a)); echo "<br />";
+				print_r(each($a)); echo "<br />";
+				echo prev($a).prev($a).prev($a);
+			?>
+</body>
+</html>
