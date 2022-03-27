@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Interval</title>
+</head>
+<body><?php
+				echo date_default_timezone_get()."<br />";
+				echo timezone_version_get()."<br />";
+				echo timezone_name_from_abbr("CET")."<br />";
+
+				$dtz = new DateTimeZone('Asia/Kunching');
+				$dt = new DateTime('now', $dtz);
+				echo $dt->format('r')."<br />";
+
+				// prints the timezone name, Asia/Kunching
+				echo $dtz->getName()."<br />";
+
+				// prints the timezone offset in seconds, 28800
+				echo $dtz->getOffset($dt)."<br />";
+
+				// prints an array of geographical information
+				print_r($dtz->getLocation()); echo "<br/>";
+
+				// prints all transitions of the timezone
+				print_r($dtz->getTransitions()); echo "<br />";
+
+				// prints an associative array containing
+				// dst, offset and the timezone name
+				print_r($dtz->listAbbreciations()); echo "<br />";
+
+				// prints a numerically indexed array with all time
+				print_r($dtz->listIdentifiers()); echo "<br />";
+		?>
+</body>
+</html>

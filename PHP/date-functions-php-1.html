@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Eg. creating and setting a date -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date Functions</title>
+</head>
+<body><?php
+				// Setting a new time with today's date
+				$dt = new DateTime('5 am');
+				$dt = new DateTime('5:30 pm');
+				$dt = new DateTime('5:30:30 pm');
+
+        // Setting a new date with midnight time
+				$dt = new DateTime('2000/12/25');
+				$dt = new DateTime('25.12.00');
+				$dt = new DateTime('25DEC00');
+				$dt = new DateTime('25-December 2000');
+				$dt = new DateTime('25-12-2000');
+				$dt = new DateTime('2000-12-25');
+				$dt = new DateTime('12/25/2000');
+				$dt = new DateTime('2000/12/25');
+
+        // Setting a new date and time together
+				$dt = new DateTime(); // current date and time
+				$dt = new DateTime('2000-12-25 18:30:30');
+				$dt = new DateTime('2000:12:25 18:30:30');
+				$dt = new DateTime('25/Dec/2000:18:30:30 -0700');
+
+        // Modification
+				$dt -> modify('2001/01/01');
+				$dt -> setDate(2000,12,25);
+				$dt -> setISODate(2000,15,5);    // 5th day of week 15
+				$dt -> setTime(18,30,30);
+				$dt -> setTimestamp(1234567890);
+				$dt = new DateTime();
+				echo $dt -> getTimestamp()."<br />";
+
+        // Procedural form (ALIAS)
+				$dt = date_create('2000/12/25');
+				date_modify($dt,'2001/01/01');
+				date_date_set($dt,2000,12,25);
+				date_isodate_set($dt,18,30,30);
+				date_timestamp_set($dt,1234567890);
+				echo date_timestamp_get($dt)."<br />";
+			?>
+</body>
+</html>

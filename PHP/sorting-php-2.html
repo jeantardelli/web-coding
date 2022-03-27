@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- For array_multisort(), $b is sorted according to the order by which $a is sorted.
+	When $a contains the same values, $b is sorted according to its own sorting order. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sorting 2</title>
+</head>
+<body><?php
+				$a =["c"=>"lemon","orange","banana","apple","watermelon"];
+				print_r(array_reverse($a)); echo "<br />";
+				shuffle($a); print_r($a); echo "<br /><br />";
+
+				$a = ["10", 11, 100, 100, 100, "a"];
+				$b = [1, 2, "2", 3, 6, "1"];
+				array_multisort($a, $b);
+				print_r($a); echo "<br />";
+				print_r($b); echo "<br /><br />";
+
+			?>
+</body>
+</html>

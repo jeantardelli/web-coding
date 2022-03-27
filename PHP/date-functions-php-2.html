@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date Functions 2</title>
+</head>
+<body><?php
+				$dt = DateTime::createFromFormat('j-M-Y', '15-Mar-2014');
+				$dt = date_create_from_format('j-M-Y', '15-Mar-2014');
+				echo $dt->format("d/m/y")."<br />";
+				echo $dt->format("jS F Y")."<br />";
+				echo $dt->format("r")."<br />";
+				echo date_format($dt,"e T P I Z")."<br />"; // procedural
+			?>
+</body>
+</html>

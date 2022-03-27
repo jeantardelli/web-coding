@@ -141,3 +141,8 @@ natcasesort(&$arr)
 ‘u’ requires acomparison function to be supplied. The comparison function $cf has to return an integer < 0 if the first argument
 is less than the second, 0 if the first argument equals the second, > 1 if the first argument is greater than the second. $i can be SORT_REGULAR,
 SORT_NUMERIC, SORT_STRING, SORT_FLAG_CASE, SORT_LOCALE_STRING, SORT_NATURAL. These functions return TRUE on success, FALSE on failure.
+
+shuffle($$arr) randomizes the order of the elements of $arr. It returns TRUE on success, FALSE on failure.
+array_reverse($arr[,$b]) returns an array with a reversed order of the elements. If $b is true, then the numeric keys are preserved.
+array_multisort(&$arr [,&$arg1=SORT_ASC[,&$arg2=SORT_REGULAR[,...]]]) can be used to sort several arrays at once. It returns TRUE on success, FALSE on failure.
+$arg can be another array, or sort options for the previous array argument: SORT_ASC, SORT_DESC, SORT_REGULAR, SORT_NUMERiC, SORT_STRING. Only string keys will be maintained.
