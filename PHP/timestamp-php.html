@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Timestamp</title>
+</head>
+<body><?php
+				echo time()."<br />";
+				echo microtime()."<br />";
+				echo microtime(true)."<br />";
+				echo gettimeofday(true)."<br />";
+				print_r(gettimeofday()); echo "<br /><br />";
+
+				echo mktime(23,59,59,12,30,2012)."<br />";
+				echo gmmktime(23,59,59,12,30,2012)."<br />";
+			?>
+</body>
+</html>

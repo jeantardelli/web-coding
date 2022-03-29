@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body><?
+				echo date('d-M-Y h:i:sa')."<br />";
+				echo gmdate('d-M-Y h:i:sa')."<br />";
+				echo idate('Y')."<br />"
+				print_r(getdate()); echo "<br />";
+				print_r(localtime()); echo "<br />";
+				print_r(localtime(time(),true)); echo "<br />";
+
+				echo strtotime('30-12-2012')."<br />";
+				echo strtotime('now')."<br />";
+				echo strtotime('yestarday')."<br />";
+				echo strtotime('+1 day')."<br />";
+				echo strtotime('+1 week')."<br />";
+				echo strtotime('+1 week 2 days 4 hours 2 seconds')."<br />";
+				echo strtotime('next Thursday')."<br />";
+				echo strtotime('last Monday')."<br />";
+				echo strtotime("2000-12-25 18:30:30")."<br />";
+				echo strtotime("2000:12:25 18:30:30")."<br />";
+			?>
+</body>
+</html>

@@ -146,3 +146,18 @@ shuffle($$arr) randomizes the order of the elements of $arr. It returns TRUE on 
 array_reverse($arr[,$b]) returns an array with a reversed order of the elements. If $b is true, then the numeric keys are preserved.
 array_multisort(&$arr [,&$arg1=SORT_ASC[,&$arg2=SORT_REGULAR[,...]]]) can be used to sort several arrays at once. It returns TRUE on success, FALSE on failure.
 $arg can be another array, or sort options for the previous array argument: SORT_ASC, SORT_DESC, SORT_REGULAR, SORT_NUMERiC, SORT_STRING. Only string keys will be maintained.
+
+Timestamp
+
+time() returns the current Unix timestamp, which is the number of seconds since 1 Jan 1970 Midnight GMT.
+microtime($b) returns the current Unix timestamp with microseconds. If $b is true, a float instead of a string is returned.
+gettimeofday($b) returns the current Unix timestamp. If $b is true, a float instead of an array is returned.
+mktime([$i1[,$i2[, $i3[, $i4[, $i5[, $i6]]]]]]) returns a Unix timestamp for the date and time. The parameters are respectively the hour, minute, second, month, dayand year.
+gmmktime(...) is similar to mktime(...) except that the passed parameters represent a GMT date.
+For the following functions in this paragraph, $ts refers to the timestamp integer. If omitted, it means the current timestamp.
+date($format[,$ts]) returns a string representing the datetime in the specified format.
+gmdate($format[,$ts]) is identical todate() except that the time returned is GMT.
+idate($format[,$ts]) returns an integer according to the given format string which is a single character.
+getdate([$ts]) returns an associative array containing the datetime information.
+localtime([$ts[,$b=false]]) returns an array containing information about the local time. If $b is true, an associative array will be returned.
+strtotime($s[,$ts]) returns a timestamp integer from the textual datetime specified by $s. $ts here signifies the relative timestamp.

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checking and Parsing</title>
+</head>
+<body><?php
+				var_dump(checkdate(2,29,2001)); echo "<br />";
+				var_dump(checkdate(12,29,2001)); echo "<br />";
+				print_r(date_parse('2000-12-25 18:30:30')); echo "<br />";
+				print_r(date_parse_from_format("j.n.Y H:iP", "6.1.2009 13:00+01:00"));
+			?>
+</body>
+</html>
