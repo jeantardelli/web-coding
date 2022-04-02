@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sun Motion</title>
+</head>
+<body><?php
+				date_default_timezone_set('Asia/Kuching');
+				$sun_info = date_sun_info(strtotime("2012-11-18"),
+				                          5.974, 116.069);
+				foreach ($sun_info as $key => $val) {
+				    echo "$key: ".date("H:i:s", $val)."<br />";
+				}
+				echo date("D M d Y"). ', sunrise time: '. date_sunrise(time(), SUNFUNCS_RET_STRING,
+				                                                       5.974, 116.069, 90, 8)."<br />";
+			  echo date("D M d Y"). ', sunrise time: '. date_sunset(time(), SUNFUNCS_RET_STRING,
+				                                                      5.974, 116.069, 90, 8)."<br />";
+		?>
+</body>
+</html>

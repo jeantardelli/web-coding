@@ -161,3 +161,12 @@ idate($format[,$ts]) returns an integer according to the given format string whi
 getdate([$ts]) returns an associative array containing the datetime information.
 localtime([$ts[,$b=false]]) returns an array containing information about the local time. If $b is true, an associative array will be returned.
 strtotime($s[,$ts]) returns a timestamp integer from the textual datetime specified by $s. $ts here signifies the relative timestamp.
+
+Sun Motion
+
+date_sun_info($ts, $f1, $f2) returns an array with information about sunset/sunrise and twilight beginning/ending. $f1 and $f2 represent the latitude and longitude respectively.
+$f1 defaults to North; pass in a negative value for South. $f2 defaults to East; pass in a negative value for West.
+date_sunrise($ts[,$i[,$f1[,$f2[,$f3[,$f4=0]]]]]) returns the sunrise time for a given day (specified as a timestamp $ts) and location. $i represents the return format, and it can be
+SUNFUNCS_RET_ STRING, SUNFUNCS_RET_DOUBLE, SUNFUNCS_RET_TIMESTAMP. $f1, $f2 and $f3 represent the latitude, longitude and zenith respectively. $f4 is the GMT offset in hours.
+date_sunset(...) is similar todate_sunrise(...) but returns the sunset timeinstead. The three functions in this paragraph return FALSE on failure.
+

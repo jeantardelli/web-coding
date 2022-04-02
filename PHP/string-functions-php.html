@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String Functions</title>
+</head>
+<body><?php
+				echo ord('A')."<br />";
+				echo chr(66)."<br />";
+				echo strrev('abcde')."<br />";
+				echo str_repeat('abc', 3)."<br />";
+				echo str_pad('abc',10,'+-', STR_PAD_BOTH)."<br />";
+				echo str_shuffle('abcdef')."<br/ >";
+				echo trim('  .-.-.-.-abc.-.-.-.-.  ', ".-  ")."<br /><br />";
+
+				echo wordwrap('I say it is quite fun to learn PHP. Do you agree?', 13,"<br />")."<br /><br />";;
+
+				echo ucwords(strtolower('hElLo WolRd!'))."<br />";
+				echo quotemeta('(can you hear me?)')."<br />";
+				echo addcslashes('Hello World', 'A..Z')."<br />";
+				echo addcslashes('Hello World', 'HWc..f')."<br />";
+				echo stripcslashes('\"\'\101 \x41 \\\ \n \r \t');
+				;
+			?>
+</body>
+</html>

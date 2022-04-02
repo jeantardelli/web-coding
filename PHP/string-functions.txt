@@ -1,0 +1,37 @@
+String Functions
+
+ASCII Code
+==========
+
+ASCII Codechr($i) returns a character specified by the ASCII code $i. ord($s) returns the ASCII value of the first character of $s.
+
+Reordering
+==========
+
+strrev($s) returns a string that is $s reversed.
+str_repeat($s,$i) returns a string that is $s repeated $i times.
+str_pad($s1,$i1[,$s2=” “,[$i2=STR_PAD_RIGHT]]) returns a string that is $s1 padded with $s2 to the length $i1. $i2 can be STR_PAD_RIGHT, STR_PAD_LEFT, or STR_PAD_BOTH.
+str_shuffle($s) returns a string that is $s randomly shuffled.
+
+Space Removal and Wrapping
+==========================
+
+rtrim($s1[,$s2]) or chop($s1[,$s2]) returns a copy of $s1 with whitespace stripped from the end. $s2 is the list containing the characters to be stripped.
+ltrim(...) is similar but strips whitespace from the beginning.
+trim(...) is similar but strips whitespace from both the beginning and end.
+wordwrap($s1[,$i=75[,$s2=”\n”[,$b=false]]]) returns a copy of $s1 wrapped to $i characters using $s2 as a string break character. If $b is true, a word at the end is broken
+so that the string is wrapped with a width of exactly $i characters.
+
+Conversion
+==========
+
+strtolower($s) returns a copy of $s with all alphabets converted to lowercase.
+strtoupper($s) returns a copy of $s with all alphabets converted to uppercase.
+lcfirst($s) returns a copy of $s with the first character lowercased, if that character is an alphabet.
+ucfirst($s) returns a copy of $s with the first character capitalized, if that character is an alphabet.
+ucwords($s) returns a copy of $s with the first character of each word capitalized, if that character is an alphabet.
+quotemeta($s) returns a copy of $s with backslashes added before . \ + * ? [ ^ ] ( $ ).
+addslashes($s) returns a copy of $s with backslashes added before single quotes (‘), doublequotes (“), backslashes (\) and NULs (the NULL byte).
+addcslashes($s1,$s2) returns a copy of $s1 with backslashes added before characters listed in $s2.
+stripslashes($s) returns a copy of $s with backslashes stripped off.
+stripcslashes($s) returns a copy of $s with backslashes stripped off. C-like \n,\r…… octal and hexadecimal representations are recognized.
