@@ -35,3 +35,43 @@ addslashes($s) returns a copy of $s with backslashes added before single quotes 
 addcslashes($s1,$s2) returns a copy of $s1 with backslashes added before characters listed in $s2.
 stripslashes($s) returns a copy of $s with backslashes stripped off.
 stripcslashes($s) returns a copy of $s with backslashes stripped off. C-like \n,\r…… octal and hexadecimal representations are recognized.
+
+Counting
+========
+
+strlen($s) returns an integer denoting the length of $s.
+str_word_count($s1[,$i=0[,$s2]]) returns the number of words in $s1. If $i is 1, an array containing all the words will be returned.
+  If $i is 2, an associative array will be returned, where the key is the character position and the value is the word itself.
+  $s2 is a list of additional characters which will be considered as ‘word’.
+substr_count($s1, $s2 [,$i1[,$i2]]) returns the no. of times $s2 is found in $s1. 
+  $i1 is the offset of where to start the counting.
+  $i2 is the maximum length after the specified offset to search for the substring.
+count_chars($s[,$i=0]) counts the no. of times every byte value (from 0 to 255) is found in $s.
+  If $i is 0, it gives an array with the byte-value as key and the frequency as value.
+  $i=1 is same as $i=0, but it only lists byte-values occurring at least once.
+  $i=2 is the same as $i=0 but it only lists byte-values occurring zero time.
+  $i=3 returns a string of all unique characters.
+  $i=4 returns a stringof all not used characters
+
+Group Searching
+===============
+
+strspn($s1,$s2[,$i1[,$i2]]) returns the position of the first character in $s1 that cannot be found in $s2.
+  $i1 is the position to start searching. If $i1 is negative, then the function will start searching at $i -th position from the end.
+  $i2 is the length of the segment to examine. If $i2 is negative, $s1 will be examined from $i1 up to $i2 characters from the end.
+strcspn(...) is similar but returns the position of the first character in $s1 that can be found in $s2.
+
+Splitting and Joining
+=====================
+
+chunk_split($s1[,$i=76[,$s2=”\r\n”]]) returns a copy of $s1 with $s2 inserted every $i characters.
+str_split($s[,$i=1]) returns an array of strings formed by splitting $s into segments of $i characters.
+str_getcsv($s1[,$s2=’,’[,$s3=’”’[,$s4=’\\’]]]) returns an array of strings formed by splitting $s1 at $s2.
+  $s3 is the enclosure character.
+  $s4 is the escape character.
+explode($s1,$s2[,$i]) returns an array of strings formed by splitting $s2 at $s1.
+  A positive $i will return a maximum of $i elements with the last element containing the rest of the string.
+  If $i is negative, all components except the last -$i are returned.
+implode([$s,]$arr) returns a string formed by joining the elements of $arr with $s.
+strtok([$s1,]$s2) splits $s1 into smaller string tokens, with each token delimited by any character from $s2.
+  $s1 is required on the first call to thefunction.

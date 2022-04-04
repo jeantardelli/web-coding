@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Splitting and Joining</title>
+</head>
+<body><?php
+				echo chunk_split("abcdefghi",3,"...")."<br />";
+				print_r(str_split("abcdefghi",3));
+				echo "<br />";
+				print_r(str_getcsv('"Sally,Irene",Osman'));
+				echo "<br />";
+				print_r(explode(",","Sally,Irene,Osman,Henry",3));
+				echo "<br />";
+				echo implode("---",["Sally","Irene","Osman"])."<br /><br />";
+
+				$s = "This is\tan example\nstring";
+				$t = strtok($s, " \n\t");
+				while ($s !== false) {
+				  echo "($t)";
+				  $t = strtok(" \n\t");
+				}
+			?>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Group Searching</title>
+</head>
+<body><?php
+				$s = 'I say it is quite fun to learn funny PHP at 3am.';
+				echo strlen($s)."<br />";
+				echo str_word_count($s)."<br />";
+				print_r(str_word_count($s, 1)); echo "<br />";
+				print_r(str_word_count($s, 2, '3')); echo "<br />";
+				echo substr_count($s, 'fun')."<br />";
+				echo count_chars($s,3)."<br />";
+				print_r(count_chars($s,1))."<br />";
+				echo strspn($s,'Is ')."<br />";
+				echo strcspn($s,'qt');
+			?>
+</body>
+</html>
