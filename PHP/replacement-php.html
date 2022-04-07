@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Replacement</title>
+</head>
+<body><?php
+				echo substr_replace("hello world", "*", 4)."<br />";
+				echo substr_replace("hello world", "*", -5, -2)."<br />";
+				echo substr_replace(["abc","def"], "*", 1, 1);
+				echo "<br />";
+				print_r(substr_replace(["abc","def"], "*", [1,2], 1));
+				echo "<br />";
+				print_r(substr_replace(["abc","def"], "*", 1, [1,2]));
+				echo "<br />";
+				print_r(substr_replace(["abc","def"], "*",  [0,1],[1,2]));
+				echo "<br /><br />";
+
+				echo str_replace("l", "*", "hello world", $i)."----$i<br />";
+				print_r(str_replace("a","*",["cat","car"])); echo "<br />";
+				echo str_replace(["ll","rl"], "*", "hello world")."<br />";
+				echo str_replace(["ll","rl"],["**","##"], "hello world")."<br /><br />";
+
+				echo strtr("abcdef","ace","XYZ")."<br />";
+				echo strtr("abcdef",["ab"=>"X","de"=>"MNO"])."<br />";
+			?>
+</body>
+</html>

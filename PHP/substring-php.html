@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Substring</title>
+</head>
+<body><?php
+				echo substr("abcdefgh",3)."<br />"; // defgh
+				echo substr("abcdefgh",-3,2)."<br />"; //fg
+				echo substr("abcdegfh",3,-2)."<br />"; // def
+				echo strstr("abcdefgh", "cde")."<br />"; // cdefgh
+				echo stristr("abcdefgh", "cDE", true)."<br />"; //ab
+				echo strrchr("abcabcdef", "aXX")."<br />"; // abcdef
+				echo strpbrk("abcdefgh","xyze")."<br />"; //efgh
+			?>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Counting</title>
+</head>
+<body><?php
+				echo strcmp("abc", "abd"); // -1
+				echo strcasecmp("abc", "ABC"); // 0
+				echo strncmp("abcd", "abce", 3); // 0
+				echo strnatcmp("image2","image11"); // -1
+				echo strcmp("imAgE11", "iMage2"); // 1
+				echo strcoll("abc", "abcd"); // -1
+				echo substr_compare("abcdef", "cDE", 2, 3, true); // 0
+			?>
+</body>
+</html>

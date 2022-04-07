@@ -75,3 +75,68 @@ explode($s1,$s2[,$i]) returns an array of strings formed by splitting $s2 at $s1
 implode([$s,]$arr) returns a string formed by joining the elements of $arr with $s.
 strtok([$s1,]$s2) splits $s1 into smaller string tokens, with each token delimited by any character from $s2.
   $s1 is required on the first call to thefunction.
+
+Comparison
+==========
+
+The string comparison functions are:
+  strcmp($s1,$s2)
+  strcasecmp($s1,$s2)
+  strncmp($s1,$s2,$i)
+  strncasecmp($s1,$s2,$i)
+  strnatcmp($s1,$s2)
+  strnatcasecmp($s1,$s2)
+  strcoll($s1,$s2)
+  substr_compare($s1,$s2,$i1[,$i2[,$b]])
+
+These functions return <0 if $s1 is less than $s2, >0 if $s1 is greater than $s2, and 0 if they are equal.
+  ‘case’ performs a case-insensitive comparison. ‘n’ compares the first $i characters from each string.
+  ‘nat’ performs a ‘natural order’ comparison.
+
+strcoll(...) is similar to strcmp(...) except that the comparison is not binary safe, and is locale based.
+substr_compare(...) compares $s1 from position $i1 with $s2 up to $i2 characters. If $i1 is negative, it starts counting from the end. If $b is true, the comparison is case-insensitive.
+
+Searching
+=========
+
+To find the position of $s2 in $s1, use:
+  strpos($s1,$s2[,$i=0]);
+  stripos($s1,$s2[,$i=0]);
+  strrpos($s1,$s2[,$i=0]);
+  strripos($s1,$s2[,$i=0]);
+
+FALSE is returned if $s2 cannot be found.
+  ‘i’ performs a case-insensitive search.
+  ‘r’ searches for the last instead of the first occurrence.
+
+$i denotes the starting position of the search. For strrpos(...) and strripos(...), if $i is negative, the search will start -$i characters from the end, searching backwards.
+
+Substring
+=========
+
+substr($s1,$i1[,$i2]) returns a substring of $s1 that is $i2 long, starting from position $i1.
+  If $i1 is negative, the returned string will start at the $i-th character from the end.
+  If $i2 is negative, that many characters will be omitted from the end.
+strstr($s1,$s2[,$b=false]) or strchr(...) returns a substring of $s1, starting from the first occurrence of $s2 to the end.
+  If $b is true, the function returns the part of $s1 before the first occurrence of $s2.
+  FALSE is returned if $s2 cannot be found.
+stristr(...) is similar to strstr(...) but is case-insensitive.
+strrchr($s1,$s2) returns a substring of $s1, starting at the last occurrence of $s2 until the end.
+  If $s2 contains more than one character, only the first is used.
+strpbrk($s1,$s2) returns a substring of $s1, starting from the first occurrence of any character from $s2, to the end.
+
+Replacement
+===========
+
+substr_replace($s1,$s2,$i1,[$i2]) returns a copy of $s1, with the portion of length $i2 starting from $i1 replaced by $s2.
+  If $s1 is an array of strings, the replacement will occur on each srting, in which case $s2, $i1 and $i2 can be scalar values or arrays.
+  If $i1 is negative, the replacement will begin at the $i1-th character from the end.
+  If $i2 is negative, it represents the number of characters from the end of $s1 at which to stop replacing.
+  If $i2 is omitted, it will default to strlen($s1).
+str_replace($s1,$s2,$s3[,&$i]) returns a copy of $s3 with all $s1 replaced by $s2.
+  $i stores the number of replacements performed.
+  If $s3 is an array, the search and replace is performed with every entry, and the return value is an array.
+  If $s1 and $s2 are arrays, then a value from each array will be taken to search and replace on $s3.
+str_ireplace(...) is the case-insensitive version of str_replace(...).
+strtr($s1,$s2,$s3) gives a copy of $s1 where all occurrences of each character in $s2 have been translated to the corresponding character in $s3.
+strtr($s1,$arr) does almost the same thing, but the second argument is an array in the form(‘from’=>’to’).

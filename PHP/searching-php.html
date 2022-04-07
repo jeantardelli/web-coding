@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- Notice the use of ===. FALSE and 0 are equivalent in calues but not in types. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Searching</title>
+</head>
+<body><?php
+				echo strpos("abcabc", "abc", 1);
+				echo stripos("abcabc", "ABC", 1);
+				echo strrpos("abcabc", "abc", -4);
+				echo strripos("abcabc", "ABC", -4);
+				echo "<br />";
+				if (strpos("aaa","bb")===FALSE) echo "string not found";
+			?>
+</body>
+</html>
