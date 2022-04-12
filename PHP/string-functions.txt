@@ -140,3 +140,31 @@ str_replace($s1,$s2,$s3[,&$i]) returns a copy of $s3 with all $s1 replaced by $s
 str_ireplace(...) is the case-insensitive version of str_replace(...).
 strtr($s1,$s2,$s3) gives a copy of $s1 where all occurrences of each character in $s2 have been translated to the corresponding character in $s3.
 strtr($s1,$arr) does almost the same thing, but the second argument is an array in the form(‘from’=>’to’).
+
+Display and Formatting
+======================
+
+To produce or output a string, use:
+
+  print ($s) or echo ($s)
+  printf($format[,$m1...])
+  sprintf($format[,$m1...])
+  fprintf($resource,$format[,$m1...])
+  vprintf($format,$arr)
+  vsprintf($format,$arr)
+  vfprintf($resource,$format,$arr)
+  sscanf($s1,$format[,&$m1...])
+
+printf(), fprint(), vprintf(), vfprintf() returns the length of the string written.
+  The prefix ‘s’ returns a string.
+  The prefix ’f’ prints the string on the resource provided.
+  The prefix ‘v’ uses an array, instead of a variable-length arguments list.
+
+sscanf() parses $s1 according to $format and stores the values in $m1...
+  If we pass only 2 arguments, it will return an array.
+  Otherwise the number of values assigned will be returned.
+
+number_format($f,$i=0) and number_format($f, $i=0, $s1=’.’, $s2=’,’) return a string that is $f formatted with grouped thousands.
+  $i sets the number of decimal points.
+  $s1 is the separator for the decimal point.
+  $s2 is the thousands separator.

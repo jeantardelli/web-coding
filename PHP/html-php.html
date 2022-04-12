@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML</title>
+</head>
+<body><?php
+				echo nl2br("Hello\nWorld\n");
+
+				$text = '<p>Test 123</p>
+				         <!-- Comment --><a href="#abc">Some text</a>';
+				echo strip_tags($text); echo "<br />\n";
+				echo strip_tags($text,"<p><a>"); echo "<br />\n";
+
+			  $s = "a=value&arr[]=foo+bar&arr[]=baz";
+			  parse_str($s);
+			  echo $a." ".$arr[0]." ".$arr[1]."<br />\n";
+
+			  parse_str($s, $output);
+			  echo $output['a']." ".$output['arr'][0]." ".$output['arr'][1];
+			?>
+</body>
+</html>

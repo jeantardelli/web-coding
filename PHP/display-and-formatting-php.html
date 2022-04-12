@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Display and Formatting</title>
+</head>
+<body><?php
+				printf("%d ducks and %d %s<br />", 20, 3, "alligators");
+				vprintf("%d ducks and %d %s<br />", [20, 3, "alligators"]);
+				printf("the number of %03d<br />", 7);
+				printf("the value of PI is %.3f<br />",3.13159265359);
+				printf("the hex 110 is %X<br />", 110);
+				printf("%+.3e%%<br />",6425.6892);
+				printf("%c<br />", 65);
+
+				sscanf("20 ducks and 3 alligators", "%d ducks and %d %s", $a, $b, $c);
+				echo "$a pigs and $b $c<br />";
+
+				list($m,$d,$y) = sscanf("February 02 2002", "%s %d $d");
+				echo "$d $m $y<br />";
+
+				echo number_format(1234567890.123456, 2, '|', '&nbsp');
+			?>
+</body>
+</html>
