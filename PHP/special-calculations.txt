@@ -1,0 +1,12 @@
+Special Calculations
+====================
+
+similar_text($s1,$s2[,&$f]) returns the similarity between two strings, ie. the number of matching characters.
+  If $f is passed, it stores the similarity in percent.
+
+levenshtein($s1,$s2[,$i1,$i2,$i3]) returns the Levenshtein distance between two strings, which is the minimal number of characters you have to replace, insert or delete to transform $s1 to $s2.
+  $i1, $i2 and $i3 define the cost of insertion, replacement and deletion respectively.
+
+soundex($s) returns the soundex key of $s as a string that is 4 characters long. Words pronounced similarly produce the same soundex key.
+
+metaphone($s[,$i]) returns the metaphone key of $s as a string that is $i characters long. Similar to soundex(), metaphone creates the same key for similarly sounding words.

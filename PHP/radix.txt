@@ -1,0 +1,8 @@
+Radix
+=====
+
+base_convert($s,$i1,$i2) returns a string containing a number that is the number in $sconverted from base $i1 to base $i2.
+
+bindec($s), octdec($s), and hexdec($s) convert to a decimal number from a binary, octal and hexadecimal number respectively.
+
+decbin($num), decoct($num), and dechex($num) return the binary, octal and hexadecimal representation strings of $num.

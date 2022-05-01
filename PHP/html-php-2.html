@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- The PHP code and the converted HTML document: -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML 2</title>
+</head>
+<body><?php
+				$e = htmlspecialchars('<p>"Hello World"</p>', ENT_QUOTES|ENT_HTML5);
+				echo "\n$e\n";
+
+				$s = htmlspecialchars_decode($e,ENT_QUOTES|ENT_HTML5);
+				echo "$s\n";
+
+				$e = htmlentities('I asked:"are you alright?"', ENT_QUOTES|ENT_HTML5);
+				echo "\n$e\n";
+
+				$s = html_entity_decode($e, ENT_QUOTES|ENT_HTML5);
+				echo "$s\n\n";
+
+				print_r(get_html_translation_table());
+			?>
+</body>
+</html>

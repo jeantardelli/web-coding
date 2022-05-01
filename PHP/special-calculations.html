@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Special Calculation</title>
+</head>
+<body><?php
+				echo similar_text("a cat", "cars", $f)." $f<br />";
+				echo levenshtein("a cat", "cars")."<br />";
+				echo soundex("Kathy")."<br />";
+				echo soundex("kittie")."<br />";
+				echo metaphone("programming")."<br />";
+				echo metaphone("programmer")."<br />";
+				echo metaphone("programmer",3)."<br />";
+			?>
+</body>
+</html>

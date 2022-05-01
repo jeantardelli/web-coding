@@ -3,6 +3,21 @@ HTML
 
 nl2br($s[,$b=true]) returns a copy of $s with ‘<br />’ inserted before all newlines.
   If $b is false, ‘<br>’ will be inserted instead.
+
 strip_tags($s1[,$s2]) returns a copy of $s1 with all NUL bytes, HTML and PHP tags stripped off.
   $s2 specifies the allowed tags.
+
 parse_str($s[,$arr]) parses $s as if it were the query string passed via a URL and set svariables in the current scope.
+
+htmlspecialchars($s[,$flags[,$encoding= ‘UTF-8’[,$b=true]]]) returns a copy of $s with the following characters translated to HTML entities: & “ ‘ < >.
+  If $b is false, the function will not convert existing entities.
+
+htmlspecialchars_decode($s, $flags) converts these HTML entities back to special characters.
+
+htmlentities(...) is identical to htmlspecialchars(), except that ALL characters which have HTML entity equivalents are translated into these entities.
+
+html_entity_decode($s [,$flags[,$encoding=’UTF-8’]]) returns a copy of $s with all HTML entities converted to their applicable characters. It is the opposite of htmlentities().
+
+get_html_translation_table([$table=HTML_SPECIALCHARS [,$flag[, $encoding=’UTF-8’]]]) returns an array, which is a translation table used by htmlspecialchars() and htmlentities().
+  The original characters are returned as keys while the entities are returned as values.
+  $table is either HTML_ENTITIES or HTML_SPECIALCHARS
