@@ -1,0 +1,39 @@
+Rational Numbers
+===============
+
+max($arr) or max($m1,$m2……) returns the highest of the parameter values. A non-numeric string is evaluated as 0.
+  If arrays are passed, the longest array is returned.
+
+min($arr) or min($m1,$m2……) is similar but returns the lowest of the parameter values.
+
+abs($num) returns the absolute value of $num.
+
+ceil($f) returns the next higher integer value.
+
+floor($f) returns the next lower integer value.
+
+round($f[,$i1=0[$,i2]]) rounds $f to the specified precision $i1 (number of digits after the decimal point).
+  $i2 can be PHP_ROUND_HALF_UP, PHP_ROUND_HALF_DOWN, PHP_ROUND_HALF_ODD, or PHP_ROUNd_HALF_EVEN
+
+fmod($f1,$f2) returns the floating point remainder of $f1 divided by $f2.
+
+sqrt($f) returns the square root of $f.
+
+pow($num1,$num2) returns the result of $num1 raised to the power of $num2.
+
+exp($f) returns the result of e raised to the power of $f.
+
+expm1($f) returns ‘exp($f)-1’, computed in a way that is accurate even when $f is near zero.
+
+log10($f) returns the base-10 logarithm of $f.
+
+log($f1[,$f2=M_E]) returns the natural algorithm of $f1.
+  If$f2 is specified, the function returns log $f2$f1, ie using $f2 as the base of the logarithm.
+
+log1p($f) returns log(1+$f), computed in a way that is accurate even when $f is near zero.
+
+is_finite($f) returns true if $f is finite, false otherwise.
+
+is_infinite($f) returns true if $f is infinite, false otherwise.
+
+is_nan($f) returns true if $f is not a number, false otherwise.

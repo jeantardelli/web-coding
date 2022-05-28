@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Randomization</title>
+</head>
+<body><?php
+				echo getrandmax()."<br />";
+				echo mt_getrandmax()."<br />";
+				echo rand()."<br />"; // already seeded randomly
+				echo mt_rand(-100,2)."<br />"; // already seeded randomly
+				echo lcg_value()."<br />";
+			?>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Randomization
+=============
+
+rand([$i1,$i2]) generates a random integer between 0 and getrandmax(), or between $i1 and $i2 if they are supplied.
+
+srand($i) seeds the random number generator for rand().
+
+mt_rand ([$i1,$i2]) generates a random integer between 0 and mt_getrandmax(), or between $i1 and $i2 if they are supplied.
+  Using the Mersenne Twister, mt_rand() is four times faster than rand().
+
+mt_srand([$i]) seeds the random number generator for mt_rand().
+
+lcg_value() returns a random float between 0 and 1, using the combined linear congruential generator.

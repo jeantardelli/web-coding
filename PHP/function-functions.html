@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function Functions</title>
+</head>
+<body><?php
+				class P {
+				  const NAME = 'P';
+				  public static function test() {
+				    $args = func_get_args();
+				    echo static::NAME, " ".join(',',$args)." <br />";
+				  }
+				}
+
+				class C extends P {
+				  const NAME= 'C';
+				  public static function test() {
+				    echo self::NAME, "<br />";
+				    forward_static_call(array('P','test'),'AB','CD');
+				    forward_static_call('test','OP','QR');
+				    forward_static_call('test',['OP','QR']);
+				  }
+				}
+ 
+				function shout($a,$b){
+				  echo $a.$b."!<br/>";
+				}
+
+				call_user_func('shout','Hello','World');
+				call_user_func_array('shout',['Hello','World']);
+
+				C::test('foo');
+				function test() {
+				  $args = func_get_args();
+				  echo "test".join(',',$args)."<br />";
+			 }	
+			?>
+</body>
+</html>

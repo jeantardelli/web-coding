@@ -1,0 +1,16 @@
+Function Functions
+==================
+
+Invocation
+
+call_user_func($s[,$m……]) calls the function $s and passes the remaining parameters as argumentsto the function $s.
+  It returns the return value of the callback, or FALSE on error.
+
+call_user_func_array($s,$arr) is similar to call_user_func() except that the arguments are supplied as an array.
+
+forward_ static_call($s[,$m……]) calls a user-defined method $s, with the following arguments.
+  This function uses late static bindinig and must be called within a method.
+  $s can be a string with a function name, or an array with a class name and a method name.
+  This function returns the result of calling $s, or FALSE on error.
+
+forward_static_ call_array($s,$arr) is similar to forward_static_ call() except that the arguments are supplied as an array.
