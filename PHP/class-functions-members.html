@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Class Functions - Members</title>
+</head>
+<body><?php
+				class P {
+				  function shout() {
+				   echo get_called_class()."<br />";
+				  }
+				}
+
+				class C extends P {
+				  const x=10;
+				  private $a=1;
+				  public $b=2;
+				  static public $c=3;
+				}
+
+				class_alias('C','D');
+				$o = new D;
+				$o->shout();
+				$arr = get_object_vars($o); print_r($arr); echo "<br />";
+				$arr = get_class_vars('D'); print_r($arr); echo "<br />";
+				$arr = get_class_methods('D'); print_r($arr); echo "<br />";
+				$arr = get_class_methods($o); print_r($arr); echo "<br />";
+			?>
+</body>
+</html>

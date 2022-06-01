@@ -1,0 +1,7 @@
+Registration
+============
+
+create_function($s1,$s2) creates an anonymous function and returns a unique name for it.
+  $s1 is the arguments string while $s2 contains the function code.
+
+register_shutdown_function($s[,$m……]) registers a callback function $s to be executed after the script execution finishes or exit() is called.

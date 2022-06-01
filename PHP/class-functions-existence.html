@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Class Functions - Existence</title>
+</head>
+<body><?php
+				class P {public $a=0;}
+				class C extends P {private $b=0;}
+
+				$o = new C;
+				var_dump(class_exists('C'));
+				var_dump(property_exists($o,'b'));
+				var_dump(property_exists('C','a'));
+				echo "<br />";
+				echo get_class($o)."<br />";
+				echo is_a($o,'P')."<br />";
+				echo is_subclass_of($o,'P')."<br />";
+				echo get_parent_class($o)."<br />";
+				echo get_parent_class('C')."<br />";
+				print_r(get_declared_interfaces());
+			?>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Filter Functions - Synopsis</title>
+</head>
+<body><?php
+				var_dump(filter_var('yes', FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE));
+				echo "<br />";
+				var_dump(filter_var('hi', FILTER_VALIDATE_BOOLEAN, ['flags' => FILTER_NULL_ON_FAILURE]));
+				echo "<br />";
+				var_dump(filter_var('0654', FILTER_VALIDATE_INT, ['options' => ['default' => 3, // if the filter fails
+				                                                                'min_range' => 0],
+																													'flags' => FILTER_FLAG_ALLOW_OCTAL]));
+			  echo "<br />";
+				var_dump(filter_var('http://www.example.com/test/test.php?username=hello&password=world',
+				                    FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED|FILTER_FLAG_QUERY_REQUIRED));
+			  echo "<br />";
+				var_dump(filter_var('(testing@example.com)', FILTER_SANITIZE_EMAIL));
+				echo "<br />";
+				function foo($value){return "$value (verified)";}
+				var_dump(filter_var('William, Thomas Lee', FILTER_CALLBACK, ['options' => 'foo']));
+			?>
+</body>
+</html>

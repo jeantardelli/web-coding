@@ -1,0 +1,46 @@
+Class Functions
+===============
+
+## Existence
+
+class_exists($s) returns true if the class $s has been defined.
+
+interface_exists($s) returns true if the interface $s has been defined.
+
+trait_exists ($s) returns true if the trait $s has been defined.
+
+method_exists($m,$s) returns true if the method $s has been defined.
+  $m is an object instance or the class name.
+
+property_exists($m,$s) returns true if the property $s has been defined.
+  $m is an object instance or the class name.
+
+get_declared_classes() returns an array with the names of the defined classes.
+
+get_declared_interfaces() returns an array with the names of the declared interfaces.
+
+get_declared_traits() returns an array of all declared traits.
+
+get_class($o) returns the class name of $o as a string.
+
+is_a($o,$s[,$b=FALSE]) returns true if $o belongs to the class $s or has this class as its ancestor.
+  If $b is false, a string class name for $o is not allowed.
+
+is_subclass_of($m,$s[,$b=TRUE])returns true if a class or object $m has the class $s as its ancestor.
+  If $b is false, a string class name for $o is not allowed.
+
+get_parent_class($m) returns the parent class name for the object or class $m.
+
+## Members
+
+class_alias($s1,$s2) creates an alias $s2 for the class $s1.
+
+get_called_class() returns the name of the class the method is called in.
+
+get_object_vars($o) returns an associative array of the non-static properties of the object $o.
+
+get_class_vars($s) returns an associative array of the declared properties of the class $s.
+  The properties are visible from the current scope.
+
+get_class_ methods($m) returns an array of the names of the methods in the class $m.
+  $m is the class name or an object instance.

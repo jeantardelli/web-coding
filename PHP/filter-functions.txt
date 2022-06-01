@@ -1,0 +1,10 @@
+Filter Functions
+================
+
+## Synopsis
+
+filter_var($m[,$filter[,$options]]) filters a variable with a specified filter.
+  It returns the filtered data, or FALSE if the filter fails.
+
+filter_var_array($arr[,$definition]) filters an array of data.
+  It returns an array containing the filtered variables, which have a value of FALSE on failure.

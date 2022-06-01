@@ -1,0 +1,8 @@
+Checking
+========
+
+function_exists($s) returns true if the given function $s has been defined.
+  It checks both built-ina nd user-defined functions.
+
+get_defined_functions() returns a multidimensional array containing all functions, both built-in and user-defined.
+  The internal functions will be accessible via $arr[‘internal] and the user defined ones via $arr[‘user’].

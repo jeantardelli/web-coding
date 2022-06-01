@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registration</title>
+</head>
+<body><?php
+				$f = create_function('$a,$b', 'echo $a.$b;');
+				$f('Hello', ' World');
+
+				function shout($s){echo "$s!";}
+				function laugh($s){echo "$s!";}
+				register_shutdown_function('shout','Bye World');
+				register_shutdown_function('laugh','Haha');
+			?>
+</body>
+</html>

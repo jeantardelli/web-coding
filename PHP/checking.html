@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checking</title>
+</head>
+<body><?php
+				function shout(){
+				  echo "Hello World";
+				}
+				var_export(function_exists('shout'));
+				$arr = get_defined_functions();
+				print_r($arr);
+			?>
+</body>
+</html>
