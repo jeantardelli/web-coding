@@ -8,3 +8,24 @@ filter_var($m[,$filter[,$options]]) filters a variable with a specified filter.
 
 filter_var_array($arr[,$definition]) filters an array of data.
   It returns an array containing the filtered variables, which have a value of FALSE on failure.
+
+## Checking Filters
+
+filter_list() returns an array of the names of all supported filters.
+
+filter_id($s) returns the filter ID belonging to a filter named $s.
+
+## External Data
+
+To filter external variables passed to the script, use:
+  filter_input($type, $s[,$filter[,$options]])
+  filter_input_array($type, $definition)
+  filter_has_var($type, $s)
+
+  $type can be INPUT_GET, INPUT_POST, INPUT_COOKIE, INPUT_SERVER or INPUT_ENV.
+
+filter_input() is similar to filter_var() except that the name of the external variable is passed as a string.
+
+filter_input_array is similar to filter_var_array() except that the type of the external variables is passed.
+
+filter_has_var() checks if the variable of aspecified type exists.

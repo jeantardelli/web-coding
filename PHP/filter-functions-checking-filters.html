@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checking Filters</title>
+</head>
+<body><?php
+				print_r(filter_list());
+				echo "<br /><br />";
+				$f = filter_id("validate_email");
+				var_dump(filter_var("hello@yahoo.com", $f));
+			?>
+</body>
+</html>

@@ -20,6 +20,29 @@
 				echo "<br />";
 				function foo($value){return "$value (verified)";}
 				var_dump(filter_var('William, Thomas Lee', FILTER_CALLBACK, ['options' => 'foo']));
+
+				$data = [
+				    'test_id'    => 'link<meta>',
+						'number'     => '6',
+						'version'    => '4.3.31',
+						'testscalar' => ['1','12','30','82'],
+						'testarray'  => '2'
+						];
+
+			  $args = [
+				   'test_id'      => FILTER_SANITIZE_ENCODED,
+					 'number'       => ['filter'  => FILTER_VALIDATE_INT,
+					                    'flags'   => FILTER_FORCE_ARRAY,
+														  'options' => ['min_range' => 1,
+														                'max_range' => 100]],
+					 'version'      => FILTER_SANITIZE_ENCODED,
+					 'doesnotexist' => FILTER_VALIDATE_INT,
+					 'testscalar'   => ['filter' => FILTER_VALIDATE_INT,
+					                    'flags'  => FILTER_REQUIRE_SCALAR],
+					 'testarray'    => ['filter' => FILTER_VALIDATE_INT,
+					                    'flags'  => FILTER_FORCE_ARRAY]];
+
+		    var_dump(filter_var_array($data, $args));
 			?>
 </body>
 </html>

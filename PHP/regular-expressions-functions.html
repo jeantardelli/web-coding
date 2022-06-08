@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body><?php
+				// filtering an array with preg_grep()
+				$arr = ['abc','aab','acd','ade'];
+				print_r(preg_grep('/ab/',$arr)); echo "<br />";
+				print(preg_grep('/ab/',$arr, PREG_GREP_INVERT));
+				echo "<br />";
+
+				// using other delimiters and the case-insentitive modifier i
+				print_r(preg_grep('/ab/i',$arr)); echo "<br />";
+				print_r(preg_grep('|Ab|i',$arr)); echo "<br />";
+				print_r(preg_grep('+aB+i',$arr)); echo "<br />";
+				print_r(preg_grep('?AB?i',$arr)); echo "<br />";
+				print_r(preg_grep('{ab}i',$arr)); echo "<br />";
+
+				// using preg_quote()
+				$word = "*very*";
+				echo preg_quote($word)."<br />";
+				print_r(preg_grep('/'.preg_quote($word).'/',
+				        ['PHP is *very* fun'])); echo "<br />";
+
+				// accessing preg_last_error()
+				switch (preg_last_error()){
+				  case PREG_NO_ERROR:
+				    echo "PREG_NO_ERROR";
+				  break; case PREG_INTERNAL_ERROR:
+				    echo "PREG_INTERNAL_ERROR";
+				  break; case PREG_BACKTRACK_LIMIT_ERROR:
+				    echo "PREG_BACKTRACK_LIMIT_ERROR";
+				  break; case PREG_RECURSION_LIMIT_ERROR:
+				    echo "PREG_RECURSION_LIMIT_ERROR";
+				  breack; case PREG_BAD_UTF8_ERROR:
+				    echo "PREG_BAD_UTF8_ERROR";
+				  breack; case PREG_BAD_UTF8_OFFSET_ERROR:
+				    echo "PREAG_BAD_UTF8_OFFSET_ERROR";
+				}
+			?>
+</body>
+</html>

@@ -1,0 +1,20 @@
+Regular Expression Functions
+============================
+
+## Basics
+
+preg_quote($s1[,$s2]) returns a copy of $s1 with a backslash \ added in front of every character that is part of the regular expression syntax.
+  The specialcharacters are .\+*?[]^$(){}=!<>|:-.
+  If the delimiter $s2 is specified, it will also be escaped.
+
+preg_grep($s,$arr[,$i]) returns an array with entries that match the pattern $s.
+  If $i is set to PREG_GREP_INVERT, the function returns elements that do not match the pattern.
+
+preg_last_error() returns the error code of the last regex execution.
+  The return value can be:
+    PREG_NO_ERROR
+    PREG_INTERNAL_ERROR
+    PREG_BACKTRACK_LIMIT_ERROR
+    PREG_RECURSION_LIMIT_ERROR
+    PREG_BAD_UTF8_ERROR
+    PREG_BAD_UTF8_OFFSET_ERROR
