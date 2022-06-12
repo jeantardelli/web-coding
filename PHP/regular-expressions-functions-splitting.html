@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Regular Expressions - Splitting</title>
+</head>
+<body><?php
+				$s = 'XXabYYacadZZ';
+				print_r(preg_split('/a./', $s));
+				echo "<br />";
+				print_r(preg_split('/a./', $s, 2));
+				echo "<br />";
+				print_r(preg_split('/a./', $s, 0, PREG_SPLIT_NO_EMPTY));
+				echo "<br />";
+				print_r(preg_split('/a.(..)/', $s, 0, PREG_SPLIT_NO_EMPTY));
+				echo "<br />";
+				print_r(preg_split('/a./', $s, 0, PREG_SPLIT_OFFSET_CAPTURE));
+				echo "<br />";
+			?>
+</body>
+</html>

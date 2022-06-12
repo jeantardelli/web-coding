@@ -18,3 +18,34 @@ preg_last_error() returns the error code of the last regex execution.
     PREG_RECURSION_LIMIT_ERROR
     PREG_BAD_UTF8_ERROR
     PREG_BAD_UTF8_OFFSET_ERROR
+
+## Splitting
+
+preg_split($s1,$s2[,$i1=-1,[$i2]]) splits $s2 into an array of strings, using the regular expression $s1 as the separator.
+  If $i1 is specified, up to $i1 substrings are returned, with the rest of the string being placed in the last substring. $i1=-1, 0 or NULL means no limit.
+  If $i2 is set to PREG_SPLIT_NO_EMPTY, only non-empty pieces will be returned.
+  If $2 is set to PREG_SPLIT_DELIM_CAPTURE, parenthesized expression in the pattern will be captured as well.
+  If $i2 is set to PREG_SPLIT_ OFFSET_CAPTURE, the string offset too will be returned for each element
+
+## Matching
+
+preg_match($s1,$s2[,&$arr[,$i1[,$i2]]]) returns 1 if the there is a match for the regular expression $s1 in $s2.
+  $arr[0] contains the substring that matches the full pattern, $arr[1] contains the substring that matches the first parenthesized subpattern, and so on.
+  If $i1 is set to PREG_OFFSET_CAPTURE, the string offset too will be returned.
+  $i2 specifies the position from which to start the search.
+
+preg_match_all($s1,$s2[,&$arr[,$i1=PREG_PATTERN_ORDER[,$i2]]]) is similar to preg_match() except that all matches are stored in $arr.
+  It returns the number of full pattern matches.
+  $i1=PREG_SET_ORDER orders the results so that $arr[0] is an array of the first set of matches, $arr[1] is an array of the second set of matches, and so on.
+
+## Replacement
+
+preg_replace($s1,$s2,$s3[,$i1=-1[,&$i2]]) searches $s3 for matches to the pattern $s1 and replaces them with $s2.
+  $s1, $s2 and $s3 can be strings or arrays of strings.
+  The replacement $s2 may contain references of the form \N or $N, which replaces the text by the n’th parathesized pattern. \0 or $0 refers to the text matched by the whole pattern.
+  $i1 sets the maximum possible replacements. The default is -1 (no limit).
+  If specified, $i2 will be filled with the number of replacements done.
+
+preg_replace_callback(s1,$f($arr),$s2[,$i1=-1[,&$i2]]) is similar to preg_replace() except that instead of the replacement string, a callback function should be specified.
+
+preg_filter($s1,$s2,$s3[,$i1=-1[,&$i2]]) is similar to preg_replace() except that it only returns the subjects where there is a match.

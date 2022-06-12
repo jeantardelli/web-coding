@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Regular Expression - Replacements</title>
+</head>
+<body><?php
+        function next_year($matches){
+				  return $matches[1].($matches[2]+1);
+				}
+
+				echo preg_replace('/(\w+) (\d+), (\d+)/i', '($2 $1 ${3})', 'January 20, 2000')."<br />";
+				echo preg_replace(['/is/','/fun/','/learn/','/\s+/'], ['is not','easy','master', ' '],'PHP is fun to     learn')."<br />";
+				echo preg_replace(['/is/','/fun/','/learn/'], '***', 'PHP is fun to learn')."<br />";
+
+				echo preg_replace_callback("|(\d{2}/\d{2}/)(\d{4})|", "next_year", "The event will be held on 29/03/2003.");
+
+				$subject = array('1', 'a', '2', 'b', '3', 'A', 'B', '4');
+				$pattern = array('/\d/','/[a-z]/','/[1a]/');
+				$replace = array('A:$0', 'B:$0', 'C:$0');
+				echo "<br />";
+				print_r(preg_filter($pattern, $replace, $subject));
+				echo "<br />";
+				print_r(preg_replace($pattern, $replace, $subject));
+			?>
+</body>
+</html>

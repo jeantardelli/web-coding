@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Regular Expressions - Matching</title>
+</head>
+<body><?php
+				$s = '--abcXXYY--abcMMNN--';
+				preg_match('/abc(..)(..)/', $s, $arr);
+				print_r($arr); echo "<br />";
+				preg_match('/abc(..)(..)/', $s, $arr, PREG_OFFSET_CAPTURE);
+				print_r($arr); echo "<br /><br />";
+
+				preg_match_all('/abc(..)(..)/', $s, $arr);
+				print_r($arr); echo "<br />";
+				preg_match_all('/abc(..)(..)/', $s, $arr, PREG_SET_ORDER);
+				print_r($arr); echo "<br />";
+				preg_match_all('/abc(..)(..)/', $s, $arr, PREG_SET_ORDER | PREG_OFFSET_CAPTURE);
+				print_r($arr); echo "<br />";
+				?>	
+</body>
+</html>
