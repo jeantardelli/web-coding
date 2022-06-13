@@ -1,0 +1,63 @@
+Error Functions
+===============
+
+## Backtrace
+
+debug_backtrace([$i1[,$i2=0]]) returns an associative array containing the backtrace.
+  $i1 can be DEBUG_BACKTRACE_PROVIDE_OBJECT or DEBUG_BACKTRACE_IGNORE_ARGS.
+  $i2 limits the number of stack frames returned. By default ($i2=0) it returns all stack frames.
+
+debug_print_backtrace([$i1[,$i2]]) prints the backtrace.
+  $i1 can be DEBUG_BACKTRACE_IGNORE_ARGS.
+  $i2 limits thenumber of stack frames used. By default ($i2=0) it prints all stack frames.
+
+error_get_last() returns an associative array containing information about the last error, or NULL if there has not been any error.
+
+
+## Logging and Reporting
+
+error_log($s1[,$i=0[,$s2[,$s3]]]) sends an error message $s1 somewhere.
+  It returns TRUE on success and FALSE on failure.
+    $i can be:
+
+    0 sends $s1 to PHP’s system logger
+    1 sends $s1 as an email to the address in $s using the extra headers $s
+    2 no longer an option
+    3 appends $s1 to the file $s2
+    4 sends $s1 to the SAPI logging handler
+
+error_reporting([$i]) sets the error_reporting directive at runtime. It returns the old error_reporting level.
+  $i can be:
+
+  constant of error level        value
+  E_ERROR                           1
+  E_WARNING                         2
+  E_PARSE                           4
+  E_NOTICE                          8
+  E_CORE_ERROR                     16
+  E_CORE_WARNING                   32
+  E_COMPILE_ERROR                  64
+  E_COMPILE_WARNING               128
+  E_USER_ERROR                    256
+  E_USER_WARNING                  512
+  E_USER_NOTICE                  1024
+  E_STRICT                       2048
+  E_RECOVERABLE_ERROR            4096
+  E_DEPRECATED                   8192
+  E_USER_DEPRECATED             16384
+  E_ALL                         32767
+
+## Error Handler
+
+set_error_handler($f($i1,$s1[,$s2[,$i2[,$arr]]]) [,$i3=E_ALL|E_STRICT]) sets a user function $f()to handle errors.
+  $i1 contains the level of the error raised.
+  $s1 contains the error message.
+  $s2 contains the filename.
+  $i2 contains the line number.
+  $arr contains all variables in the scope.
+  If $f() returns FALSE then the normal error handler continues.
+  $i3 dictates what error levels trigger the error handler $f().
+
+restore_error_handler() reverts to the previous error handler function, which can be a built-in or a user-defined function.
+
+Similarly, restore_exception_handler() reverts to the previous exception handler, after changing the exception handler using set_exception_handler()

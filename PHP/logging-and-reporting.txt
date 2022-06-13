@@ -1,0 +1,33 @@
+Logging and Reporting
+=====================
+
+error_log($s1[,$i=0[,$s2[,$s3]]]) sends an error message $s1 somewhere.
+  It returns TRUE on success and FALSE on failure.
+    $i can be:
+
+    0 sends $s1 to PHP’s system logger
+    1 sends $s1 as an email to the address in $s using the extra headers $s
+    2 no longer an option
+    3 appends $s1 to the file $s2
+    4 sends $s1 to the SAPI logging handler
+
+error_reporting([$i]) sets the error_reporting directive at runtime. It returns the old error_reporting level.
+  $i can be:
+
+  constant of error level        value
+  E_ERROR                           1
+  E_WARNING                         2
+  E_PARSE                           4
+  E_NOTICE                          8
+  E_CORE_ERROR                     16
+  E_CORE_WARNING                   32
+  E_COMPILE_ERROR                  64
+  E_COMPILE_WARNING               128
+  E_USER_ERROR                    256
+  E_USER_WARNING                  512
+  E_USER_NOTICE                  1024
+  E_STRICT                       2048
+  E_RECOVERABLE_ERROR            4096
+  E_DEPRECATED                   8192
+  E_USER_DEPRECATED             16384
+  E_ALL                         32767

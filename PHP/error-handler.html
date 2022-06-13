@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Error Handler</title>
+</head>
+<body><?php
+				function eh($errno,$errmsg,$file,$line,$var){
+				  echo "Error level $errno<br />";
+				  echo "$errmsg<br />";
+				  echo "$file<br />";
+				  echo "Line $line<br />";
+				  print_r($var);
+				}
+			  function eh2(){
+				  echo "Error";
+				}
+				set_error_handler('eh');
+				set_error_handler('eh2');
+				restore_error_handler();
+				echo $a;
+			?>
+</body>
+</html>
