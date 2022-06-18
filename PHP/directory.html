@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>File System Functions - Directory</title>
+</head>
+<body><?php
+				mkdir("testing");
+				rename("testing","testing2");
+				var_dump(is_dir("testing2")); echo "<br />";
+				print_r(scandir("./testing2/..")); // back to the current dir
+				chdir("testing2");
+				echo getcwd();
+				rename("../a.html","b.html");
+				rmdir("../testing2");
+
+				echo "<br /><br />";
+				r = opendir(".");
+				while (false !== ($entry = readdir($r)))
+				    echo "$entry"."<br />";
+				closedir($r);
+
+				$d=dir(".");
+				echo $d->path."<br />";
+				echo $d->read()."<br />";
+				echo $d->read()."<br />";
+				echo $d->read()."<br />";
+				$d->rewind();
+				echo $d->read()."<br />";
+				$d->close();
+			?>
+</body>
+</html>

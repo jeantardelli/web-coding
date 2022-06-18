@@ -61,3 +61,8 @@ set_error_handler($f($i1,$s1[,$s2[,$i2[,$arr]]]) [,$i3=E_ALL|E_STRICT]) sets a u
 restore_error_handler() reverts to the previous error handler function, which can be a built-in or a user-defined function.
 
 Similarly, restore_exception_handler() reverts to the previous exception handler, after changing the exception handler using set_exception_handler()
+
+## Error Generatino
+
+trigger_error($s[,$i=E_USER_NOTICE]) or user_error(...) generates a user-level error/warning/notice.
+  $i can be E_USER_NOTICE, E_USER_WARNING, E_USER_ERROR.

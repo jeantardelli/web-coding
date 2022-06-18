@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Directory</title>
+</head>
+<body><?php
+				echo basename("/abc/def/ghi","i")."<br />";
+				echo dirname("xampp/external")."<br />";
+				print_r(pathinfo("xampp/external/cds.php")); echo "<br />";
+				echo realpath(".")."<br />";
+				echo realpath_cache_sizE()."<br />";
+				echo disk_free_space(".")."<br />";
+				echo disk_total_space(".")."<br />";
+			?>
+</body>
+</html>

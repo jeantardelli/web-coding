@@ -1,0 +1,63 @@
+File System Functions
+=====================
+
+## Directory
+
+is_dir($s) returns true if $s is a directory.
+
+getcwd() returns the current working directory as a string.
+
+chdir($s) changes the current directory to $s and returns true on success.
+
+scandir($s[,$i=SCANDIR_SORT_ASCENDING]) returns an array of files and directories from the directory $s, or false on failure.
+  $i can be SCANDIR_SORT_ASCENDING, SCANDIR_SORT_DESCEDING, or SCANDIR_SORT_NONE.
+
+mkdir($s[,$i=0777[,$b=false]]) creates the directory $s with an access code (see chmod()) of $i, and returns true on success.
+  If $b is set to true, then nested directories can be create
+
+rename($s1,$s2) renames a file or directory $s1 to $s2, moving it between directories if necessary, and returns true on success.
+  If $s2 exists, it will be overwritten.
+
+rmdir($s) removes an empty directory $s, and returns true on success.
+
+opendir($s) opens a directory handle and returns the resource. False is returned on failure.
+
+dir($s) returns an instance of the Directory class for the directory $s.
+
+Synopsis for the class Directory:
+
+  Properties
+
+    string $path
+    resource $handle
+
+  Methods
+
+    void close([resource $dir_handle])
+    ALIAS closedir(...)
+    This closes the directory handle.
+
+    string read([resource $dir_handle])
+    ALIAS readdir(...)
+    This returns the next entry. False is returned on failure.
+
+    void rewind([resource $dir_handle])
+    ALIAS rewinddir(...)
+    This rewinds the stream to the beginning.
+
+basename($s1[,$s2]) returns the trailing name component of the path $s1.
+  Any suffix $s2 will be cut off.
+
+dirname($s) returns the parent directory of the path $s.
+
+pathinfo($s[,$i= PATHINFO_DIRNAME|PATHINFO_BASENAME|PATHINFO_EXTENSION|PATHINFO_FILENAME]) returns information about a file path $s, as an array or string.
+
+realpath($s) returns the absolute pathname of $s.
+
+realpath_cache_get() returns an array of realpath cache entries.
+
+realpath_cache_size() returns the amount of memory used by the realpath cache.
+
+disk_free_space($s) or diskfreespace($s) returns the available space of a filesystem as specified by the path $s.
+
+disk_total_space($s) returns the total size of a filesystem as specified by the path $s.
