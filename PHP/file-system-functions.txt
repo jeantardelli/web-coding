@@ -61,3 +61,192 @@ realpath_cache_size() returns the amount of memory used by the realpath cache.
 disk_free_space($s) or diskfreespace($s) returns the available space of a filesystem as specified by the path $s.
 
 disk_total_space($s) returns the total size of a filesystem as specified by the path $s.
+
+## General File
+
+file_exists($s) returns true if the file or directory $s exists.
+
+is_file($s) returns true if $s is a regular file.
+
+is_executable($s) returns true if $s is an executable file.
+
+is_link($s) returns true if $s is a symbolic link.
+
+is_readable($s) returns true if $s is a readable file.
+
+is_writable($s) or is_writeable($s) returns true if $s is a writable file.
+
+fnmatch($s1,$s2[,$i]) returns true if the passed string $s2 matches the shell wildcard pattern $s1.
+  $i can be any combination of:
+
+  FNM_NOESCAPE Disable backslash escaping.
+  FNM_PATHNAME A slash in the string only matches a slash in the given pattern.
+  FNM_PERIODA leading period in the string must be exactly matched by a period in the given pattern.
+  FNM_CASEFOLD Caseless match.
+
+glob($s[,$i]) returns an array of path names matching the shell wildcard pattern $s.
+  $i can be:
+
+  GLOB_MARK Adds a slash to each directory returned.
+  GLOB_NOSORT No sorting.
+  GLOB_NOCHECK Returns the search pattern if no matching files were found.
+  GLOB_NOESCAPE Backslashes do not quote metacharacters.
+  GLOB_BRACEGLOB_ERR Expands {a,b,c} to match ‘a’,’b’ or ’c’.
+  GLOB_ONLYDIR Returns only matching directories.
+  GLOB_ERR Stops on read errors.
+
+fileatime($s) returns the last access time of the file $s in the form of a Unix timestamp.
+
+filemtime ($s) returns the last modification time of the file $s in the form of a Unix timestamp.
+
+touch($s[,$i1=time()[,$i2]]) sets the touch time of the file $s to be $i1, and the access time to be $i2.
+  It returns true on success or false on failure.
+
+filectime($s) returns the inode change time of the file $s in the form of a Unix timestamp.
+
+fileinode($s) returns the inode number of the file $s.
+
+filesize($s) returns the size of the file $s.
+
+filetype($s) returns the type of the file $s, which canbe “fifo”,”char”,”dir”,”block”,”link”,”file”,”socket” and “unknown”.
+
+stat($s) returns an array containing information about a file $s.
+
+fstat($r) is similar to stat() except that it operates on an open file pointer $r.
+
+lstat($s) is similar to stat() except that if the file $s is a symbolic link, the status of the symbolic link is returned.
+
+clearstatcache([$b=false[,$s]]) clears the file status cache. When you call a function that returns information about a file, PHP often caches it to provide faster performance.
+In case the file is changed, the cache needs to be cleared in order to reflect the reality.
+  If $b is true, the realpath cache is cleared.
+  If $s is set, the realpath and stat cache are cleared for the file $s only.
+
+filegroup($s) returns the group ID of the file $s.
+
+fileowner($s) returns the user ID of the owner of the file $s.
+
+chgrp($s,$m) changes the group of the file $s to $m, which is a group name or number.
+  It returns true on success or false on failure.
+
+lchgrp($s,$m) is similar but changes the group of a symlink instead.
+
+chown($s,$m) changes the owner of the file $s to $m, which is a user name or number.
+  It returns true on success or false on failure.
+
+lchown($s,$m) is similar but changes the owner of a symlink instead.
+
+chmod($s,$i) changes the permission mode of the file $s to $i.
+  $i consists of three octal number components for the owner, the user group, and everybody else, in this order.
+  One component can be computed by adding up the needed permissions for that target user base.
+  Number 1 means execution rights, number 2 means writeable rights, number 4 means readable rights.
+  Add up these numbers to specify the needed rights.
+
+fileperms($s) returns the permissions for the file $s, along with other information. Lower bits are the same as the permissions expected by chmod()
+
+umask([$i]) sets PHP’s umask to $i & 0777 and returns the old umask. Without any arguments, it simply returns the current umask.
+
+copy($s1,$s2) copies the file $s1 to $s2. It returns true on success.
+
+unlink($s) deletes the file $s. It returns true on success.
+
+link($s1,$s2) creates a hard link $s2 for the file $s1. It returns true on success.
+
+symlink($s1,$s2) creates a symbolic link $s2 for the file $s1. It returns true on success.
+
+linkinfo($s) is used to verify if a link $s really exists. It returns the st_dev field of the Unix C stat structure returned by the lstat system call, and 0 or false incase of error.
+
+readlink($s) returns the contents of the symbolic link path $s, or false on error.
+
+tempnam($s1,$s2) creates a file with a unique filename, with the prefix $s2 and access permission set to 0600, in the specified directory $s1. It returns the new temporary filename, or FALSE on failure.
+
+tmpfile() creates a temporary file with a unique name in read-write mode and returns the file handle.
+  The file is automatically closed when the script ends.
+
+is_uploaded_file($s) returns true if the file $s was uploaded via HTTP POST.
+
+move_uploaded_file($s1,$s2) moves an uploaded file $s1 to $s2.
+
+parse_ini_file($s[,$b=false[,$i=INI_SCANNER_NORMAL]]) returns an array consisting of the settings in the ini file $s.
+  If $b is set to true, you get a multidimensional array, with the section names included.
+  If $i is set to INI_SCANNER_RAW, then option values will not be parsed.
+
+parse_ini_string(...) is similar but takes in a string $s insteadof a file.
+
+## Reading/Writing
+
+fopen($s1,$s2[,$b]) opens a file $s1 for reading or writing, using the mode $s2. It returns the file handler resource.
+  If $b is set to true, files in the include_path will be searched too.
+  To read a remote URL (eg. http:// or ftp://), allow_url_fopen in php.ini needs to be enabled.
+  $s2 can be:
+
+  flag r w pointer file already exists
+  r    Y   Start
+  r+   Y Y Start
+  w      Y Start   Truncate to 0 length
+  w+   Y Y Strat   Truncate to 0 length
+  a      Y End
+  a+   Y Y End
+  x      Y Start   Error
+  x+   Y Y Start   Error
+  c      Y Start
+  c+   Y Y Start
+  additional flag
+  b binary files
+  t plain-text files. translates \n to \r\n
+
+fclose($r) closes an open file pointer opened by fopen().
+  It returns true on success.
+
+fwrite($r,$s[,$i]) or fputs(...) writes the string $s to the file $r.
+  If $i is specified, writing will stop after that many bytes have been written.
+  This function returns the number of bytes written, or false on error.
+
+file_put_contents($s,$m[,$i]) is identical to calling fopen(), fwrite() and fclose() successively to write data to a file $s.
+  $m can be either a string, an array(implode()), or a stream resource(remaining buffer).
+  This function returns the number of bytes written, or false on error.
+  $i can be any combination of:
+
+  FILE_USE_INCLUDE_PATH Search for the file in the include directory
+  FILE_APPEND Append data to the file instead of overwrithing it.
+  LOCK_EX Use an exclusive loc
+
+fputcsv($r,$arr[,$s1=’,’[,$s2=’”’]]) formats the array $arr as CSV and writes it to the file $r.
+  $s1 is the delimiter character, and $s2 is the enclosure character.
+
+fflush($r) forces all buffered output to be written to the file $r.
+  It returns true on success or false on failure.
+
+ftruncate($r,$i) truncates the file $r to length $i.
+  It returns true on success or false on failure.
+
+fread($r,$i) reads $i bytes from the file $r and returns the string.
+
+fscanf($r,$s[,&$m…]) reads one line from the file $r and stores the values into &$m..., according to the format $s (see sscanf() and sprint()).
+  If &$m is omitted, the values parsed will be returned as an array. Otherwise, the function will return the number of assigned values.
+
+fgetc($r) reads and returns one character from the file $r.
+
+fgets ($r[,$i]) reads and returns one line from the file $r.
+  If $i is specified, reading ends when $i-1 bytes, a newline or EOF has been read (whichever comes first).
+
+fgetss($r[,$i[,$s]]) is identical to fgets() except that it strips any NUL bytes, HTML and PHP tags from the text it reads.
+  $s specifies the allowed tags.
+
+fgetcsv ($r[,$i[,$s1=’,’[,$s2=’”’[,$s3=’\\’]]]]) reads a line from the file $r, and returns an array containing the fields read.
+  $i must be greater than the longest line in characters.
+  $s1 sets the delimiter character.
+  $s2 sets the enclosure character.
+  $s3 sets the escape character.
+
+file_get_contents($s[,$b=false[,$r[,$i1= -1[,$i2]]]]) reads the entire file $s into a string.
+  If $b is true, include_path will be searched.
+  $r denotes the context resource and can be skipped by setting it to NULL.
+  $i1 tells where the reading starts.
+  $i2 tells the number of bytes to read.
+
+file($s[,$i=0]) splits an entire file $s into lines and stores them into an array.
+  $i can be any combination of:
+
+  FILE_USE_INCLUDE_PATH: Search the include_path.
+  FILE_IGNORE_NEW_LINES: Do not add a newline at the end of each array element.
+  FILE_SKIP_EMPTY_LINES: Skip empty lines.

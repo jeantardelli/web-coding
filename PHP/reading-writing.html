@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reading & Writing</title>
+</head>
+<body><?php
+				file_put_contents("test.txt", "ABCDEF");
+
+				$r=fopen("test.txt","ab");
+				fwrite($r, "1234567890", 3);
+				fwrite($r,"---");
+				fflush($r);
+				ftruncate($r,12);
+				fclose($r);
+
+				$r=fopen("test.txt", "c");
+				fwrite($r,"XXX");
+				fclose($r);
+			?>
+</body>
+</html>

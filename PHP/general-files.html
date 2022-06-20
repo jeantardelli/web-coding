@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>General Files</title>
+</head>
+<body><?php
+				var_dump(fnmatch("a?c","abc")); // true
+				var_dump(fnmatch("*A",".CBA")); // true
+				var_dump(fnmatch("*A",".CBA", FNM_PERIOD)); // false
+				var_dump(fnmatch("[abc]","B",FNM_CASEFOLD)); // true
+
+				echo "<br /><br />";
+				print_r(glob("*", GLOB_MARK|GLOB_NOSORT));
+
+				echo "<br /><br />";
+				print_r(stat("test.php")); echo "<br />";
+				echo fileatime("test.php")."<br />";
+				touch("test.php");
+				echo fileatime("test.php")."<br />";
+				clearstatcache();
+				echo fileatime("test.php")."<br />";
+
+				echo sprintf("%0", fileperms("test.php"))."<br />";
+				chmod("test.php", 0764);
+			?>
+</body>
+</html>
