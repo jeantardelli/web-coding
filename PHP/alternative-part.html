@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- For receivers that do not support HTML mails, you can send a multi-part mail
+	with an alternative part. Notice the two dashes that preced each boundary and
+	that mark the end of the entire message. Leave an empty line before and after
+	sub-messages. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Alternative Part</title>
+</head>
+<body><?php
+				// This creates a random hash for the boundary string
+				$boundary=md5(time());
+
+				$msg="If you can see this then your client doesn't accetp MIME types!
+
+							--$boundary
+							Content-Type: text/plain; charset=\"iso-8859-1\"
+						  Content-Transfer-Encoding: 7bit
+
+              This is a simple, alternative mail.
+
+              --$boundary
+							Content-Type: text/html; charset=\"iso-8859-1\"
+				      Content-Transfer-Encoding: 7bit
+
+              <h1>This is the HTML mail.</h1>
+
+              --$boundary--";
+				mail("jeantardelli@gmail.com",
+				     "Test 3",
+				     $msg,
+				     "From: jeantardelli@gmail.com\n".
+				     "Content-type: multipart/alternative;
+							              boundary=\"$boundary\"");
+				?>
+</body>
+</html>

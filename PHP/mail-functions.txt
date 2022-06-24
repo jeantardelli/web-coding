@@ -1,0 +1,7 @@
+Mail Functions
+==============
+
+mail($s1,$s2,$s3[,$s4[,$s5]]) sends an email to $s1, with the subject $s2, and the message $s3.
+  $s5 are additional command line options.
+  This function returns true if the mail was successfully accepted for delivery.
+  $s4 specifies extra headers separated by “\r\n” (if“\r\n” doesn’t work, try “\n”). These headers include “From”, “To”, “Cc”, “Bcc”,”Reply-To”, “MIME-Version”, “Content-type”, “X-Mailer”...

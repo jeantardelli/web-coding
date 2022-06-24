@@ -250,3 +250,30 @@ file($s[,$i=0]) splits an entire file $s into lines and stores them into an arra
   FILE_USE_INCLUDE_PATH: Search the include_path.
   FILE_IGNORE_NEW_LINES: Do not add a newline at the end of each array element.
   FILE_SKIP_EMPTY_LINES: Skip empty lines.
+
+readfile($s[,$b]) reads a file $s and outputs it.
+  Set $b to true to search the include_path.
+  This function returns the number of bytes read from the file, or false on error.
+
+fpassthru($r) reads to EOF on the file $r and outputs the results. It returns the number of bytes read from the file, or false on error.
+
+feof($r) returns true if the position indicator in the file $r has reached the end-of-file.
+
+ftell($r) returns the current position of the position indicator in the file $r.
+
+rewind($r) sets the position indicator in the file $r to the beginning.
+
+fseek($r,$i1[,$i2]) sets the position indicator in the file $r to be $i1 bytes away.
+  It returns 0 upon success or -1 otherwise.
+  $i2 can be:
+    SEEK_SET $i1 bytes from the start
+    SEEK_CUR $i1 bytes from the current position
+    SEEK_END $i1 bytes from EOF
+
+flock($r,$i) performs a portable advisory locking onthe file $r.
+  By default, this function will block until the requested lock is acquired.
+  It returns true on successor false on failure.
+  $i can be:
+    LOCK_SH Acquire a shared lock (reader).
+    LOCK_EXAcquire an exclusive lock (writer).
+    LOCK_UN Release a lock.

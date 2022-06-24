@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Mail</title>
+</head>
+<body><?php
+				mail("jeantardelli@gmail.com",
+				     "Test 2",
+				     "This is a <b>HTML mail</b>."."<img src=http://www.example.com/image.gif>",
+					   "MIME-Version: 1.0 \n"."Content-type: text/html; charset=iso-8859-1 \n");
+				?>
+</body>
+</html>

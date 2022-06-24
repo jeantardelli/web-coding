@@ -17,6 +17,22 @@
 				$r=fopen("test.txt", "c");
 				fwrite($r,"XXX");
 				fclose($r);
+
+				file_put_contents("text.txt","1,2,3,4,5
+													            a,b,c,d,e
+																			@,#,$,%,&");
+				readfile("test.txt");
+				echo "<br /><br />";
+
+				$r=fopen("test.txt","rb");
+				echo fread($r,3)."<br />";
+				echo fgets($r)."<br />";
+				print_r(fgetcsv($r));
+				echo "<br /><br />";
+				fclose($r);
+	
+				echo file_get_contents("test.txt",false,NULL,0,10)."<br />";
+				print_r(file("test.txt"));
 			?>
 </body>
 </html>

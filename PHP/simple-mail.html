@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- It is easy to send a simple mail. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Mail</title>
+</head><?php
+				mail("jeantardelli@gmail.com, De Lugar Nenhum<enl.viagens@gmail.com>",
+				     "Test 1",
+				     "This is a simple mail.",
+				     "From: jeantardelli@gmail.com \n".
+				     "To: jeantardelli@gmail.com \nn".
+				     "Reply-To: Help Desk<robba.caravieri@gmail.com>\n".
+				     "X-Mailer: PHP/".phpversion())
+				or die("MAIL ERROR");
+
+				mail("jeantardelli@gmail.com", "Test 1", "This is a simple mail with an extra option.", "null", "jeantardelli@gmail.com");
+			?>
+<body>
+</body>
+</html>

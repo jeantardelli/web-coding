@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reading and Writing - 2</title>
+</head>
+<body><?php
+				file_put_contents("test.txt", "1234567890");
+
+				$r=fopen("test.txt","rb");
+				fscanf($r,"123%d",$i);
+				echo $i."<br />";                   // 4567890
+				echo ftell($r)."<br />";            // 10
+				var_dump(feof($r)); echo "<br />";  // bool(true)
+				rewind($r);
+				echo ftell($r)."<br />"/            // 0
+				fseek($r,-3,SEEK_END);
+				echo ftell($r)."<br />";            // 7
+				fclose($r);
+
+				$r=fopen("test2.txt","wb");
+				if (flock($r, LOCK_EX)) {
+				    $r2=fopen("test2.txt","wb");
+				    fwrite($r2,"ABC123");           // nothing written!
+				    fwrite($r, "DEF");
+				    fflush($r);
+				    flock($r,LOCK_ON);
+				} else {
+				    echo "Couldn't acquire the lock!";
+				}
+				fclose($r); fclose($r2);
+			?>
+</body>
+</html>
