@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Decoding</title>
+</head>
+<body><?php
+				$a = '{"a":1, "b":2, "c":3, "special-X":100}';
+				var_dump(json_decode($a));
+				var_dump(json_decode($a, true));
+
+				$b = json_decode($a);
+				echo $b -> {'special-X'}; // - is not allowed originally
+
+				$a = '{"num": 12345678901234567890}';
+				var_dump(json_decode($a));
+				var_dump(json_decode($a, false, 512, JSON_BIGINT_AS_STRING));
+			?>
+</body>
+</html>

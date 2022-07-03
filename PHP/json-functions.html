@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON Functions</title>
+</head>
+<body><?php
+				$a = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+				echo json_encode($a), "<br />";
+
+				$a = array('<cat>', "'dog'", '"cow"', '&fish&', "\xc4\xa9");
+				echo json_encode($a, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE), "<br />";
+
+				$a = array(array(1, 2, 3));
+				echo json_encode($a), "<br />";
+				echo json_encode($a, JSON_FORCE_OBJECT), "<br />";
+
+				$a = array("cat", "dog", "cow", "fish");
+				echo json_encode($a), "<br />";
+	
+				unset($a[0]);
+				echo json_encode($a), "<br />";
+
+				class cl {
+				  public $v1=1;
+					public $v2=2;
+				}
+	
+				$a = new cl;
+				echo json_encode($a), "<br />";
+
+				echo json_encode("acb"), "<br />";
+				echo json_encode(3);
+			?>
+</body>
+</html>

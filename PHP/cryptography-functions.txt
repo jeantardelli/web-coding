@@ -1,0 +1,19 @@
+Cryptography Functions
+======================
+
+## Password Hashing
+
+Storing passwords as hashes adds an additional level of security to your system.
+
+password_hash($s, $i [,$arr]) creates a one-way, password hash for the password $s.
+  Password hashes created with crypt() can be used with password_hash().
+  $i denotes the algorithm, and can be PASSWORD_DEFAULT or PASSWORD_BCRYPT.
+  The latter causes password $s to be truncated to 72 characters, and results in a hash that is always 60 characters.
+  For PASSWORD_BCRYPT, you may specify $arr, an array containing the keys ‘salt’ and ‘cost’.
+  ‘cost’ denotes the algorithmic cost, and is 10 by default.
+
+password_verify($s1, $s2) returns true if the password $s1 matches the hash $s2. Note that password_hash() returns the algorithm, cost and salt as part of the returned hash.
+
+password_needs_rehash($s, $i [,$arr]) returns true if the supplied hash $s does not implement the algorithm $i and $options $arr.
+
+password_get_info($s) returns an array containing information about the hash.

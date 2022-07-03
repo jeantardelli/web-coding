@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Error Handling</title>
+</head>
+<body><?php
+				$o = json_decode('{"a":1, "b":2, "c": 3,}'); // extra comm
+				echo json_last_error_msg();
+				if (json_last_error() == JSON_ERROR_SYNTAX) echo 1;
+			?>
+</body>
+</html>

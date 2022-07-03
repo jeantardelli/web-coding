@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cryptography Functions</title>
+</head>
+<body><?php
+				$P = 'myPassword';
+				$O = [
+				  'cost' =>  11,
+					'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)];
+				$H = password_hash($P, PASSWORD_BCRYPT, $O);
+
+				echo $H;
+				var_dump(password_verify($P, $H));
+				var_dump(password_needs_rehash($H, PASSWORD_BCRYPT,$O));
+				print_r(password_get_info($H));
+			?>
+</body>
+</html>

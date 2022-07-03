@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- To send small attachment files, first capture the file contents into strings. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Attachment</title>
+</head>
+<body><?php
+				$boundary=md5(time());
+				$file1 = chunk_split(base64_encode(file_get_contents('a.zip')));
+				$file2 = chunk_split(base64_encode(file_get_contents('b.exe')));
+
+				$msg = "--$boundray
+								Content-Type: text/html
+								Content-Transfer-Encoding: 7bit
+
+                <h1>This is the HTML mail.</h1>
+
+								--$boundary
+								Content-Type: application/octet-stream; name=\"a.zip\"
+								Content-Transfer-Encoding: base64
+								Content-Disposition: attachment
+
+                $file2
+
+                --$boundary--";
+				mail("jeantardelli@gmail.com", "Test 4", $msg, "From: admin@example.com\n"."MIME-Version: 1.0\n"."Content-type: multipart/mixed;\n"."boundary=\"$boundary\"")
+				or die("MAIL ERROR");
+			?>
+</body>
+</html>
