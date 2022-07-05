@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>General Hashing</title>
+</head>
+<body><?php
+				$s = "hello world";
+				echo crc32($s)."<br />";
+				echo crypt($s)."<br />"; // different each time
+				echo crypt($s)."<br />";
+				echo crypt($s, "ABC")."<br />";
+				echo md5($s)."<br />";
+				echo sha1($s)."<br />";
+
+				$s = "PHP 5.4.0\n\r";
+				echo str_rot13($s)."<br />";
+				echo str_rot13(str_rot13($s))."<br />";
+				echo bin2hex($s)."<br />";
+				echo hex2bin(bin2hex($s))."<br />";
+				echo convert_uuencode($s)."<br />";
+				echo convert_uudecode(convert_uuencode($s))."<br />";
+				echo quoted_printable_encode($s)."<br />";
+				echo quoted_printable_decode(quoted_printable_encode($s))."<br />";
+
+				print_r(hash_algos())."<br />";
+	
+				echo hash('sha1', 'Please code PHP well.')."<br />";
+				file_put_contents('eg.txt', 'Please code PHP well.');
+				echo hash_file('sha1', 'eg.txt');
+
+				$c = hash_init('md5');
+				hash_update($c, 'PHP is really fun.');
+				hash_update($c, 'Do you agree?');
+				hash_update_file($c, 'eg.txt');
+				echo hash_final($c);
+			?>
+</body>
+</html>

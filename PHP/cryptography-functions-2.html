@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- This determines for BCRYPT the maximum algorithmic cost given a time limit. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cryptography Functions 2</title>
+</head>
+<body><?php
+				$timeTarget= 1.0;
+				$cost = 9;
+
+				do {
+				  $cost++;
+				  $start = microtime(true);
+				  password_hash("test", PASSWORD_BCRYPT, ["cost"=>$cost]);
+					$end = microtime(true);
+				} while (($end - $start) < $timeTarget);
+
+				echo "Appropriate Cost Found: " . $cost . "\n";
+			?>
+</body>
+</html>

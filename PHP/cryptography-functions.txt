@@ -17,3 +17,57 @@ password_verify($s1, $s2) returns true if the password $s1 matches the hash $s2.
 password_needs_rehash($s, $i [,$arr]) returns true if the supplied hash $s does not implement the algorithm $i and $options $arr.
 
 password_get_info($s) returns an array containing information about the hash.
+
+## General Hashing
+
+rc32($s) returns an integer which is the cyclic-redundancy-checksum polynomial of $s.
+  It is 32 bits long.
+
+crypt($s1[,$s2]) returns a hashed string of $s1, using the standard Unix DES-based algorithm.
+  $s2 is the salt string to base the hashing on.
+
+md5($s[,$b=false]) returns the MD5 hash of $s, which is a string storing a 32-character hexadecimal number.
+  If $b is true, the hash is in raw binary format with a length of 16.
+
+md5_file($s [,$b=false]) is similar to md5() except that instead of a string, $s is the name of the file to be hashed.
+
+sha1($s[,$b=false]) returns the sha1 hash of $s, which is a string storing a 40-character hexadecimal number.
+  If $b is true, the hash is in raw binary format with a length of 20.
+
+sha1_file ($s[,b]) is similar to sha1() except that instead of a string, $s is the name of the file to be hashed.
+
+tr_rot13($s) returns a copy of $s with ROT13 performed.
+  ROT13 encoding shifts every letter by 13 places in the alphabet.
+  Passing an encoded string as an argument will return the original version.
+
+bin2hex($s) returns a string containing the hexadecimal representation of $s.
+
+hex2bin($s) is the reverse of bin2hex().
+
+convert_uuencode($s) returns a string that is $s encoded using the uuencode algorithm.
+  Uuencode translates all strings into printable characters, making them safe for network transmissions.
+  Uuencoded data is about 35% larger than the original.
+
+convert_uudecode($s) is the reverse of convert_uuencode().
+
+quoted_printable_encode($s) returns a quoted printable string created according to RFC2045, from a 8 bit string.
+
+quoted_printable_decode($s) is the reverse of quoted_printable_encode()
+
+hash_algos() returns an array containing the names of all registered hashing algorithms.
+
+hash_file($s1, $s2 [,$b=false]) returns a hash for string $s2 using algorithm $s1.
+
+hash_file($s1, $s2[,$b=false]) returns a hash for file $s2 using algorithm $s1.
+  If $b is true, raw binary data is output.
+
+hash_init($s1 [, $i=0 [, $s2=NULL]]) initializes an incremental hashing context, using algorithm $s1.
+  $i can be HASH_HMAC.
+  If $i is HASH_HMAC, $s2 specifies the secret key.
+
+hash_update($r, $s) pumps string $s into active hashing context $r.
+
+hash_update_file($r, $s) pumps data from file $s into active hashing context $r.
+
+hash_final($r,$b=false) finalizes an incremental hash (context $r) and returns the resulting digest.
+  If $b is true, raw binary data is output.
