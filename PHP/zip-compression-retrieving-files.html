@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- This extracts all entries -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Retrieving Files</title>
+</head>
+<body><?php
+				$zip = new ZipArchive();
+				if ($zip -> open('test.zip') === TRUE) {
+				  $zip -> extractTo('.');
+					$zip -> close();
+					echo 'ok';
+				} else {
+				  echo 'failed';
+			  }
+			?>
+</body>
+</html>

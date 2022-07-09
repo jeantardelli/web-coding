@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- If archive.zip already exists, the files will be added to the archive.
+	The second parameter to $zip->addFile() is optional. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adding Files</title>
+</head>
+<body><?php
+				$zip = new ZipArchive();
+				$filename = "./archive.zip";
+
+				if ($zip->open($filename, ZipArchive::CREATE)!==TRUE)
+				  exit("cannot open <$filename>\n");
+
+				$zip->addFile("test.php", "archive");
+
+				echo "numfiles: " . $zip->numFiles . "<br />";
+				echo "status: " . $zip->status . "<br />";
+
+				$zip->close();
+			?>
+</body>
+</html>

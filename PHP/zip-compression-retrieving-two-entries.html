@@ -1,0 +1,20 @@
+	<!DOCTYPE html>
+	<!-- This extracts two entries -->
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Retrieving Two Entries</title>
+	</head>
+	<body><?php
+					$zip = new ZipArchive;
+					$res = $zip -> open('test_im.zip');
+					if ($res === TRUE) {
+					  $zip -> extractTo('/myFolder/', array('a.gif', 'b.php'));
+						$zip -> close();
+						echo 'ok';
+					} else {
+					  echo 'failed';
+					}
+				?>
+	</body>
+	</html>
