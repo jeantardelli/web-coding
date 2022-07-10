@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- This function converts an image from any format to any format. -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Processing - File Conversion</title>
+</head>
+<body><?php
+				function image_convert($file, $targetType) {
+				  // Obtain the file into memory
+				  $last3 = strtolower(substr($file, -3));
+				  $last4 = strtolower(substr($file, -4));
+				  $r = ($last3 == 'gif') ? imagecreatefromgif($file) :
+				       ($last3 == 'png') ? imagecreatefrompng($file) :
+				       ($last3 == 'jpg' || $last4 == 'jpeg') ? imagecreatefromjpeg($file) :
+				       NULL;
+				  if (!r) die('Invalid source file');
+
+				  echo "Image OK<br />";
+
+				  // Output the file
+				  $filebase = ($last4 == 'jpeg') ? substr($file, 0, -4) : substr($file, 0, -3);
+				  $targetType = strtolower($targetType);
+
+				  echo "filebase: $filebase<br />";
+
+				  if ($targetType == 'gif') imagegif($r, $filebase."gif");
+				  else if ($targetType == 'png') imagepng($r, $filebase."png");
+				  else if ($targetType == 'jpg') imagejpeg($r, $filebase."jpg");
+				  else if ($targetType == 'jpeg') imagejpeg($r, $filebase."jpeg");
+
+				  // Free the file from memory
+				  imagedestroy($r);
+			}
+
+			image_convert("../src/images/test.png", "jpg");
+		?>
+</body>
+</html>

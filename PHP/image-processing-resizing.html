@@ -1,0 +1,11 @@
+// imagescale($r,$i1[,$i2=-1[,$i3=IMG_BILINAER_FIXED]]) scales an image $r using the new width $i1 and new height $i2.
+// A new image resource is returned. $i3 can be IMG_NEAREST_NEIGHBOUR, IMG_BILINEAR_FIXED, IMG_BICUBIC, IMG_BICUBIC_FIXED
+
+
+<?php
+
+$rs=imagecreatefromjped("../src/images/test.png");
+$rd=imagescale($rs,100,100);
+imagejpeg($rs,"../src/images/test_.png");
+
+?>
